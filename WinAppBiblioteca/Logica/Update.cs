@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinAppBiblioteca.Logica
 {
-    internal class Update
+    public class Update
     {
     }
 }
