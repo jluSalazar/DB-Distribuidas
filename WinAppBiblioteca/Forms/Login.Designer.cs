@@ -89,11 +89,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 18F);
+            this.label1.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(149, 209);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 28);
+            this.label1.Size = new System.Drawing.Size(110, 27);
             this.label1.TabIndex = 3;
             this.label1.Text = "USUARIO";
             // 
@@ -118,11 +118,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 18F);
+            this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(149, 286);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 28);
+            this.label2.Size = new System.Drawing.Size(124, 27);
             this.label2.TabIndex = 6;
             this.label2.Text = "PASSWORD";
             // 
@@ -148,12 +148,13 @@
             // lmessage
             // 
             this.lmessage.AutoSize = true;
+            this.lmessage.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lmessage.ForeColor = System.Drawing.Color.Red;
             this.lmessage.Location = new System.Drawing.Point(88, 432);
             this.lmessage.Name = "lmessage";
-            this.lmessage.Size = new System.Drawing.Size(220, 13);
+            this.lmessage.Size = new System.Drawing.Size(217, 13);
             this.lmessage.TabIndex = 8;
-            this.lmessage.Text = "-----------------------------------------------------------------------";
+            this.lmessage.Text = "-----------------------------------";
             // 
             // Blogin
             // 
