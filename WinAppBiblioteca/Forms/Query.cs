@@ -20,7 +20,7 @@ namespace WinAppBiblioteca
     public partial class Query : Form
     {
 
-        Buscar buscar;
+       private Buscar buscar;
        
         public Query()
         {
@@ -38,9 +38,7 @@ namespace WinAppBiblioteca
         }
 
 
-        private void Listado_ar()
-        {
-        }
+       
         private void Estudiante_Load(object sender, EventArgs e)
         {
             Listado_ar();
@@ -92,9 +90,22 @@ namespace WinAppBiblioteca
 
         private void dataGLibroQ_Layout(object sender, LayoutEventArgs e)
         {
-            Buscar buscar = new Buscar();
+            
+        }
+        private void Listado_ar()
+        {
+            string consulta = "SELECT * FROM Libro";
+            dataGridView1.DataSource = buscar.listado(consulta);
+        }
+        
+        private void dataGridView1_Layout(object sender, LayoutEventArgs e)
+        {
+           Listado_ar();
+        }
 
-            dataGLibroQ.DataSource = buscar.Listar();
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
