@@ -87,9 +87,14 @@ namespace WinAppBiblioteca
 
         private void dataGLibro_Layout(object sender, LayoutEventArgs e)
         {
+            
+        }
+
+        private void dataGLibroQ_Layout(object sender, LayoutEventArgs e)
+        {
             Buscar buscar = new Buscar();
-            DataTable dt = buscar.listado();
-            dataGLibro.DataSource = dt;
+
+            dataGLibroQ.DataSource = buscar.Listar();
         }
     }
 }

@@ -47,13 +47,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.dataGLibro = new System.Windows.Forms.DataGridView();
             this.tquery = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGLibroQ = new System.Windows.Forms.DataGridView();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGLibro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGLibroQ)).BeginInit();
             this.SuspendLayout();
             // 
             // panel11
@@ -278,17 +278,6 @@
             this.label12.TabIndex = 14;
             this.label12.Text = "Popular Dish";
             // 
-            // dataGLibro
-            // 
-            this.dataGLibro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGLibro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGLibro.Location = new System.Drawing.Point(20, 167);
-            this.dataGLibro.Name = "dataGLibro";
-            this.dataGLibro.Size = new System.Drawing.Size(532, 257);
-            this.dataGLibro.TabIndex = 21;
-            this.dataGLibro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGLibro.Layout += new System.Windows.Forms.LayoutEventHandler(this.dataGLibro_Layout);
-            // 
             // tquery
             // 
             this.tquery.Location = new System.Drawing.Point(34, 104);
@@ -311,15 +300,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // MetodosEstudiante
+            // dataGLibroQ
+            // 
+            this.dataGLibroQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGLibroQ.Location = new System.Drawing.Point(34, 181);
+            this.dataGLibroQ.Name = "dataGLibroQ";
+            this.dataGLibroQ.Size = new System.Drawing.Size(478, 201);
+            this.dataGLibroQ.TabIndex = 24;
+            this.dataGLibroQ.Layout += new System.Windows.Forms.LayoutEventHandler(this.dataGLibroQ_Layout);
+            // 
+            // Query
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(740, 675);
+            this.Controls.Add(this.dataGLibroQ);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tquery);
-            this.Controls.Add(this.dataGLibro);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
@@ -330,7 +328,7 @@
             this.Controls.Add(this.button15);
             this.Controls.Add(this.panel9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MetodosEstudiante";
+            this.Name = "Query";
             this.Text = "FormDashboard";
             this.Load += new System.EventHandler(this.Estudiante_Load);
             this.panel11.ResumeLayout(false);
@@ -339,7 +337,7 @@
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGLibro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGLibroQ)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,8 +362,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dataGLibro;
         private System.Windows.Forms.TextBox tquery;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGLibroQ;
     }
 }
