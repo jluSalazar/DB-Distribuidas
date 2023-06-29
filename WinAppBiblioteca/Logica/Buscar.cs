@@ -16,29 +16,35 @@ namespace WinAppBiblioteca.Logica
             
 
         }
-        public DataTable Listar( )
+        public DataTable listado(string sqlconection)
         {
-            SQLiteDataReader Resultado;
-            DataTable Tabla = new DataTable();
-            SQLiteConnection SqlCon = new SQLiteConnection();
+
+            SQLiteDataReader resultado;
+            DataTable dt = new DataTable();
+            SQLiteConnection sqlcon = new SQLiteConnection();
+
             try
             {
-                SqlCon = Conexion.getInstancia().crearConexion();
-                string Sql_tarea = "select * from Libro";
-                SQLiteCommand Comando = new SQLiteCommand(Sql_tarea, SqlCon);
-                SqlCon.Open();
-                Resultado = Comando.ExecuteReader();
-                Tabla.Load(Resultado);
-                return Tabla;
+                sqlcon = Conexion.getInstancia().crearConexion();
+                string sql_tarea = sqlconection;
+                SQLiteCommand cmd = new SQLiteCommand(sql_tarea, sqlcon);
+                sqlcon.Open();
+                resultado = cmd.ExecuteReader();
+                dt.Load(resultado);
+                return dt;
+
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
             finally
             {
-                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+                if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
             }
+
+
         }
 
 
