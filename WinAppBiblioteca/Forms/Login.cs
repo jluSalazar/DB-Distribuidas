@@ -16,6 +16,7 @@ namespace WinAppBiblioteca.Forms
     {
 
         SQLiteConnection sqlcon = new SQLiteConnection();
+       
         public Login()
         {
             InitializeComponent();
@@ -53,7 +54,7 @@ namespace WinAppBiblioteca.Forms
                     }
                     if (count == 1)
                     {
-                        Pantalla pantalla = new Pantalla();
+                        Diseno pantalla = new Diseno();
                         pantalla.Show();
                         this.Hide();
 

@@ -248,6 +248,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Diseno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Diseno.Designer.cs">
+      <DependentUpon>Diseno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Query.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Query.Designer.cs">
+      <DependentUpon>Query.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +272,7 @@
     <Compile Include="Forms\Pantalla.Designer.cs">
       <DependentUpon>Pantalla.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logica\Buscar.cs" />
     <Compile Include="Logica\Conexion.cs" />
     <Compile Include="Logica\Create.cs" />
     <Compile Include="Logica\Delete.cs" />
@@ -329,6 +342,12 @@
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
+    <EmbeddedResource Include="Forms\Diseno.resx">
+      <DependentUpon>Diseno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Query.resx">
+      <DependentUpon>Query.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -343,7 +362,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Biblioteca.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
