@@ -9,16 +9,16 @@ using WinAppBiblioteca.Model;
 
 namespace WinAppBiblioteca.Logica
 {
-    public class Update
+    public class UpdateL
     {
 
-        public void ActualizarRegistro(string tableName, Libro libro)
+        public void ActualizarRegistro(Libro libro)
         {
 
             SQLiteConnection SqlCon = Conexion.getInstancia().crearConexion();
             try
             {
-                string sqlActualizar = "UPDATE " + tableName + " SET nombre_libro = @NombreLibro, fecha_publicacion = @Fecha, edicion = @Edicion, nombre_autor = @AutorNombre, apellido_autor = @AutorApellido, categoria = @Categoria, stock = @Stock, disponibilidad = @Disponibilidad WHERE codigo_libro = @CodigoLibro";
+                string sqlActualizar = "UPDATE Libro SET nombre_libro = @NombreLibro, fecha_publicacion = @Fecha, edicion = @Edicion, nombre_autor = @AutorNombre, apellido_autor = @AutorApellido, categoria = @Categoria, stock = @Stock, disponibilidad = @Disponibilidad WHERE codigo_libro = @CodigoLibro";
                 SQLiteCommand Comando = new SQLiteCommand(sqlActualizar, SqlCon);
 
                 // Agregar parámetros a la consulta

@@ -283,7 +283,7 @@
     <Compile Include="Logica\Create.cs" />
     <Compile Include="Logica\Delete.cs" />
     <Compile Include="Logica\Read.cs" />
-    <Compile Include="Logica\Update.cs" />
+    <Compile Include="Logica\UpdateL.cs" />
     <Compile Include="Model\Libro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

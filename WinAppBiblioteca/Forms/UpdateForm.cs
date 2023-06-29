@@ -18,11 +18,12 @@ namespace WinAppBiblioteca.Forms
     public partial class UpdateForm : Form
     {
         Read readAux;
-        Update updateAux;
+        UpdateL updateAux;
         public UpdateForm()
         {
             InitializeComponent();
             readAux = new Read();
+            updateAux = new UpdateL();
         }
 
         public void ListarDGV()
@@ -107,7 +108,7 @@ namespace WinAppBiblioteca.Forms
                     txt_NombreAu.Text, txt_ApellidoAu.Text, txt_Categoria.Text,
                     int.Parse(txt_Stock.Text), int.Parse(txt_Disponibilidad.Text));
 
-                updateAux.ActualizarLibro(libro);
+                updateAux.ActualizarRegistro(libro);
                 this.ListarDGV();
                 MessageBox.Show("Se ha actualizado el Registro", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
