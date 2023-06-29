@@ -21,5 +21,10 @@ namespace WinAppBiblioteca.Forms
         {
             this.Close();
         }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
