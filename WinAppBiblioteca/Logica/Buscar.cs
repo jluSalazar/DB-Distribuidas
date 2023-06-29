@@ -24,7 +24,7 @@ namespace WinAppBiblioteca.Logica
             try
             {
                 SqlCon = Conexion.getInstancia().crearConexion();
-                string Sql_tarea = "select * from libro" ;
+                string Sql_tarea = "select * from Libro";
                 SQLiteCommand Comando = new SQLiteCommand(Sql_tarea, SqlCon);
                 SqlCon.Open();
                 Resultado = Comando.ExecuteReader();
