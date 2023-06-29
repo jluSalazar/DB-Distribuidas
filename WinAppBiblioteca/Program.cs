@@ -16,7 +16,7 @@ namespace WinAppBiblioteca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.UpdateForm());
+            Application.Run(new Forms.Login());
         }
     }
 }
