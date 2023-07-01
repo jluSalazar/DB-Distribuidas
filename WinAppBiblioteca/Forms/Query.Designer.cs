@@ -37,11 +37,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.button18 = new System.Windows.Forms.Button();
+            this.bBusquedaLineal = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.bBusquedaBinaria = new System.Windows.Forms.Button();
+            this.bordenarporid = new System.Windows.Forms.Button();
+            this.Bordenarpornombre = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -148,20 +148,20 @@
             this.label17.TabIndex = 1;
             this.label17.Text = "$24 for three";
             // 
-            // button18
+            // bBusquedaLineal
             // 
-            this.button18.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(146)))), ((int)(((byte)(89)))));
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(146)))), ((int)(((byte)(89)))));
-            this.button18.Location = new System.Drawing.Point(563, 362);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(154, 42);
-            this.button18.TabIndex = 17;
-            this.button18.Text = "Busqueda lineal";
-            this.button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
+            this.bBusquedaLineal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(146)))), ((int)(((byte)(89)))));
+            this.bBusquedaLineal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bBusquedaLineal.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBusquedaLineal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(146)))), ((int)(((byte)(89)))));
+            this.bBusquedaLineal.Location = new System.Drawing.Point(563, 362);
+            this.bBusquedaLineal.Name = "bBusquedaLineal";
+            this.bBusquedaLineal.Size = new System.Drawing.Size(154, 42);
+            this.bBusquedaLineal.TabIndex = 17;
+            this.bBusquedaLineal.Text = "Busqueda lineal";
+            this.bBusquedaLineal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bBusquedaLineal.UseVisualStyleBackColor = false;
+            this.bBusquedaLineal.Click += new System.EventHandler(this.button18_Click);
             // 
             // label29
             // 
@@ -174,50 +174,50 @@
             this.label29.TabIndex = 15;
             this.label29.Text = "Quick Actions";
             // 
-            // button17
+            // bBusquedaBinaria
             // 
-            this.button17.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.button17.Location = new System.Drawing.Point(563, 301);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(154, 42);
-            this.button17.TabIndex = 18;
-            this.button17.Text = "Búsqueda Binaria";
-            this.button17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button17.UseVisualStyleBackColor = false;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.bBusquedaBinaria.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.bBusquedaBinaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bBusquedaBinaria.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBusquedaBinaria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.bBusquedaBinaria.Location = new System.Drawing.Point(563, 301);
+            this.bBusquedaBinaria.Name = "bBusquedaBinaria";
+            this.bBusquedaBinaria.Size = new System.Drawing.Size(154, 42);
+            this.bBusquedaBinaria.TabIndex = 18;
+            this.bBusquedaBinaria.Text = "Búsqueda Binaria";
+            this.bBusquedaBinaria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bBusquedaBinaria.UseVisualStyleBackColor = false;
+            this.bBusquedaBinaria.Click += new System.EventHandler(this.button17_Click);
             // 
-            // button16
+            // bordenarporid
             // 
-            this.button16.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(99)))), ((int)(((byte)(135)))));
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(99)))), ((int)(((byte)(135)))));
-            this.button16.Location = new System.Drawing.Point(563, 241);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(154, 42);
-            this.button16.TabIndex = 19;
-            this.button16.Text = "Order by id";
-            this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button16.UseVisualStyleBackColor = false;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.bordenarporid.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(99)))), ((int)(((byte)(135)))));
+            this.bordenarporid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bordenarporid.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bordenarporid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(99)))), ((int)(((byte)(135)))));
+            this.bordenarporid.Location = new System.Drawing.Point(563, 241);
+            this.bordenarporid.Name = "bordenarporid";
+            this.bordenarporid.Size = new System.Drawing.Size(154, 42);
+            this.bordenarporid.TabIndex = 19;
+            this.bordenarporid.Text = "Order by id";
+            this.bordenarporid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bordenarporid.UseVisualStyleBackColor = false;
+            this.bordenarporid.Click += new System.EventHandler(this.button16_Click);
             // 
-            // button15
+            // Bordenarpornombre
             // 
-            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.button15.Location = new System.Drawing.Point(563, 181);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(154, 42);
-            this.button15.TabIndex = 20;
-            this.button15.Text = "Order by Name";
-            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.Bordenarpornombre.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.Bordenarpornombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bordenarpornombre.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bordenarpornombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.Bordenarpornombre.Location = new System.Drawing.Point(563, 181);
+            this.Bordenarpornombre.Name = "Bordenarpornombre";
+            this.Bordenarpornombre.Size = new System.Drawing.Size(154, 42);
+            this.Bordenarpornombre.TabIndex = 20;
+            this.Bordenarpornombre.Text = "Order by Name";
+            this.Bordenarpornombre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Bordenarpornombre.UseVisualStyleBackColor = false;
+            this.Bordenarpornombre.Click += new System.EventHandler(this.button15_Click);
             // 
             // panel9
             // 
@@ -322,11 +322,11 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
-            this.Controls.Add(this.button18);
+            this.Controls.Add(this.bBusquedaLineal);
             this.Controls.Add(this.label29);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button16);
-            this.Controls.Add(this.button15);
+            this.Controls.Add(this.bBusquedaBinaria);
+            this.Controls.Add(this.bordenarporid);
+            this.Controls.Add(this.Bordenarpornombre);
             this.Controls.Add(this.panel9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Query";
@@ -353,11 +353,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button bBusquedaLineal;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button bBusquedaBinaria;
+        private System.Windows.Forms.Button bordenarporid;
+        private System.Windows.Forms.Button Bordenarpornombre;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label14;
