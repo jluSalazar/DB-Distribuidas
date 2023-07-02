@@ -31,7 +31,6 @@
             this.DGVLibro = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.panelDrag = new System.Windows.Forms.Panel();
             this.txt_Stock = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,11 +49,9 @@
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.txt_Codigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDelete = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.Btn_search = new FontAwesome.Sharp.IconButton();
+            this.btnDelete = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGVLibro)).BeginInit();
-            this.panelDrag.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +71,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(48, 50);
+            this.label2.Location = new System.Drawing.Point(48, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(208, 27);
             this.label2.TabIndex = 31;
@@ -90,16 +87,6 @@
             this.label8.Size = new System.Drawing.Size(119, 20);
             this.label8.TabIndex = 25;
             this.label8.Text = "Disponible:";
-            // 
-            // panelDrag
-            // 
-            this.panelDrag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.panelDrag.Controls.Add(this.iconButton2);
-            this.panelDrag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDrag.Location = new System.Drawing.Point(0, 0);
-            this.panelDrag.Name = "panelDrag";
-            this.panelDrag.Size = new System.Drawing.Size(984, 34);
-            this.panelDrag.TabIndex = 32;
             // 
             // txt_Stock
             // 
@@ -191,7 +178,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(-8, 104);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 174);
+            this.panel3.Size = new System.Drawing.Size(1008, 174);
             this.panel3.TabIndex = 30;
             // 
             // label9
@@ -314,6 +301,22 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Código:";
             // 
+            // Btn_search
+            // 
+            this.Btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_search.FlatAppearance.BorderSize = 0;
+            this.Btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_search.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.Btn_search.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.Btn_search.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_search.IconSize = 28;
+            this.Btn_search.Location = new System.Drawing.Point(325, 15);
+            this.Btn_search.Name = "Btn_search";
+            this.Btn_search.Size = new System.Drawing.Size(35, 24);
+            this.Btn_search.TabIndex = 16;
+            this.Btn_search.UseVisualStyleBackColor = true;
+            this.Btn_search.Click += new System.EventHandler(this.Btn_search_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -337,54 +340,21 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // iconButton2
-            // 
-            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 24;
-            this.iconButton2.Location = new System.Drawing.Point(965, 0);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(35, 32);
-            this.iconButton2.TabIndex = 1;
-            this.iconButton2.UseVisualStyleBackColor = false;
-            // 
-            // Btn_search
-            // 
-            this.Btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_search.FlatAppearance.BorderSize = 0;
-            this.Btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_search.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.Btn_search.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.Btn_search.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_search.IconSize = 28;
-            this.Btn_search.Location = new System.Drawing.Point(325, 15);
-            this.Btn_search.Name = "Btn_search";
-            this.Btn_search.Size = new System.Drawing.Size(35, 24);
-            this.Btn_search.TabIndex = 16;
-            this.Btn_search.UseVisualStyleBackColor = true;
-            this.Btn_search.Click += new System.EventHandler(this.Btn_search_Click);
-            // 
             // DeleteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(984, 636);
+            this.ClientSize = new System.Drawing.Size(1000, 636);
             this.Controls.Add(this.DGVLibro);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.panelDrag);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DeleteForm";
             this.Text = "DeleteForm";
             this.Load += new System.EventHandler(this.DeleteForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVLibro)).EndInit();
-            this.panelDrag.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -397,9 +367,6 @@
         private System.Windows.Forms.DataGridView DGVLibro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton btnDelete;
-        private System.Windows.Forms.Panel panelDrag;
         private FontAwesome.Sharp.IconButton Btn_search;
         private System.Windows.Forms.TextBox txt_Stock;
         private System.Windows.Forms.Label label10;
@@ -419,5 +386,6 @@
         private System.Windows.Forms.TextBox txt_Nombre;
         private System.Windows.Forms.TextBox txt_Codigo;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnDelete;
     }
 }

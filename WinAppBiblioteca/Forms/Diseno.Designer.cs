@@ -39,8 +39,8 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnRestaurants = new System.Windows.Forms.Button();
             this.btnAnalytics = new System.Windows.Forms.Button();
-            this.btnMenuList = new System.Windows.Forms.Button();
-            this.btnEmployees = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -154,8 +154,8 @@
             this.panel2.Controls.Add(this.btnSettings);
             this.panel2.Controls.Add(this.btnRestaurants);
             this.panel2.Controls.Add(this.btnAnalytics);
-            this.panel2.Controls.Add(this.btnMenuList);
-            this.panel2.Controls.Add(this.btnEmployees);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnCustomers);
             this.panel2.Controls.Add(this.btnDashboard);
             this.panel2.Controls.Add(this.panel3);
@@ -223,38 +223,39 @@
             this.btnAnalytics.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAnalytics.UseVisualStyleBackColor = true;
             // 
-            // btnMenuList
+            // btnDelete
             // 
-            this.btnMenuList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMenuList.FlatAppearance.BorderSize = 0;
-            this.btnMenuList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuList.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnMenuList.Image = global::WinAppBiblioteca.Properties.Resources.clipboard;
-            this.btnMenuList.Location = new System.Drawing.Point(0, 244);
-            this.btnMenuList.Name = "btnMenuList";
-            this.btnMenuList.Size = new System.Drawing.Size(200, 42);
-            this.btnMenuList.TabIndex = 4;
-            this.btnMenuList.Text = "Menu List";
-            this.btnMenuList.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnMenuList.UseVisualStyleBackColor = true;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnDelete.Image = global::WinAppBiblioteca.Properties.Resources.clipboard;
+            this.btnDelete.Location = new System.Drawing.Point(0, 244);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(200, 42);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelet_Click);
             // 
-            // btnEmployees
+            // btnUpdate
             // 
-            this.btnEmployees.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmployees.FlatAppearance.BorderSize = 0;
-            this.btnEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployees.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnEmployees.Image = global::WinAppBiblioteca.Properties.Resources.employee;
-            this.btnEmployees.Location = new System.Drawing.Point(0, 202);
-            this.btnEmployees.Name = "btnEmployees";
-            this.btnEmployees.Size = new System.Drawing.Size(200, 42);
-            this.btnEmployees.TabIndex = 4;
-            this.btnEmployees.Text = "Update";
-            this.btnEmployees.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnEmployees.UseVisualStyleBackColor = true;
-            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnUpdate.Image = global::WinAppBiblioteca.Properties.Resources.employee;
+            this.btnUpdate.Location = new System.Drawing.Point(0, 202);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(200, 42);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCustomers
             // 
@@ -416,8 +417,8 @@
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnRestaurants;
         private System.Windows.Forms.Button btnAnalytics;
-        private System.Windows.Forms.Button btnMenuList;
-        private System.Windows.Forms.Button btnEmployees;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Label label4;

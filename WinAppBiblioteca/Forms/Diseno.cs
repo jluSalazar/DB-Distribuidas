@@ -71,8 +71,8 @@ namespace WinAppBiblioteca
             Color btnColor = Color.FromArgb(26, 23, 40);
             btnDashboard.BackColor = btnColor;
             btnCustomers.BackColor = btnColor;
-            btnEmployees.BackColor = btnColor;
-            btnMenuList.BackColor = btnColor;
+            btnUpdate.BackColor = btnColor;
+            btnDelete.BackColor = btnColor;
             btnAnalytics.BackColor = btnColor;
             btnRestaurants.BackColor = btnColor;
             btnSettings.BackColor = btnColor;
@@ -131,18 +131,32 @@ namespace WinAppBiblioteca
 
         }
 
-        private void btnEmployees_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            pnlNavIndicator.Height = btnEmployees.Height;
-            pnlNavIndicator.Top = btnEmployees.Top;
-            pnlNavIndicator.Left = btnEmployees.Left;
-            ButtonColorReset(btnEmployees);
+            pnlNavIndicator.Height = btnUpdate.Height;
+            pnlNavIndicator.Top = btnUpdate.Top;
+            pnlNavIndicator.Left = btnUpdate.Left;
+            ButtonColorReset(btnUpdate);
 
             lblTabTitle.Text = "Update";
             this.pnlContent.Controls.Clear();
             UpdateForm update = new UpdateForm(){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(update);
             update.Show();
+        }
+
+        private void btnDelet_Click(object sender, EventArgs e)
+        {
+            pnlNavIndicator.Height = btnUpdate.Height;
+            pnlNavIndicator.Top = btnUpdate.Top;
+            pnlNavIndicator.Left = btnUpdate.Left;
+            ButtonColorReset(btnDelete);
+
+            lblTabTitle.Text = "Delete";
+            this.pnlContent.Controls.Clear();
+            DeleteForm deleteForm = new DeleteForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pnlContent.Controls.Add(deleteForm);
+            deleteForm.Show();
         }
     }
 }

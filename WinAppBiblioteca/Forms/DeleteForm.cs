@@ -29,7 +29,7 @@ namespace WinAppBiblioteca.Forms
 
         private void DeleteForm_Load(object sender, EventArgs e)
         {
-
+            ListarDGV();
         }
 
         private void Btn_search_Click(object sender, EventArgs e)
@@ -59,7 +59,6 @@ namespace WinAppBiblioteca.Forms
                 txt_Stock.Text = stock.ToString();
                 txt_Disponibilidad.Text = disponibilidad.ToString();
 
-                txt_Codigo.ReadOnly = true;
             }
         }
 
@@ -89,7 +88,6 @@ namespace WinAppBiblioteca.Forms
                 txt_Stock.Text = stock.ToString();
                 txt_Disponibilidad.Text = disponibilidad.ToString();
 
-                txt_Codigo.ReadOnly = true;
             }
         }
 
@@ -104,10 +102,22 @@ namespace WinAppBiblioteca.Forms
 
                 deleteAux.EliminarRegistro(libro);
                 this.ListarDGV();
+                limpiarTxt();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void limpiarTxt()
+        {
+            this.txt_Codigo.ReadOnly = false;
+            foreach (Control control in panel3.Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    textBox.Text = string.Empty;
+                }
             }
         }
     }

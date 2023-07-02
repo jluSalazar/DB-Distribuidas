@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Data.Entity.Infrastructure.Design.Executor;
 using WinAppBiblioteca.Logica;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
-using System.Windows.Controls;
 using WinAppBiblioteca.Model;
 
 namespace WinAppBiblioteca.Forms
@@ -100,7 +91,6 @@ namespace WinAppBiblioteca.Forms
 
                 txt_Codigo.ReadOnly = true;
             }
-
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -114,10 +104,23 @@ namespace WinAppBiblioteca.Forms
 
                 updateAux.ActualizarRegistro(libro);
                 this.ListarDGV();
+                limpiarTxt();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void limpiarTxt()
+        {
+            this.txt_Codigo.ReadOnly= false;
+            foreach (Control control in panel3.Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    textBox.Text = string.Empty;
+                }
             }
         }
     }
