@@ -25,27 +25,6 @@ namespace WinAppBiblioteca.Forms
             readAux = new Read();
             updateAux = new UpdateL();
         }
-        private Point lastLocation;
-
-        private void PanelDrag_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                lastLocation = e.Location;
-            }
-        }
-
-        private void PanelDrag_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Location = new Point(
-                    (this.Location.X - lastLocation.X) + e.X,
-                    (this.Location.Y - lastLocation.Y) + e.Y);
-
-                this.Update();
-            }
-        }
         public void ListarDGV()
         {
             DGVLibro.DataSource = readAux.Listar("Libro");

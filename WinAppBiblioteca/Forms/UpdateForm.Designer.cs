@@ -304,8 +304,6 @@
             this.panelDrag.Name = "panelDrag";
             this.panelDrag.Size = new System.Drawing.Size(1000, 34);
             this.panelDrag.TabIndex = 27;
-            this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelDrag_MouseDown);
-            this.panelDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelDrag_MouseMove);
             // 
             // iconButton2
             // 
