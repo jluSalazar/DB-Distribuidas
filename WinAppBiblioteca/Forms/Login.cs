@@ -21,7 +21,27 @@ namespace WinAppBiblioteca.Forms
         {
             InitializeComponent();
         }
+        private Point lastLocation;
 
+        private void PanelHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                lastLocation = e.Location;
+            }
+        }
+
+        private void PanelHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X,
+                    (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();

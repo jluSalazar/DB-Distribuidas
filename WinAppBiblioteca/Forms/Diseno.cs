@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinAppBiblioteca.Forms;
 
 namespace WinAppBiblioteca
 {
@@ -42,8 +43,28 @@ namespace WinAppBiblioteca
             FormDashboard FrmDashboard_Vrb = new FormDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(FrmDashboard_Vrb);
             FrmDashboard_Vrb.Show();*/
-        }       
-        
+        }
+        private Point lastLocation;
+
+        private void PanelHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                lastLocation = e.Location;
+            }
+        }
+
+        private void PanelHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X,
+                    (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
         private void ButtonColorReset(Button button)
         {
             Color activeColor = Color.FromArgb(31, 27, 48);
@@ -112,16 +133,16 @@ namespace WinAppBiblioteca
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
-           /* pnlNavIndicator.Height = btnEmployees.Height;
+            pnlNavIndicator.Height = btnEmployees.Height;
             pnlNavIndicator.Top = btnEmployees.Top;
             pnlNavIndicator.Left = btnEmployees.Left;
             ButtonColorReset(btnEmployees);
 
-            lblTabTitle.Text = "Employes";
+            lblTabTitle.Text = "Update";
             this.pnlContent.Controls.Clear();
-           // FormCustomers FrmCustomer_Vrb = new FormCustomers() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(FrmCustomer_Vrb);
-            FrmCustomer_Vrb.Show();*/
+            UpdateForm update = new UpdateForm(){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pnlContent.Controls.Add(update);
+            update.Show();
         }
     }
 }
