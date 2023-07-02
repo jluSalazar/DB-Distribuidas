@@ -51,7 +51,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 475);
+            this.panel1.Location = new System.Drawing.Point(0, 516);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(435, 22);
             this.panel1.TabIndex = 0;
@@ -79,9 +79,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::WinAppBiblioteca.Properties.Resources.man;
-            this.pictureBox2.Location = new System.Drawing.Point(129, 64);
+            this.pictureBox2.Location = new System.Drawing.Point(141, 67);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(156, 113);
+            this.pictureBox2.Size = new System.Drawing.Size(153, 141);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -91,7 +91,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(149, 209);
+            this.label1.Location = new System.Drawing.Point(158, 238);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 27);
             this.label1.TabIndex = 3;
@@ -110,7 +110,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.panel3.Controls.Add(this.tusers);
-            this.panel3.Location = new System.Drawing.Point(85, 240);
+            this.panel3.Location = new System.Drawing.Point(94, 269);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(221, 34);
             this.panel3.TabIndex = 5;
@@ -120,7 +120,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(149, 286);
+            this.label2.Location = new System.Drawing.Point(158, 315);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 27);
             this.label2.TabIndex = 6;
@@ -130,7 +130,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.panel4.Controls.Add(this.tPass);
-            this.panel4.Location = new System.Drawing.Point(85, 317);
+            this.panel4.Location = new System.Drawing.Point(94, 346);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(221, 34);
             this.panel4.TabIndex = 7;
@@ -150,7 +150,7 @@
             this.lmessage.AutoSize = true;
             this.lmessage.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lmessage.ForeColor = System.Drawing.Color.Red;
-            this.lmessage.Location = new System.Drawing.Point(88, 432);
+            this.lmessage.Location = new System.Drawing.Point(88, 463);
             this.lmessage.Name = "lmessage";
             this.lmessage.Size = new System.Drawing.Size(217, 13);
             this.lmessage.TabIndex = 8;
@@ -162,7 +162,7 @@
             this.Blogin.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
             this.Blogin.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Blogin.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Blogin.Location = new System.Drawing.Point(164, 357);
+            this.Blogin.Location = new System.Drawing.Point(163, 399);
             this.Blogin.Name = "Blogin";
             this.Blogin.Size = new System.Drawing.Size(75, 43);
             this.Blogin.TabIndex = 9;
@@ -175,7 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(435, 497);
+            this.ClientSize = new System.Drawing.Size(435, 538);
             this.Controls.Add(this.Blogin);
             this.Controls.Add(this.lmessage);
             this.Controls.Add(this.panel4);

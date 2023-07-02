@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Query));
             this.panel11 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
@@ -39,27 +43,34 @@
             this.label17 = new System.Windows.Forms.Label();
             this.bBusquedaLineal = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
-            this.bBusquedaBinaria = new System.Windows.Forms.Button();
+            this.Bbinarysearch = new System.Windows.Forms.Button();
             this.bordenarporid = new System.Windows.Forms.Button();
-            this.Bordenarpornombre = new System.Windows.Forms.Button();
+            this.Bsecuncial = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tquery = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dQuery = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dQuery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel11
             // 
             this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.panel11.Controls.Add(this.pictureBox3);
             this.panel11.Controls.Add(this.label18);
             this.panel11.Controls.Add(this.label19);
             this.panel11.Controls.Add(this.label20);
@@ -75,9 +86,9 @@
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(198)))), ((int)(((byte)(205)))));
             this.label18.Location = new System.Drawing.Point(7, 138);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(160, 18);
+            this.label18.Size = new System.Drawing.Size(105, 18);
             this.label18.TabIndex = 1;
-            this.label18.Text = "Chocolate Brownies";
+            this.label18.Text = "Arséne Lupin";
             // 
             // label19
             // 
@@ -87,9 +98,9 @@
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
             this.label19.Location = new System.Drawing.Point(133, 166);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 17);
+            this.label19.Size = new System.Drawing.Size(60, 17);
             this.label19.TabIndex = 1;
-            this.label19.Text = "2 mins";
+            this.label19.Text = "216 pag";
             // 
             // label20
             // 
@@ -98,14 +109,15 @@
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
             this.label20.Location = new System.Drawing.Point(7, 166);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 17);
+            this.label20.Size = new System.Drawing.Size(80, 17);
             this.label20.TabIndex = 1;
-            this.label20.Text = "$10 each";
+            this.label20.Text = "3 Unidades";
             // 
             // panel10
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.panel10.Controls.Add(this.pictureBox2);
             this.panel10.Controls.Add(this.label15);
             this.panel10.Controls.Add(this.label16);
             this.panel10.Controls.Add(this.label17);
@@ -121,9 +133,9 @@
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(198)))), ((int)(((byte)(205)))));
             this.label15.Location = new System.Drawing.Point(7, 138);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(150, 18);
+            this.label15.Size = new System.Drawing.Size(105, 18);
             this.label15.TabIndex = 1;
-            this.label15.Text = "Pancakes Caramel";
+            this.label15.Text = "El Alquimista";
             // 
             // label16
             // 
@@ -133,9 +145,9 @@
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
             this.label16.Location = new System.Drawing.Point(133, 166);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 17);
+            this.label16.Size = new System.Drawing.Size(60, 17);
             this.label16.TabIndex = 1;
-            this.label16.Text = "8 mins";
+            this.label16.Text = "192 pag";
             // 
             // label17
             // 
@@ -144,9 +156,9 @@
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
             this.label17.Location = new System.Drawing.Point(7, 166);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(90, 17);
+            this.label17.Size = new System.Drawing.Size(74, 17);
             this.label17.TabIndex = 1;
-            this.label17.Text = "$24 for three";
+            this.label17.Text = "Disponible";
             // 
             // bBusquedaLineal
             // 
@@ -154,11 +166,11 @@
             this.bBusquedaLineal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bBusquedaLineal.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bBusquedaLineal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(146)))), ((int)(((byte)(89)))));
-            this.bBusquedaLineal.Location = new System.Drawing.Point(563, 362);
+            this.bBusquedaLineal.Location = new System.Drawing.Point(553, 333);
             this.bBusquedaLineal.Name = "bBusquedaLineal";
             this.bBusquedaLineal.Size = new System.Drawing.Size(154, 42);
             this.bBusquedaLineal.TabIndex = 17;
-            this.bBusquedaLineal.Text = "Busqueda lineal";
+            this.bBusquedaLineal.Text = "Ordenar Burbuja";
             this.bBusquedaLineal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bBusquedaLineal.UseVisualStyleBackColor = false;
             this.bBusquedaLineal.Click += new System.EventHandler(this.button18_Click);
@@ -168,26 +180,26 @@
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(198)))), ((int)(((byte)(205)))));
-            this.label29.Location = new System.Drawing.Point(559, 134);
+            this.label29.Location = new System.Drawing.Point(564, 133);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(126, 20);
+            this.label29.Size = new System.Drawing.Size(128, 20);
             this.label29.TabIndex = 15;
-            this.label29.Text = "Quick Actions";
+            this.label29.Text = "Query Actions";
             // 
-            // bBusquedaBinaria
+            // Bbinarysearch
             // 
-            this.bBusquedaBinaria.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.bBusquedaBinaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bBusquedaBinaria.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bBusquedaBinaria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.bBusquedaBinaria.Location = new System.Drawing.Point(563, 301);
-            this.bBusquedaBinaria.Name = "bBusquedaBinaria";
-            this.bBusquedaBinaria.Size = new System.Drawing.Size(154, 42);
-            this.bBusquedaBinaria.TabIndex = 18;
-            this.bBusquedaBinaria.Text = "Búsqueda Binaria";
-            this.bBusquedaBinaria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.bBusquedaBinaria.UseVisualStyleBackColor = false;
-            this.bBusquedaBinaria.Click += new System.EventHandler(this.button17_Click);
+            this.Bbinarysearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.Bbinarysearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bbinarysearch.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bbinarysearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
+            this.Bbinarysearch.Location = new System.Drawing.Point(553, 275);
+            this.Bbinarysearch.Name = "Bbinarysearch";
+            this.Bbinarysearch.Size = new System.Drawing.Size(154, 42);
+            this.Bbinarysearch.TabIndex = 18;
+            this.Bbinarysearch.Text = "Búsqueda Binaria";
+            this.Bbinarysearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Bbinarysearch.UseVisualStyleBackColor = false;
+            this.Bbinarysearch.Click += new System.EventHandler(this.button17_Click);
             // 
             // bordenarporid
             // 
@@ -195,7 +207,7 @@
             this.bordenarporid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bordenarporid.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bordenarporid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(99)))), ((int)(((byte)(135)))));
-            this.bordenarporid.Location = new System.Drawing.Point(563, 241);
+            this.bordenarporid.Location = new System.Drawing.Point(553, 218);
             this.bordenarporid.Name = "bordenarporid";
             this.bordenarporid.Size = new System.Drawing.Size(154, 42);
             this.bordenarporid.TabIndex = 19;
@@ -204,25 +216,26 @@
             this.bordenarporid.UseVisualStyleBackColor = false;
             this.bordenarporid.Click += new System.EventHandler(this.button16_Click);
             // 
-            // Bordenarpornombre
+            // Bsecuncial
             // 
-            this.Bordenarpornombre.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.Bordenarpornombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Bordenarpornombre.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bordenarpornombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.Bordenarpornombre.Location = new System.Drawing.Point(563, 181);
-            this.Bordenarpornombre.Name = "Bordenarpornombre";
-            this.Bordenarpornombre.Size = new System.Drawing.Size(154, 42);
-            this.Bordenarpornombre.TabIndex = 20;
-            this.Bordenarpornombre.Text = "Order by Name";
-            this.Bordenarpornombre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Bordenarpornombre.UseVisualStyleBackColor = false;
-            this.Bordenarpornombre.Click += new System.EventHandler(this.button15_Click);
+            this.Bsecuncial.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.Bsecuncial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bsecuncial.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bsecuncial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.Bsecuncial.Location = new System.Drawing.Point(553, 160);
+            this.Bsecuncial.Name = "Bsecuncial";
+            this.Bsecuncial.Size = new System.Drawing.Size(154, 42);
+            this.Bsecuncial.TabIndex = 20;
+            this.Bsecuncial.Text = "Busqueda Secuencial";
+            this.Bsecuncial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Bsecuncial.UseVisualStyleBackColor = false;
+            this.Bsecuncial.Click += new System.EventHandler(this.button15_Click);
             // 
             // panel9
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.panel9.Controls.Add(this.pictureBox1);
             this.panel9.Controls.Add(this.label11);
             this.panel9.Controls.Add(this.label14);
             this.panel9.Controls.Add(this.label13);
@@ -239,9 +252,9 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(198)))), ((int)(((byte)(205)))));
             this.label11.Location = new System.Drawing.Point(7, 138);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(162, 18);
+            this.label11.Size = new System.Drawing.Size(171, 18);
             this.label11.TabIndex = 1;
-            this.label11.Text = "Burrito Special Pack";
+            this.label11.Text = "Cien años de soledad";
             // 
             // label14
             // 
@@ -251,9 +264,9 @@
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
             this.label14.Location = new System.Drawing.Point(133, 166);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 17);
+            this.label14.Size = new System.Drawing.Size(60, 17);
             this.label14.TabIndex = 1;
-            this.label14.Text = "20 mins";
+            this.label14.Text = "560 pag";
             // 
             // label13
             // 
@@ -262,9 +275,9 @@
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
             this.label13.Location = new System.Drawing.Point(7, 166);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 17);
+            this.label13.Size = new System.Drawing.Size(74, 17);
             this.label13.TabIndex = 1;
-            this.label13.Text = "$20 for two";
+            this.label13.Text = "Disponible";
             // 
             // label12
             // 
@@ -274,26 +287,69 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(16, 427);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(118, 20);
+            this.label12.Size = new System.Drawing.Size(152, 20);
             this.label12.TabIndex = 14;
-            this.label12.Text = "Popular Dish";
+            this.label12.Text = "Libros Populares";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tquery
             // 
+            this.tquery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tquery.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tquery.HideSelection = false;
             this.tquery.Location = new System.Drawing.Point(34, 104);
             this.tquery.Name = "tquery";
-            this.tquery.Size = new System.Drawing.Size(478, 20);
+            this.tquery.Size = new System.Drawing.Size(492, 13);
             this.tquery.TabIndex = 22;
             // 
-            // dataGridView1
+            // dQuery
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 163);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(482, 215);
-            this.dataGridView1.TabIndex = 24;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            this.dataGridView1.Layout += new System.Windows.Forms.LayoutEventHandler(this.dataGridView1_Layout);
+            this.dQuery.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dQuery.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dQuery.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dQuery.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dQuery.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dQuery.ColumnHeadersHeight = 20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dQuery.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dQuery.EnableHeadersVisualStyles = false;
+            this.dQuery.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dQuery.Location = new System.Drawing.Point(30, 163);
+            this.dQuery.Name = "dQuery";
+            this.dQuery.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dQuery.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dQuery.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dQuery.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dQuery.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dQuery.Size = new System.Drawing.Size(496, 215);
+            this.dQuery.TabIndex = 24;
+            this.dQuery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dQuery.Layout += new System.Windows.Forms.LayoutEventHandler(this.dataGridView1_Layout);
             // 
             // button1
             // 
@@ -303,12 +359,42 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.button1.Location = new System.Drawing.Point(537, 104);
+            this.button1.Location = new System.Drawing.Point(543, 104);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(15, 25);
             this.button1.TabIndex = 23;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::WinAppBiblioteca.Properties.Resources.lupin;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 15);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(155, 120);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WinAppBiblioteca.Properties.Resources.el_alquimista;
+            this.pictureBox2.Location = new System.Drawing.Point(10, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(155, 120);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WinAppBiblioteca.Properties.Resources.cien_soledad;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // Query
             // 
@@ -316,7 +402,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(740, 675);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dQuery);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tquery);
             this.Controls.Add(this.label12);
@@ -324,9 +410,9 @@
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.bBusquedaLineal);
             this.Controls.Add(this.label29);
-            this.Controls.Add(this.bBusquedaBinaria);
+            this.Controls.Add(this.Bbinarysearch);
             this.Controls.Add(this.bordenarporid);
-            this.Controls.Add(this.Bordenarpornombre);
+            this.Controls.Add(this.Bsecuncial);
             this.Controls.Add(this.panel9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Query";
@@ -338,7 +424,10 @@
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dQuery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,16 +444,19 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button bBusquedaLineal;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Button bBusquedaBinaria;
+        private System.Windows.Forms.Button Bbinarysearch;
         private System.Windows.Forms.Button bordenarporid;
-        private System.Windows.Forms.Button Bordenarpornombre;
+        private System.Windows.Forms.Button Bsecuncial;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox tquery;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dQuery;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox tquery;
     }
 }

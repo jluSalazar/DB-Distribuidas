@@ -198,7 +198,7 @@
             this.btnRestaurants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestaurants.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestaurants.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-          this.btnRestaurants.Image = global::WinAppBiblioteca.Properties.Resources.hamburger;
+            this.btnRestaurants.Image = global::WinAppBiblioteca.Properties.Resources.hamburger;
             this.btnRestaurants.Location = new System.Drawing.Point(0, 328);
             this.btnRestaurants.Name = "btnRestaurants";
             this.btnRestaurants.Size = new System.Drawing.Size(200, 42);
@@ -293,7 +293,7 @@
             // 
             // pictureBox2
             // 
-           this.pictureBox2.Image = global::WinAppBiblioteca.Properties.Resources.man;
+            this.pictureBox2.Image = global::WinAppBiblioteca.Properties.Resources.man;
             this.pictureBox2.Location = new System.Drawing.Point(12, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(54, 42);
@@ -322,7 +322,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-           this.button2.BackgroundImage = global::WinAppBiblioteca.Properties.Resources.email__2_;
+            this.button2.BackgroundImage = global::WinAppBiblioteca.Properties.Resources.email__2_;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -336,7 +336,7 @@
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-           this.btnExit.BackgroundImage = global::WinAppBiblioteca.Properties.Resources.close_new;
+            this.btnExit.BackgroundImage = global::WinAppBiblioteca.Properties.Resources.close_new;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
