@@ -34,10 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Query));
             this.panel11 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -47,6 +49,7 @@
             this.bordenarporid = new System.Windows.Forms.Button();
             this.Bsecuncial = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -54,16 +57,14 @@
             this.tquery = new System.Windows.Forms.TextBox();
             this.dQuery = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel11.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dQuery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dQuery)).BeginInit();
             this.SuspendLayout();
             // 
             // panel11
@@ -74,10 +75,20 @@
             this.panel11.Controls.Add(this.label18);
             this.panel11.Controls.Add(this.label19);
             this.panel11.Controls.Add(this.label20);
-            this.panel11.Location = new System.Drawing.Point(458, 460);
+            this.panel11.Location = new System.Drawing.Point(691, 460);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(199, 193);
             this.panel11.TabIndex = 9;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::WinAppBiblioteca.Properties.Resources.lupin;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 15);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(155, 120);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
             // 
             // label18
             // 
@@ -121,10 +132,20 @@
             this.panel10.Controls.Add(this.label15);
             this.panel10.Controls.Add(this.label16);
             this.panel10.Controls.Add(this.label17);
-            this.panel10.Location = new System.Drawing.Point(239, 460);
+            this.panel10.Location = new System.Drawing.Point(395, 460);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(199, 193);
             this.panel10.TabIndex = 10;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WinAppBiblioteca.Properties.Resources.el_alquimista;
+            this.pictureBox2.Location = new System.Drawing.Point(10, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(155, 120);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // label15
             // 
@@ -166,7 +187,7 @@
             this.bBusquedaLineal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bBusquedaLineal.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bBusquedaLineal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(146)))), ((int)(((byte)(89)))));
-            this.bBusquedaLineal.Location = new System.Drawing.Point(553, 333);
+            this.bBusquedaLineal.Location = new System.Drawing.Point(769, 356);
             this.bBusquedaLineal.Name = "bBusquedaLineal";
             this.bBusquedaLineal.Size = new System.Drawing.Size(154, 42);
             this.bBusquedaLineal.TabIndex = 17;
@@ -180,7 +201,7 @@
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(198)))), ((int)(((byte)(205)))));
-            this.label29.Location = new System.Drawing.Point(564, 133);
+            this.label29.Location = new System.Drawing.Point(779, 110);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(128, 20);
             this.label29.TabIndex = 15;
@@ -192,7 +213,7 @@
             this.Bbinarysearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bbinarysearch.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bbinarysearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(190)))), ((int)(((byte)(240)))));
-            this.Bbinarysearch.Location = new System.Drawing.Point(553, 275);
+            this.Bbinarysearch.Location = new System.Drawing.Point(769, 285);
             this.Bbinarysearch.Name = "Bbinarysearch";
             this.Bbinarysearch.Size = new System.Drawing.Size(154, 42);
             this.Bbinarysearch.TabIndex = 18;
@@ -207,7 +228,7 @@
             this.bordenarporid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bordenarporid.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bordenarporid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(99)))), ((int)(((byte)(135)))));
-            this.bordenarporid.Location = new System.Drawing.Point(553, 218);
+            this.bordenarporid.Location = new System.Drawing.Point(769, 214);
             this.bordenarporid.Name = "bordenarporid";
             this.bordenarporid.Size = new System.Drawing.Size(154, 42);
             this.bordenarporid.TabIndex = 19;
@@ -222,7 +243,7 @@
             this.Bsecuncial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Bsecuncial.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bsecuncial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.Bsecuncial.Location = new System.Drawing.Point(553, 160);
+            this.Bsecuncial.Location = new System.Drawing.Point(769, 146);
             this.Bsecuncial.Name = "Bsecuncial";
             this.Bsecuncial.Size = new System.Drawing.Size(154, 42);
             this.Bsecuncial.TabIndex = 20;
@@ -239,11 +260,21 @@
             this.panel9.Controls.Add(this.label11);
             this.panel9.Controls.Add(this.label14);
             this.panel9.Controls.Add(this.label13);
-            this.panel9.Location = new System.Drawing.Point(20, 460);
+            this.panel9.Location = new System.Drawing.Point(62, 460);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(199, 193);
             this.panel9.TabIndex = 11;
             this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WinAppBiblioteca.Properties.Resources.cien_soledad;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label11
             // 
@@ -296,10 +327,11 @@
             // 
             this.tquery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tquery.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tquery.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tquery.HideSelection = false;
-            this.tquery.Location = new System.Drawing.Point(34, 104);
+            this.tquery.Location = new System.Drawing.Point(34, 61);
             this.tquery.Name = "tquery";
-            this.tquery.Size = new System.Drawing.Size(492, 13);
+            this.tquery.Size = new System.Drawing.Size(245, 22);
             this.tquery.TabIndex = 22;
             // 
             // dQuery
@@ -327,7 +359,7 @@
             this.dQuery.DefaultCellStyle = dataGridViewCellStyle6;
             this.dQuery.EnableHeadersVisualStyles = false;
             this.dQuery.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dQuery.Location = new System.Drawing.Point(30, 163);
+            this.dQuery.Location = new System.Drawing.Point(30, 110);
             this.dQuery.Name = "dQuery";
             this.dQuery.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -346,7 +378,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.dQuery.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dQuery.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dQuery.Size = new System.Drawing.Size(496, 215);
+            this.dQuery.Size = new System.Drawing.Size(672, 288);
             this.dQuery.TabIndex = 24;
             this.dQuery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dQuery.Layout += new System.Windows.Forms.LayoutEventHandler(this.dataGridView1_Layout);
@@ -359,49 +391,31 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.button1.Location = new System.Drawing.Point(543, 104);
+            this.button1.Location = new System.Drawing.Point(290, 61);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(15, 25);
+            this.button1.Size = new System.Drawing.Size(26, 25);
             this.button1.TabIndex = 23;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox3
+            // label2
             // 
-            this.pictureBox3.Image = global::WinAppBiblioteca.Properties.Resources.lupin;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 15);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(155, 120);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::WinAppBiblioteca.Properties.Resources.el_alquimista;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(155, 120);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WinAppBiblioteca.Properties.Resources.cien_soledad;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 120);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(29, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(250, 27);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Buscar por Codigo";
             // 
             // Query
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(740, 675);
+            this.ClientSize = new System.Drawing.Size(1000, 675);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dQuery);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tquery);
@@ -420,14 +434,14 @@
             this.Load += new System.EventHandler(this.Estudiante_Load);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dQuery)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dQuery)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,5 +472,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox tquery;
+        private System.Windows.Forms.Label label2;
     }
 }
