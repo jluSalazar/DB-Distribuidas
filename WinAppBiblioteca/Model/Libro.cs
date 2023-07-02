@@ -8,7 +8,7 @@ namespace WinAppBiblioteca.Model
 {
     public class Libro
     {
-        public int CodigoLibro { get; set; }
+        public string CodigoLibro { get; set; }
         public string NombreLibro { get; set; }
         public string FechaPublicacion { get; set; }
         public string Edicion { get; set; }
@@ -18,7 +18,7 @@ namespace WinAppBiblioteca.Model
         public int Stock { get; set; }
         public int Disponibilidad { get; set; }
 
-        public Libro(int codigoLibro, string nombreLibro, string fechaPublicacion, string edicion,
+        public Libro(string codigoLibro, string nombreLibro, string fechaPublicacion, string edicion,
         string nombreAutor, string apellidoAutor, string categoria, int stock, int disponibilidad)
         {
             CodigoLibro = codigoLibro;

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WinAppBiblioteca.Model;
+using System.Windows.Forms;
 
 namespace WinAppBiblioteca.Logica
 {
@@ -14,11 +15,14 @@ namespace WinAppBiblioteca.Logica
 
         public void ActualizarRegistro(Libro libro)
         {
-
-            SQLiteConnection SqlCon = Conexion.getInstancia().crearConexion();
+            SQLiteConnection SqlCon = new SQLiteConnection();
+            SqlCon = Conexion.getInstancia().crearConexion();
             try
             {
-                string sqlActualizar = "UPDATE Libro SET nombre_libro = @NombreLibro, fecha_publicacion = @Fecha, edicion = @Edicion, nombre_autor = @AutorNombre, apellido_autor = @AutorApellido, categoria = @Categoria, stock = @Stock, disponibilidad = @Disponibilidad WHERE codigo_libro = @CodigoLibro";
+                string sqlActualizar = "UPDATE Libro SET nombre_libro = @NombreLibro, " +
+                            "fecha_publicacion = @Fecha, edicion = @Edicion, nombre_autor = @AutorNombre, " +
+                            "apellido_autor = @AutorApellido, categoria = @Categoria, stock = @Stock, " +
+                            "disponibilidad = @Disponibilidad WHERE codigo_libro = @CodigoLibro";
                 SQLiteCommand Comando = new SQLiteCommand(sqlActualizar, SqlCon);
 
                 // Agregar parámetros a la consulta
@@ -33,10 +37,12 @@ namespace WinAppBiblioteca.Logica
                 Comando.Parameters.AddWithValue("@CodigoLibro", libro.CodigoLibro);
 
                 SqlCon.Open();
-                Comando.ExecuteNonQuery();
+                int numRows = Comando.ExecuteNonQuery();
+                MessageBox.Show("Se han actualizado "+ numRows + " Registros", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
+                //MessageBox.Show("Se produjo un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw ex;
             }
             finally
@@ -44,5 +50,6 @@ namespace WinAppBiblioteca.Logica
                 if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
             }
         }
+
     }
 }

@@ -58,7 +58,7 @@ namespace WinAppBiblioteca.Logica
                 else
                 {
                     MessageBox.Show("No se encontro el registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return null; // No se encontró ningún registro con el código especificado
+                    return null;
                 }
             }
             catch (Exception ex)

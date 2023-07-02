@@ -25,7 +25,27 @@ namespace WinAppBiblioteca.Forms
             readAux = new Read();
             updateAux = new UpdateL();
         }
+        private Point lastLocation;
 
+        private void PanelDrag_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                lastLocation = e.Location;
+            }
+        }
+
+        private void PanelDrag_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X,
+                    (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
         public void ListarDGV()
         {
             DGVLibro.DataSource = readAux.Listar("Libro");
@@ -103,16 +123,15 @@ namespace WinAppBiblioteca.Forms
         {
             try
             {
-                Libro libro = new Libro(int.Parse(txt_Codigo.Text),
+                Libro libro = new Libro(txt_Codigo.Text,
                     txt_Nombre.Text, txt_FechaPub.Text, txt_Edicion.Text,
                     txt_NombreAu.Text, txt_ApellidoAu.Text, txt_Categoria.Text,
                     int.Parse(txt_Stock.Text), int.Parse(txt_Disponibilidad.Text));
 
                 updateAux.ActualizarRegistro(libro);
                 this.ListarDGV();
-                MessageBox.Show("Se ha actualizado el Registro", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (FormatException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -48,13 +48,13 @@
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.txt_Codigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelDrag = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.DGVLibro = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelDrag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVLibro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -290,15 +290,17 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Código:";
             // 
-            // panel2
+            // panelDrag
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.iconButton2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 34);
-            this.panel2.TabIndex = 27;
+            this.panelDrag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.panelDrag.Controls.Add(this.iconButton2);
+            this.panelDrag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDrag.Location = new System.Drawing.Point(0, 0);
+            this.panelDrag.Name = "panelDrag";
+            this.panelDrag.Size = new System.Drawing.Size(1000, 34);
+            this.panelDrag.TabIndex = 27;
+            this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelDrag_MouseDown);
+            this.panelDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelDrag_MouseMove);
             // 
             // iconButton2
             // 
@@ -370,7 +372,7 @@
             this.Controls.Add(this.DGVLibro);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelDrag);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UpdateForm";
@@ -378,7 +380,7 @@
             this.Load += new System.EventHandler(this.UpdateForm_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.panelDrag.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVLibro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -407,7 +409,7 @@
         private System.Windows.Forms.TextBox txt_Stock;
         private System.Windows.Forms.TextBox txt_Categoria;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelDrag;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnActualizar;
         private System.Windows.Forms.DataGridView DGVLibro;
