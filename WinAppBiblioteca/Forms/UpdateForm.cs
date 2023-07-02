@@ -66,7 +66,7 @@ namespace WinAppBiblioteca.Forms
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = DGVLibro.Rows[e.RowIndex];
-                int codigoLibro = Convert.ToInt32(row.Cells["codigo_libro"].Value);
+                string codigoLibro = row.Cells["codigo_libro"].Value.ToString();
                 string nombreLibro = row.Cells["nombre_libro"].Value.ToString();
                 string fechaPublicacion = row.Cells["fecha_publicacion"].Value.ToString();
                 string edicion = row.Cells["edicion"].Value.ToString();
@@ -95,7 +95,7 @@ namespace WinAppBiblioteca.Forms
             if (row != null)
             {
                 // Obtener los valores de las columnas del registro seleccionado
-                int codigoLibro = Convert.ToInt32(row["codigo_libro"]);
+                string codigoLibro = row["codigo_libro"].ToString();
                 string nombreLibro = row["nombre_libro"].ToString();
                 string fechaPublicacion = row["fecha_publicacion"].ToString();
                 string edicion = row["edicion"].ToString();
@@ -106,7 +106,7 @@ namespace WinAppBiblioteca.Forms
                 int disponibilidad = Convert.ToInt32(row["disponibilidad"]);
 
                 // Establecer los valores en los cuadros de texto
-                txt_Codigo.Text = codigoLibro.ToString();
+                txt_Codigo.Text = codigoLibro;
                 txt_Nombre.Text = nombreLibro;
                 txt_FechaPub.Text = fechaPublicacion;
                 txt_Edicion.Text = edicion;
