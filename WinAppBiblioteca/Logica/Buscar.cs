@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinAppBiblioteca.Model;
+using System.Windows.Forms;
 
 namespace WinAppBiblioteca.Logica
 {
@@ -41,8 +43,8 @@ namespace WinAppBiblioteca.Logica
                 if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
             }
         }
-
-        public void OrdenarPorNombreLibroBurbuja(DataTable dt)
+       
+        public DataTable OrdenamientoBurbuja(DataTable dt)
         {
             DataRow[] rows = dt.Select();
 
@@ -50,18 +52,32 @@ namespace WinAppBiblioteca.Logica
             {
                 for (int j = 0; j < rows.Length - i - 1; j++)
                 {
-                    string nombreLibro1 = rows[j]["nombre_libro"].ToString();
-                    string nombreLibro2 = rows[j + 1]["nombre_libro"].ToString();
+                    int codigoLibro1 = Convert.ToInt32(rows[j]["codigo_libro"]);
+                    int codigoLibro2 = Convert.ToInt32(rows[j + 1]["codigo_libro"]);
 
-                    if (string.Compare(nombreLibro1, nombreLibro2) > 0)
+                    if (codigoLibro1 > codigoLibro2)
                     {
-                        DataRow tempRow = rows[j];
-                        rows[j] = rows[j + 1];
-                        rows[j + 1] = tempRow;
+                        DataRow tempRow = dt.NewRow();
+                        tempRow.ItemArray = rows[j].ItemArray;
+
+                        rows[j].ItemArray = rows[j + 1].ItemArray;
+                        rows[j + 1].ItemArray = tempRow.ItemArray;
                     }
                 }
             }
+
+            DataTable dtOrdenado = dt.Clone();
+            foreach (DataRow row in rows)
+            {
+                dtOrdenado.ImportRow(row);
+            }
+
+            return dtOrdenado;
         }
+
+
+             
+
 
         public DataTable BuscarLibro(string texto)
         {
@@ -90,11 +106,43 @@ namespace WinAppBiblioteca.Logica
                 if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
             }
         }
-
-        public int BuscarPorCodigoLibro(string codigo)
+        /*
+        public DataTable BuscarPorNombreLibroSecuencial(string texto)
         {
-            DataTable dt = listado("SELECT codigo_libro FROM Libro ORDER BY codigo_libro ASC");
+            DataTable dtOriginal = listado("SELECT * FROM Libro");
+            DataTable dtResultado = dtOriginal.Clone();
 
+            foreach (DataRow row in dtOriginal.Rows)
+            {
+                string nombreLibro = row["nombre_libro"].ToString().ToLower();
+                if (nombreLibro.Contains(texto.ToLower()))
+                {
+                    dtResultado.ImportRow(row);
+                }
+            }
+
+            return dtResultado;
+        }
+        */
+        public int BusquedaSecuencial(DataTable dt, string nombreLibro)
+        {
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string nombreLibroActual = dt.Rows[i]["nombre_libro"].ToString();
+
+                if (nombreLibroActual.Equals(nombreLibro, StringComparison.OrdinalIgnoreCase))
+                {
+                    return i; // Se encontró el libro, se devuelve su índice
+                }
+            }
+
+            return -1; // No se encontró el libro
+        }
+
+       
+
+        public int BusquedaBinariaCodigo(DataTable dt, string codigo)
+        {
             int inicio = 0;
             int fin = dt.Rows.Count - 1;
 
@@ -119,6 +167,9 @@ namespace WinAppBiblioteca.Logica
 
             return -1; // No encontrado
         }
+
+        
+
 
     }
 }
