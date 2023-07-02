@@ -28,6 +28,7 @@ namespace WinAppBiblioteca.Forms
         public void ListarDGV()
         {
             DGVLibro.DataSource = readAux.Listar("Libro");
+            txt_Codigo.ReadOnly = false;
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -65,6 +66,8 @@ namespace WinAppBiblioteca.Forms
                 txt_Categoria.Text = categoria;
                 txt_Stock.Text = stock.ToString();
                 txt_Disponibilidad.Text = disponibilidad.ToString();
+
+                txt_Codigo.ReadOnly = true;
             }
         }
 
@@ -94,6 +97,8 @@ namespace WinAppBiblioteca.Forms
                 txt_Categoria.Text = categoria;
                 txt_Stock.Text = stock.ToString();
                 txt_Disponibilidad.Text = disponibilidad.ToString();
+
+                txt_Codigo.ReadOnly = true;
             }
 
         }
@@ -115,31 +120,5 @@ namespace WinAppBiblioteca.Forms
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Categoria_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Stock_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
