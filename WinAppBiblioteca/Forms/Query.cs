@@ -75,7 +75,7 @@ namespace WinAppBiblioteca
 
         private void button16_Click(object sender, EventArgs e)
         {
-            
+            Listado_ar();
         }
 
 
