@@ -43,11 +43,20 @@ namespace WinAppBiblioteca
         {
             Listado_ar();
         }
+        private void Listado_ar2()
+        {
+            string consulta = "SELECT * FROM Libro";
+            DataTable dataTable = buscar.listado(consulta);
+
+            buscar.OrdenarPorNombreLibroBurbuja(dataTable);
+
+            dataGridView1.DataSource = dataTable;
+        }
 
         private void button15_Click(object sender, EventArgs e)
         {
-          
 
+            Listado_ar2();
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -58,13 +67,26 @@ namespace WinAppBiblioteca
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            string texto = tquery.Text.Trim();
+            dataGridView1.DataSource = buscar.BuscarLibro(texto);
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            
 
+            string codigo = tquery.Text.Trim();
+            int indice = buscar.BuscarPorCodigoLibro(codigo);
+
+            if (indice >= 0)
+            {
+                DataTable dt = ((DataTable)dataGridView1.DataSource).Clone();
+                dt.ImportRow(((DataTable)dataGridView1.DataSource).Rows[indice]);
+                dataGridView1.DataSource = dt;
+            }
+            else
+            {
+                dataGridView1.DataSource = null;
+            }
         }
 
         
@@ -73,7 +95,7 @@ namespace WinAppBiblioteca
 
         private void button18_Click(object sender, EventArgs e)
         {
-          
+            
 
 
         }
