@@ -79,18 +79,19 @@ namespace WinAppBiblioteca
             button.BackColor = activeColor;
         }
 
-        private void BtnDashboard_Click(object sender, EventArgs e)
+        private void BtnDashboard_Click(object sender, EventArgs e) //Insertar
         {
-           /* pnlNavIndicator.Height = btnDashboard.Height;
+           pnlNavIndicator.Height = btnDashboard.Height;
             pnlNavIndicator.Top = btnDashboard.Top;
             pnlNavIndicator.Left = btnDashboard.Left;
             ButtonColorReset(btnDashboard);
-
-            lblTabTitle.Text = "Dashboard";
+           
+           
+            lblTabTitle.Text = "Insertar";
             this.pnlContent.Controls.Clear();
-            FormDashboard FrmDashboard_Vrb = new FormDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(FrmDashboard_Vrb);
-            FrmDashboard_Vrb.Show();*/
+            Insertar insertar = new Insertar() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pnlContent.Controls.Add(insertar);
+            insertar.Show();
         }
 
         private void BtnCustomers_Click(object sender, EventArgs e)
@@ -157,6 +158,11 @@ namespace WinAppBiblioteca
             DeleteForm deleteForm = new DeleteForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(deleteForm);
             deleteForm.Show();
+        }
+
+        private void btnAnalytics_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
