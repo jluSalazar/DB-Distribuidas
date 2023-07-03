@@ -260,6 +260,12 @@
     <Compile Include="Forms\Diseno.Designer.cs">
       <DependentUpon>Diseno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Insertar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Insertar.Designer.cs">
+      <DependentUpon>Insertar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Query.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,7 @@
     <Compile Include="Logica\Conexion.cs" />
     <Compile Include="Logica\Create.cs" />
     <Compile Include="Logica\Delete.cs" />
+    <Compile Include="Logica\InsertarL.cs" />
     <Compile Include="Logica\Read.cs" />
     <Compile Include="Logica\UpdateL.cs" />
     <Compile Include="Model\Libro.cs" />
@@ -363,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Diseno.resx">
       <DependentUpon>Diseno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Insertar.resx">
+      <DependentUpon>Insertar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Query.resx">
       <DependentUpon>Query.cs</DependentUpon>

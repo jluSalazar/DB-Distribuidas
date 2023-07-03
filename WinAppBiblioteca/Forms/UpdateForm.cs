@@ -123,5 +123,10 @@ namespace WinAppBiblioteca.Forms
                 }
             }
         }
+
+        private void DGVLibro_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

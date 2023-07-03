@@ -18,6 +18,9 @@ namespace WinAppBiblioteca.Model
         public int Stock { get; set; }
         public int Disponibilidad { get; set; }
 
+        public Libro() { }
+
+
         public Libro(string codigoLibro, string nombreLibro, string fechaPublicacion, string edicion,
         string nombreAutor, string apellidoAutor, string categoria, int stock, int disponibilidad)
         {
@@ -31,6 +34,8 @@ namespace WinAppBiblioteca.Model
             Stock = stock;
             Disponibilidad = disponibilidad;
         }
+
+
     }
 
 }

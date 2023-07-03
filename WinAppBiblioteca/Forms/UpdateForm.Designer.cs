@@ -30,6 +30,7 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.Btn_search = new FontAwesome.Sharp.IconButton();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_Disponibilidad = new System.Windows.Forms.TextBox();
             this.txt_Stock = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DGVLibro = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
-            this.Btn_search = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVLibro)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +92,22 @@
             this.label8.Size = new System.Drawing.Size(119, 20);
             this.label8.TabIndex = 25;
             this.label8.Text = "Disponible:";
+            // 
+            // Btn_search
+            // 
+            this.Btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_search.FlatAppearance.BorderSize = 0;
+            this.Btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_search.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.Btn_search.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.Btn_search.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_search.IconSize = 28;
+            this.Btn_search.Location = new System.Drawing.Point(325, 15);
+            this.Btn_search.Name = "Btn_search";
+            this.Btn_search.Size = new System.Drawing.Size(35, 24);
+            this.Btn_search.TabIndex = 16;
+            this.Btn_search.UseVisualStyleBackColor = true;
+            this.Btn_search.Click += new System.EventHandler(this.Btn_search_Click);
             // 
             // label9
             // 
@@ -292,6 +308,7 @@
             this.DGVLibro.Size = new System.Drawing.Size(968, 287);
             this.DGVLibro.TabIndex = 29;
             this.DGVLibro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLibro_CellClick);
+            this.DGVLibro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLibro_CellContentClick);
             // 
             // btnActualizar
             // 
@@ -316,28 +333,12 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // Btn_search
-            // 
-            this.Btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_search.FlatAppearance.BorderSize = 0;
-            this.Btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_search.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.Btn_search.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.Btn_search.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btn_search.IconSize = 28;
-            this.Btn_search.Location = new System.Drawing.Point(325, 15);
-            this.Btn_search.Name = "Btn_search";
-            this.Btn_search.Size = new System.Drawing.Size(35, 24);
-            this.Btn_search.TabIndex = 16;
-            this.Btn_search.UseVisualStyleBackColor = true;
-            this.Btn_search.Click += new System.EventHandler(this.Btn_search_Click);
-            // 
             // UpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1000, 675);
+            this.ClientSize = new System.Drawing.Size(1049, 675);
             this.Controls.Add(this.DGVLibro);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label2);
