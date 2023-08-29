@@ -22,23 +22,28 @@ namespace WinAppBiblioteca.Forms
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
+            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=prueba;PASSWORD=prueba";
             conn = new OracleConnection(conStr);
             updateGried();
         }
 
         private void updateGried()
         {
-            conn.Open();
-            OracleCommand getemps= conn.CreateCommand();
-            getemps.CommandText = "SELECT * FROM DATOS";
-            getemps.CommandType = CommandType.Text;
-            OracleDataReader empDR= getemps.ExecuteReader();
-            DataTable empdt = new DataTable();
-            empdt.Load(empDR);
-            dataGridView1.DataSource=empdt;
-            conn.Close();
+            string consulta = "SELECT * FROM VWTABLA_ORG"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            conn.Open(); // Abre la conexión a la base de datos Oracle
+            OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
+            OracleDataAdapter adaptador = new OracleDataAdapter(comando);
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dataGridView1.DataSource = tabla;
+
+            conn.Close(); // Cierra la conexión después de usarla
+
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            updateGried();
+        }
     }
 }
