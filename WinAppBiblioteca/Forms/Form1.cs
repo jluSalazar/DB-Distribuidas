@@ -19,7 +19,7 @@ namespace WinAppBiblioteca.Forms
         {
             InitializeComponent();
         }
-
+        //REPLICACIÓN
         private void Form1_Load(object sender, EventArgs e)
         {
             string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=prueba;PASSWORD=prueba";
