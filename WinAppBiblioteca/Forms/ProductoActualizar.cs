@@ -1,6 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Data;
+using System.Globalization;
 using System.Windows.Forms;
 using WinAppBiblioteca.Logica;
 using WinAppBiblioteca.Model;
@@ -10,16 +11,14 @@ namespace WinAppBiblioteca.Forms
     public partial class ProductoActualizar : Form
     {
         OracleConnection conn;
+        string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=jsalazar;PASSWORD=jsalazar";
         
         bool IsMaster;
         public ProductoActualizar(bool ismaster)
         {
             InitializeComponent();
+            conn = new OracleConnection(conStr);
             IsMaster = ismaster;
-        }
-        public void ListarDGV()
-        {
-            txt_Codigo.ReadOnly = false;
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -36,22 +35,25 @@ namespace WinAppBiblioteca.Forms
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = DGVLibro.Rows[e.RowIndex];
-                string codigoLibro = row.Cells["codigo_libro"].Value.ToString();
-                string nombreLibro = row.Cells["nombre_libro"].Value.ToString();
-                string fechaPublicacion = row.Cells["fecha_publicacion"].Value.ToString();
-                string edicion = row.Cells["edicion"].Value.ToString();
-                string nombreAutor = row.Cells["nombre_autor"].Value.ToString();
-                string apellidoAutor = row.Cells["apellido_autor"].Value.ToString();
-                string categoria = row.Cells["categoria"].Value.ToString();
-                int stock = Convert.ToInt32(row.Cells["stock"].Value);
-                int disponibilidad = Convert.ToInt32(row.Cells["disponibilidad"].Value);
+                DataGridViewRow row = DGVProd_Act.Rows[e.RowIndex];
+
+                string idProducto = row.Cells["idproducto"].Value.ToString();
+                string nombreProducto = row.Cells["nombreproducto"].Value.ToString();
+                string descripcion = row.Cells["descripcion"].Value.ToString();
+                decimal precioUnitario;
+
+                // Verifica y convierte el valor del TextBox de Precio Unitario a decimal
+                if (!decimal.TryParse(row.Cells["preciounitario"].Value.ToString(), out precioUnitario))
+                {
+                    MessageBox.Show("El precio unitario no es válido.");
+                    return;
+                }
 
                 // Establecer los valores en los cuadros de texto
-                txt_Codigo.Text = codigoLibro.ToString();
-                txt_Nombre.Text = nombreLibro;
-                txt_Desc.Text = fechaPublicacion;
-                txt_PrecUnit.Text = edicion;
+                txt_Codigo.Text = idProducto;
+                txt_Nombre.Text = nombreProducto;
+                txt_Desc.Text = descripcion;
+                txt_PrecUnit.Text = precioUnitario.ToString();
 
                 txt_Codigo.ReadOnly = true;
             }
@@ -59,87 +61,93 @@ namespace WinAppBiblioteca.Forms
 
         private void Btn_search_Click(object sender, EventArgs e)
         {
-            DataRow row = readAux.BuscarRegistroPorCodigo("Libro", txt_Codigo.Text, "codigo_libro");
-            if (row != null)
-            {
-                // Obtener los valores de las columnas del registro seleccionado
-                string codigoLibro = row["codigo_libro"].ToString();
-                string nombreLibro = row["nombre_libro"].ToString();
-                string fechaPublicacion = row["fecha_publicacion"].ToString();
-                string edicion = row["edicion"].ToString();
-                string nombreAutor = row["nombre_autor"].ToString();
-                string apellidoAutor = row["apellido_autor"].ToString();
-                string categoria = row["categoria"].ToString();
-                int stock = Convert.ToInt32(row["stock"]);
-                int disponibilidad = Convert.ToInt32(row["disponibilidad"]);
+            
+        }
+        private void ListarDGV()
+        {
+            
+            string consulta = "SELECT * FROM producto"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            conn.Open(); // Abre la conexión a la base de datos Oracle
+            OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
+            OracleDataAdapter adaptador = new OracleDataAdapter(comando);
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            DGVProd_Act.DataSource = tabla;
 
-                // Establecer los valores en los cuadros de texto
-                txt_Codigo.Text = codigoLibro;
-                txt_Nombre.Text = nombreLibro;
-                txt_Desc.Text = fechaPublicacion;
-                txt_PrecUnit.Text = edicion;
+            conn.Close(); // Cierra la conexión después de usarla
 
-                txt_Codigo.ReadOnly = true;
-            }
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
+        private void ActualizarProducto(string idProducto, string nuevoNombre, string nuevaDescripcion, decimal nuevoPrecio)
         {
-            string idProducto = txt_Codigo.Text;
-            string nombreProducto = txt_Nombre.Text;
-            string descripcion = txt_Desc.Text;
-            float precioUnitario = ;
-
-            // Valida y convierte el valor del TextBox de Precio Unitario a decimal
-            if (!decimal.TryParse(txtPrecioUnitario.Text, out precioUnitario))
-            {
-                MessageBox.Show("El precio unitario no es válido.");
-                return;
-            }
-
-            // Verifica que el campo IdProducto no esté vacío antes de la actualización
+            // Verifica que el ID del producto no esté vacío (puedes agregar más validaciones según tus necesidades)
             if (string.IsNullOrWhiteSpace(idProducto))
             {
-                MessageBox.Show("El campo IdProducto es obligatorio para la actualización.");
+                MessageBox.Show("Por favor, ingresa el ID del producto que deseas actualizar.");
                 return;
             }
 
-            string updateQuery = "UPDATE Producto@replica_proyrad SET NombreProducto = :nombreProducto, Descripcion = :descripcion, PrecioUnitario = :precioUnitario " +
-                                 "WHERE IdProducto = :idProducto";
+            // Crea la consulta SQL de actualización
+            string updateQuery = "";
+            if (IsMaster)
+            {
+                updateQuery = "UPDATE Producto SET NombreProducto = :nuevoNombre, Descripcion = :nuevaDescripcion, PrecioUnitario = :nuevoPrecio WHERE IdProducto = :idProducto";
+            }
+            else
+            {
+                updateQuery = "UPDATE Producto@replica_proyrad SET NombreProducto = :nuevoNombre, Descripcion = :nuevaDescripcion, PrecioUnitario = :nuevoPrecio WHERE IdProducto = :idProducto";
+            }
 
             // Crea un objeto OracleCommand
             OracleCommand updateCommand = new OracleCommand(updateQuery, conn);
 
             // Asigna valores a los parámetros
+            updateCommand.Parameters.Add(":nuevoNombre", OracleDbType.Varchar2).Value = nuevoNombre;
+            updateCommand.Parameters.Add(":nuevaDescripcion", OracleDbType.Varchar2).Value = nuevaDescripcion;
+            updateCommand.Parameters.Add(":nuevoPrecio", OracleDbType.Decimal).Value = nuevoPrecio;
             updateCommand.Parameters.Add(":idProducto", OracleDbType.Varchar2).Value = idProducto;
-            updateCommand.Parameters.Add(":nombreProducto", OracleDbType.Varchar2).Value = nombreProducto;
-            updateCommand.Parameters.Add(":descripcion", OracleDbType.Varchar2).Value = descripcion;
-            updateCommand.Parameters.Add(":precioUnitario", OracleDbType.Decimal).Value = precioUnitario;
 
             try
             {
-                // Abre la conexión y ejecuta la sentencia SQL de actualización
+                // Abre la conexión y ejecuta la consulta de actualización
                 conn.Open();
-                updateCommand.ExecuteNonQuery();
+                int rowsAffected = updateCommand.ExecuteNonQuery();
                 conn.Close();
 
-                // Actualiza el DataGridView para mostrar los datos actualizados
-                mostrardatos(); // Asumiendo que este método también muestra datos de productos
-                MessageBox.Show("La actualización del producto se realizó con éxito.");
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("La actualización del producto se realizó con éxito.");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró un producto con el ID especificado.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al actualizar producto: " + ex.Message);
+                MessageBox.Show("Error al actualizar el producto: " + ex.Message);
             }
         }
-        
-        private void actualizar()
-        {
-            try
-            {
 
+        // Luego puedes llamar a la función de actualización con los nuevos valores que desees
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            string idProducto = txt_Codigo.Text;
+            string nuevoNombre = txt_Nombre.Text;
+            string nuevaDescripcion = txt_Desc.Text;
+
+            decimal nuevoPrecio;
+            if (!decimal.TryParse(txt_PrecUnit.Text, out nuevoPrecio))
+            {
+                MessageBox.Show("El nuevo precio no es válido.");
+                return;
             }
+
+            ActualizarProducto(idProducto, nuevoNombre, nuevaDescripcion, nuevoPrecio);
+            ListarDGV(); // Actualiza el DataGridView para mostrar los datos actualizados
         }
+
+
         private void limpiarTxt()
         {
             this.txt_Codigo.ReadOnly= false;
@@ -151,6 +159,8 @@ namespace WinAppBiblioteca.Forms
                 }
             }
         }
+
+
 
         private void DGVLibro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

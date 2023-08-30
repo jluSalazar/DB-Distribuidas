@@ -39,10 +39,10 @@
             this.txt_Codigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.DGVLibro = new System.Windows.Forms.DataGridView();
+            this.DGVProd_Act = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVLibro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVProd_Act)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -174,17 +174,17 @@
             this.label2.Text = "ACTUALIZAR PRODUCTO";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // DGVLibro
+            // DGVProd_Act
             // 
-            this.DGVLibro.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
-            this.DGVLibro.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.DGVLibro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVLibro.Location = new System.Drawing.Point(20, 376);
-            this.DGVLibro.Name = "DGVLibro";
-            this.DGVLibro.Size = new System.Drawing.Size(968, 287);
-            this.DGVLibro.TabIndex = 29;
-            this.DGVLibro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLibro_CellClick);
-            this.DGVLibro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLibro_CellContentClick);
+            this.DGVProd_Act.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.DGVProd_Act.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.DGVProd_Act.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVProd_Act.Location = new System.Drawing.Point(20, 376);
+            this.DGVProd_Act.Name = "DGVProd_Act";
+            this.DGVProd_Act.Size = new System.Drawing.Size(968, 287);
+            this.DGVProd_Act.TabIndex = 29;
+            this.DGVProd_Act.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLibro_CellClick);
+            this.DGVProd_Act.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLibro_CellContentClick);
             // 
             // btnActualizar
             // 
@@ -215,7 +215,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1049, 675);
-            this.Controls.Add(this.DGVLibro);
+            this.Controls.Add(this.DGVProd_Act);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
@@ -225,7 +225,7 @@
             this.Load += new System.EventHandler(this.UpdateForm_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVLibro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVProd_Act)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,6 +245,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnActualizar;
-        private System.Windows.Forms.DataGridView DGVLibro;
+        private System.Windows.Forms.DataGridView DGVProd_Act;
     }
 }

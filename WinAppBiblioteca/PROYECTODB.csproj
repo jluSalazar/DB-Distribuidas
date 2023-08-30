@@ -287,12 +287,6 @@
     <Compile Include="Forms\DeleteForm.Designer.cs">
       <DependentUpon>DeleteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DiseñoMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DiseñoMaster.Designer.cs">
-      <DependentUpon>DiseñoMaster.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Diseno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +354,7 @@
     <Compile Include="Logica\InsertarL.cs" />
     <Compile Include="Logica\Read.cs" />
     <Compile Include="Logica\UpdateL.cs" />
+    <Compile Include="Model\Libro.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -442,9 +437,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeleteForm.resx">
       <DependentUpon>DeleteForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DiseñoMaster.resx">
-      <DependentUpon>DiseñoMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Diseno.resx">
       <DependentUpon>Diseno.cs</DependentUpon>

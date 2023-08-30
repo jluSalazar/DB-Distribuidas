@@ -26,7 +26,6 @@ namespace WinAppBiblioteca.Logica
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
             DataTable tabla = new DataTable();
             adaptador.Fill(tabla);
-            DGVINSERTPROD.DataSource = tabla;
 
             conn.Close(); // Cierra la conexión después de usarla
         }

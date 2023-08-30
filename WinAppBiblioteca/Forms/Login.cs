@@ -73,13 +73,13 @@ namespace WinAppBiblioteca.Forms
             else
             {
 
-                if (tusers.Text == user1.username)
+                if (tusers.Text == user1.username && tPass.Text == user1.password)
                 {
                     Diseno pantalla = new Diseno(user1.ismaster);
                     pantalla.Show();
                     this.Hide();
                 }
-                else if(tusers.Text == user2.username)
+                else if(tusers.Text == user2.username && tPass.Text == user2.password)
                 {
                     Diseno pantalla = new Diseno(user2.ismaster);
                     pantalla.Show();
@@ -87,6 +87,11 @@ namespace WinAppBiblioteca.Forms
                 }
 
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
