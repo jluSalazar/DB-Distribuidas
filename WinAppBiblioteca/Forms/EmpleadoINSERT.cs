@@ -19,9 +19,11 @@ namespace WinAppBiblioteca
     public partial class EmpleadoINSERT : Form 
     {
         OracleConnection conn;
-        public EmpleadoINSERT()
+        bool IsMaster;
+        public EmpleadoINSERT(bool isMaster)
         {
             InitializeComponent();
+            IsMaster = isMaster;
         }
 
         #region "Variables"
@@ -142,16 +144,25 @@ namespace WinAppBiblioteca
                 MessageBox.Show("Por favor, completa todos los campos obligatorios.");
                 return;
             }
-
+            string updateQuery = "";
+            if (IsMaster)
+            {
+                updateQuery = "INSERT INTO empleado (IdEmpleado, IdSucursal, Nombre, Apellido, Direccion, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idEmpleado, :idSucursal, :nombre, :apellido, :direccion, :ciudad, :provincia, :telefono)";
+            }
+            else
+            {
+                updateQuery = "INSERT INTO empleado@replica_proyrad (IdEmpleado, IdSucursal, Nombre, Apellido, Direccion, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idEmpleado, :idSucursal, :nombre, :apellido, :direccion, :ciudad, :provincia, :telefono)";
+            }
             // Modifica la cadena de conexión para usar el Database Link
             string conStr = @"DATA SOURCE = replica_proyrad; USER ID=marmijo;PASSWORD=marmijo";
 
             // Sentencia SQL de inserción con el uso de Database Link
-            string insertQuery = "INSERT INTO empleado@replica_proyrad (IdEmpleado, IdSucursal, Nombre, Apellido, Direccion, Ciudad, Provincia, Telefono) " +
-                                 "VALUES (:idEmpleado, :idSucursal, :nombre, :apellido, :direccion, :ciudad, :provincia, :telefono)";
+          
 
             // Crea un objeto OracleCommand
-            OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
+            OracleCommand insertCommand = new OracleCommand(updateQuery, conn);
 
             // Asigna valores a los parámetros
             insertCommand.Parameters.Add(":idEmpleado", OracleDbType.Varchar2).Value = idEmpleado;

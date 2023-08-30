@@ -125,7 +125,7 @@
             this.lbInsertar.Name = "lbInsertar";
             this.lbInsertar.Size = new System.Drawing.Size(479, 40);
             this.lbInsertar.TabIndex = 28;
-            this.lbInsertar.Text = "INSERTAR PROVEEDOR GYE";
+            this.lbInsertar.Text = "INSERTAR PROVEEDOR UIO";
             // 
             // DGVINSERTPROD
             // 
@@ -243,7 +243,7 @@
             this.label5.TabIndex = 40;
             this.label5.Text = "IDSucursal";
             // 
-            // ProveedorGYEinsert
+            // ProveedorUIOinsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -267,7 +267,7 @@
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btInsertar);
             this.Controls.Add(this.DGVINSERTPROD);
-            this.Name = "ProveedorGYEinsert";
+            this.Name = "ProveedorUIOinsert";
             this.Text = "Insertar";
             this.Load += new System.EventHandler(this.Insertar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVINSERTPROD)).EndInit();

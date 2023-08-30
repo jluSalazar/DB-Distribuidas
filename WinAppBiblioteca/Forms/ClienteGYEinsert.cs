@@ -19,6 +19,7 @@ namespace WinAppBiblioteca
     public partial class ClienteGYEinsert : Form 
     {
         OracleConnection conn;
+
         public ClienteGYEinsert()
         {
             InitializeComponent();

@@ -19,9 +19,11 @@ namespace WinAppBiblioteca
     public partial class InventarioINSERT : Form 
     {
         OracleConnection conn;
-        public InventarioINSERT()
+        bool IsMaster;
+        public InventarioINSERT(bool isMaster)
         {
             InitializeComponent();
+            IsMaster = isMaster;
         }
 
         #region "Variables"
@@ -143,15 +145,25 @@ namespace WinAppBiblioteca
                 return;
             }
 
+            string updateQuery = "";
+            if (IsMaster)
+            {
+                updateQuery = "INSERT INTO Inventario (IdProducto, IdSucursal, Cantidad) " +
+                                 "VALUES (:idProducto, :idSucursal, :cantidad)";
+            }
+            else
+            {
+                updateQuery = "INSERT INTO Inventario@replica_proyrad (IdProducto, IdSucursal, Cantidad) " +
+                                 "VALUES (:idProducto, :idSucursal, :cantidad)";
+            }
+
             // Modifica la cadena de conexión para usar el Database Link
             string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
 
             // Sentencia SQL de inserción con el uso de Database Link
-            string insertQuery = "INSERT INTO Inventario@replica_proyrad (IdProducto, IdSucursal, Cantidad) " +
-                                 "VALUES (:idProducto, :idSucursal, :cantidad)";
 
             // Crea un objeto OracleCommand
-            OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
+            OracleCommand insertCommand = new OracleCommand(updateQuery, conn);
 
             // Asigna valores a los parámetros
             insertCommand.Parameters.Add(":idProducto", OracleDbType.Varchar2).Value = idProducto;

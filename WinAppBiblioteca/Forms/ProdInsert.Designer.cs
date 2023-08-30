@@ -52,7 +52,7 @@
             this.btInsertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(99)))), ((int)(((byte)(135)))));
             this.btInsertar.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInsertar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(99)))), ((int)(((byte)(135)))));
-            this.btInsertar.Location = new System.Drawing.Point(312, 91);
+            this.btInsertar.Location = new System.Drawing.Point(486, 97);
             this.btInsertar.Name = "btInsertar";
             this.btInsertar.Size = new System.Drawing.Size(85, 33);
             this.btInsertar.TabIndex = 4;
@@ -158,9 +158,9 @@
             this.lbInsertar.ForeColor = System.Drawing.Color.White;
             this.lbInsertar.Location = new System.Drawing.Point(50, 91);
             this.lbInsertar.Name = "lbInsertar";
-            this.lbInsertar.Size = new System.Drawing.Size(185, 40);
+            this.lbInsertar.Size = new System.Drawing.Size(374, 40);
             this.lbInsertar.TabIndex = 28;
-            this.lbInsertar.Text = "INSERTAR";
+            this.lbInsertar.Text = "INSERTAR PRODUCTO";
             // 
             // DGVINSERTPROD
             // 

@@ -11,7 +11,7 @@ namespace WinAppBiblioteca.Forms
     public partial class ProductoActualizar : Form
     {
         OracleConnection conn;
-        string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=jsalazar;PASSWORD=jsalazar";
+        string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
         
         bool IsMaster;
         public ProductoActualizar(bool ismaster)

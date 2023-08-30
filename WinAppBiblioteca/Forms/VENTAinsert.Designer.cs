@@ -121,9 +121,9 @@
             this.lbInsertar.ForeColor = System.Drawing.Color.White;
             this.lbInsertar.Location = new System.Drawing.Point(48, 89);
             this.lbInsertar.Name = "lbInsertar";
-            this.lbInsertar.Size = new System.Drawing.Size(416, 40);
+            this.lbInsertar.Size = new System.Drawing.Size(311, 40);
             this.lbInsertar.TabIndex = 28;
-            this.lbInsertar.Text = "INSERTAR PEDIDO GYE";
+            this.lbInsertar.Text = "INSERTAR VENTA";
             // 
             // DGVINSERTPROD
             // 
