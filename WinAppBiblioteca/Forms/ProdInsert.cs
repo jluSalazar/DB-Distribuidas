@@ -11,13 +11,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 
 namespace WinAppBiblioteca
 {
-    public partial class Insertar : Form 
+    public partial class ProdInsert : Form 
     {
-        public Insertar()
+        OracleConnection conn;
+        public ProdInsert()
         {
             InitializeComponent();
         }
@@ -32,29 +34,13 @@ namespace WinAppBiblioteca
         //Método para activar o desactivas la edición de las casillas
         private void estadoTexto(bool logicEstado)
         {
-            txt_codigo_libro.ReadOnly = !logicEstado;
-            txtNombreL.ReadOnly = !logicEstado;
-            txtFechaL.ReadOnly = !logicEstado;
-            txtEdicionL.ReadOnly = !logicEstado;
-            txtNombreA.ReadOnly = !logicEstado;
-            txtApellidoA.ReadOnly = !logicEstado;
-            txtCategoriaL.ReadOnly = !logicEstado;
-            txtStockL.ReadOnly = !logicEstado;
-            txtDisponibilidadL.ReadOnly = !logicEstado;
+            
         }
 
         //Limpia las casillas para ingresar un nuevo libro
         private void LimpiarTexto()
         {
-            txt_codigo_libro.Clear();
-            txtNombreL.Clear();
-            txtFechaL.Clear();
-            txtEdicionL.Clear();
-            txtNombreA.Clear();
-            txtApellidoA.Clear();
-            txtCategoriaL.Clear ();
-            txtStockL.Clear();  
-            txtDisponibilidadL.Clear();
+            
 
         }
 
@@ -101,7 +87,7 @@ namespace WinAppBiblioteca
             this.LimpiarTexto();
             this.estadoBotonesCG(true);
             this.estadoBotonesPrincipales(false);
-            txtNombreL.Focus();
+            txtIdProducto.Focus();
 
         }
         
@@ -117,40 +103,75 @@ namespace WinAppBiblioteca
             this.estadoBotonesPrincipales(true);
         }
 
-        private TextBox GetTxtStockL()
+       /* private TextBox GetTxtStockL()
         {
-            return txtStockL;
-        }
+            
+        }*/
+        private void mostrardatos()
+        {
+            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
+            conn = new OracleConnection(conStr);
+            string consulta = "SELECT * FROM PRODUCTO"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            conn.Open(); // Abre la conexión a la base de datos Oracle
+            OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
+            OracleDataAdapter adaptador = new OracleDataAdapter(comando);
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            DGVINSERTPROD.DataSource = tabla;
 
+            conn.Close(); // Cierra la conexión después de usarla
+
+        }
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            string respuesta = "";
-            Libro mLibro = new Libro(); //mLibro = oAr
 
-            mLibro.CodigoLibro = txt_codigo_libro.Text.Trim();
-            mLibro.NombreLibro = txtNombreL.Text.Trim();
-            mLibro.FechaPublicacion = txtFechaL.Text.Trim();
-            mLibro.Edicion = txtEdicionL.Text.Trim();
-            mLibro.NombreAutor = txtNombreA.Text.Trim();
-            mLibro.ApellidoAutor = txtApellidoA.Text.Trim();
-            mLibro.Categoria = txtCategoriaL.Text.Trim();
-            mLibro.Stock = int.Parse(txtStockL.Text.Trim());
-            mLibro.Disponibilidad = int.Parse(txtDisponibilidadL.Text.Trim());
+            string idProducto = txtIdProducto.Text;
+            string nombreProducto = txtNombreProducto.Text;
+            string descripcion = txtDescripcion.Text;
+            decimal precioUnitario;
 
-            InsertarL datos = new InsertarL(); //datos = DATOS
-            respuesta = datos.guardarLibros(nEstadoguarda, mLibro); //Guardar_ar = guardarLibros
-            
-            if(respuesta.Equals("OK"))
+            // Valida y convierte el valor del TextBox de Precio Unitario a decimal
+            if (!decimal.TryParse(txtPrecioUnitario.Text, out precioUnitario))
             {
-                this.Listado_lib();
-                MessageBox.Show("Los datos han sido guardados corectamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(respuesta);
+                MessageBox.Show("El precio unitario no es válido.");
+                return;
             }
 
-            
+            // Verifica que los campos no estén vacíos antes de la inserción (agrega tu propia lógica de validación)
+            if (string.IsNullOrWhiteSpace(idProducto) || string.IsNullOrWhiteSpace(nombreProducto) || string.IsNullOrWhiteSpace(descripcion))
+            {
+                MessageBox.Show("Por favor, completa todos los campos obligatorios.");
+                return;
+            }
+            string insertQuery = "INSERT INTO Producto@replica_proyrad (IdProducto, NombreProducto, Descripcion, PrecioUnitario) " +
+                     "VALUES (:idProducto, :nombreProducto, :descripcion, :precioUnitario)";
+
+            // Crea un objeto OracleCommand
+            OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
+
+            // Asigna valores a los parámetros
+            insertCommand.Parameters.Add(":idProducto", OracleDbType.Varchar2).Value = idProducto;
+            insertCommand.Parameters.Add(":nombreProducto", OracleDbType.Varchar2).Value = nombreProducto;
+            insertCommand.Parameters.Add(":descripcion", OracleDbType.Varchar2).Value = descripcion;
+            insertCommand.Parameters.Add(":precioUnitario", OracleDbType.Decimal).Value = precioUnitario;
+            // Configura la conexión a Oracle y la sentencia SQL de inserción (como se mostró en respuestas anteriores)
+
+            try
+            {
+                // Abre la conexión y ejecuta la sentencia SQL de inserción
+                conn.Open();
+                insertCommand.ExecuteNonQuery();
+                conn.Close();
+
+                // Actualiza el DataGridView para mostrar los datos actualizados
+                mostrardatos(); // Asumiendo que este método también muestra datos de productos
+                MessageBox.Show("La inserción del producto se realizó con éxito.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar producto: " + ex.Message);
+            }
+
         }
         //Fin de los botones de modificación de datos
 
@@ -158,7 +179,7 @@ namespace WinAppBiblioteca
 
         private void lbNombreL_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void lbFechaL_Click(object sender, EventArgs e)
@@ -243,7 +264,7 @@ namespace WinAppBiblioteca
         //EVENTO LOAD
         private void Insertar_Load(object sender, EventArgs e)
         {
-            this.Listado_lib();
+            mostrardatos();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
