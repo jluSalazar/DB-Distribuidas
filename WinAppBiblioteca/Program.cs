@@ -17,7 +17,7 @@ namespace WinAppBiblioteca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PedidoGYEinsert());
+            Application.Run(new InventarioINSERT());
         }
     }
 }
