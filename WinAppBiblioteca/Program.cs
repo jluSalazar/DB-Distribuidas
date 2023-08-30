@@ -17,7 +17,9 @@ namespace WinAppBiblioteca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InventarioINSERT());
+
+            Application.Run(new ProductoActualizar(true));
+
         }
     }
 }

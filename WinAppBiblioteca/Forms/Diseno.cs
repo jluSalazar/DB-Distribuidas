@@ -14,6 +14,7 @@ namespace WinAppBiblioteca
 {
     public partial class Diseno : Form
     {
+        bool IsMaster;
         Query query;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         
@@ -29,20 +30,11 @@ namespace WinAppBiblioteca
 
       );
         
-        public Diseno()
+        public Diseno(bool ismaster)
         {
             InitializeComponent();
-           /*Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
-            pnlNavIndicator.Height = btnDashboard.Height;
-            pnlNavIndicator.Top = btnDashboard.Top;
-            pnlNavIndicator.Left = btnDashboard.Left;
-            ButtonColorReset(btnDashboard);
-
-            lblTabTitle.Text = "Dashboard";
-            this.pnlContent.Controls.Clear();
-            FormDashboard FrmDashboard_Vrb = new FormDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(FrmDashboard_Vrb);
-            FrmDashboard_Vrb.Show();*/
+            IsMaster = ismaster;
+            
         }
         private Point lastLocation;
 
@@ -109,17 +101,7 @@ namespace WinAppBiblioteca
         }
         private void BtnRestaurants_Click(object sender, EventArgs e)
         {
-            /*
-            pnlNavIndicator.Height = btnRestaurants.Height;
-            pnlNavIndicator.Top = btnRestaurants.Top;
-            pnlNavIndicator.Left = btnRestaurants.Left;
-            ButtonColorReset(btnRestaurants);
-
-            lblTabTitle.Text = "Restaurants";
-            this.pnlContent.Controls.Clear();
-            FormRestaurants FrmCustomer_Vrb = new FormRestaurants() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(FrmCustomer_Vrb);
-            FrmCustomer_Vrb.Show();*/
+            
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -141,7 +123,7 @@ namespace WinAppBiblioteca
 
             lblTabTitle.Text = "Update";
             this.pnlContent.Controls.Clear();
-            UpdateForm update = new UpdateForm(){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ProductoActualizar update = new ProductoActualizar(IsMaster){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(update);
             update.Show();
         }
