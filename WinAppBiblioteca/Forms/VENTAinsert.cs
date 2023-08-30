@@ -19,9 +19,12 @@ namespace WinAppBiblioteca
     public partial class VENTAinsert : Form 
     {
         OracleConnection conn;
-        public VENTAinsert()
+        bool IsMaster;
+
+        public VENTAinsert(bool isMaster)
         {
             InitializeComponent();
+            IsMaster = isMaster;
         }
 
         #region "Variables"
@@ -111,7 +114,7 @@ namespace WinAppBiblioteca
         {
             string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
             conn = new OracleConnection(conStr);
-            string consulta = "SELECT * FROM venta"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            string consulta = "SELECT * FROM VENTA"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
             conn.Open(); // Abre la conexión a la base de datos Oracle
             OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
@@ -152,15 +155,25 @@ namespace WinAppBiblioteca
                 return;
             }
 
+            string updateQuery = "";
+            if (IsMaster)
+            {
+                updateQuery = "INSERT INTO venta (IdVenta, IdSucursal, IdCliente, Fecha, Total) " +
+                                 "VALUES (:idVenta, :idSucursal, :idCliente, :fecha, :total)";
+            }
+            else
+            {
+                updateQuery = "INSERT INTO venta@replica_proyrad (IdVenta, IdSucursal, IdCliente, Fecha, Total) " +
+                                 "VALUES (:idVenta, :idSucursal, :idCliente, :fecha, :total)";
+            }
             // Modifica la cadena de conexión para usar el Database Link
             string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
 
             // Sentencia SQL de inserción con el uso de Database Link
-            string insertQuery = "INSERT INTO venta@replica_proyrad (IdVenta, IdSucursal, IdCliente, Fecha, Total) " +
-                                 "VALUES (:idVenta, :idSucursal, :idCliente, :fecha, :total)";
+           
 
             // Crea un objeto OracleCommand
-            OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
+            OracleCommand insertCommand = new OracleCommand(updateQuery, conn);
 
             // Asigna valores a los parámetros
             insertCommand.Parameters.Add(":idVenta", OracleDbType.Varchar2).Value = idVenta;
