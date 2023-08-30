@@ -123,7 +123,7 @@ namespace WinAppBiblioteca
 
             lblTabTitle.Text = "Update";
             this.pnlContent.Controls.Clear();
-            ProductoActualizar update = new ProductoActualizar(IsMaster){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            UpdateForm update = new UpdateForm(IsMaster){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(update);
             update.Show();
         }

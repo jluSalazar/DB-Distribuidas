@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Data;
 using System.Windows.Forms;
 using WinAppBiblioteca.Logica;
@@ -6,19 +7,18 @@ using WinAppBiblioteca.Model;
 
 namespace WinAppBiblioteca.Forms
 {
-    public partial class UpdateForm : Form
+    public partial class ProductoActualizar : Form
     {
-        Read readAux;
-        UpdateL updateAux;
-        public UpdateForm()
+        OracleConnection conn;
+        
+        bool IsMaster;
+        public ProductoActualizar(bool ismaster)
         {
             InitializeComponent();
-            readAux = new Read();
-            updateAux = new UpdateL();
+            IsMaster = ismaster;
         }
         public void ListarDGV()
         {
-            DGVLibro.DataSource = readAux.Listar("Libro");
             txt_Codigo.ReadOnly = false;
         }
 
@@ -50,13 +50,8 @@ namespace WinAppBiblioteca.Forms
                 // Establecer los valores en los cuadros de texto
                 txt_Codigo.Text = codigoLibro.ToString();
                 txt_Nombre.Text = nombreLibro;
-                txt_FechaPub.Text = fechaPublicacion;
-                txt_Edicion.Text = edicion;
-                txt_NombreAu.Text = nombreAutor;
-                txt_ApellidoAu.Text = apellidoAutor;
-                txt_Categoria.Text = categoria;
-                txt_Stock.Text = stock.ToString();
-                txt_Disponibilidad.Text = disponibilidad.ToString();
+                txt_Desc.Text = fechaPublicacion;
+                txt_PrecUnit.Text = edicion;
 
                 txt_Codigo.ReadOnly = true;
             }
@@ -81,13 +76,8 @@ namespace WinAppBiblioteca.Forms
                 // Establecer los valores en los cuadros de texto
                 txt_Codigo.Text = codigoLibro;
                 txt_Nombre.Text = nombreLibro;
-                txt_FechaPub.Text = fechaPublicacion;
-                txt_Edicion.Text = edicion;
-                txt_NombreAu.Text = nombreAutor;
-                txt_ApellidoAu.Text = apellidoAutor;
-                txt_Categoria.Text = categoria;
-                txt_Stock.Text = stock.ToString();
-                txt_Disponibilidad.Text = disponibilidad.ToString();
+                txt_Desc.Text = fechaPublicacion;
+                txt_PrecUnit.Text = edicion;
 
                 txt_Codigo.ReadOnly = true;
             }
@@ -95,23 +85,61 @@ namespace WinAppBiblioteca.Forms
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            string idProducto = txt_Codigo.Text;
+            string nombreProducto = txt_Nombre.Text;
+            string descripcion = txt_Desc.Text;
+            float precioUnitario = ;
+
+            // Valida y convierte el valor del TextBox de Precio Unitario a decimal
+            if (!decimal.TryParse(txtPrecioUnitario.Text, out precioUnitario))
+            {
+                MessageBox.Show("El precio unitario no es válido.");
+                return;
+            }
+
+            // Verifica que el campo IdProducto no esté vacío antes de la actualización
+            if (string.IsNullOrWhiteSpace(idProducto))
+            {
+                MessageBox.Show("El campo IdProducto es obligatorio para la actualización.");
+                return;
+            }
+
+            string updateQuery = "UPDATE Producto@replica_proyrad SET NombreProducto = :nombreProducto, Descripcion = :descripcion, PrecioUnitario = :precioUnitario " +
+                                 "WHERE IdProducto = :idProducto";
+
+            // Crea un objeto OracleCommand
+            OracleCommand updateCommand = new OracleCommand(updateQuery, conn);
+
+            // Asigna valores a los parámetros
+            updateCommand.Parameters.Add(":idProducto", OracleDbType.Varchar2).Value = idProducto;
+            updateCommand.Parameters.Add(":nombreProducto", OracleDbType.Varchar2).Value = nombreProducto;
+            updateCommand.Parameters.Add(":descripcion", OracleDbType.Varchar2).Value = descripcion;
+            updateCommand.Parameters.Add(":precioUnitario", OracleDbType.Decimal).Value = precioUnitario;
+
             try
             {
-                Libro libro = new Libro(txt_Codigo.Text,
-                    txt_Nombre.Text, txt_FechaPub.Text, txt_Edicion.Text,
-                    txt_NombreAu.Text, txt_ApellidoAu.Text, txt_Categoria.Text,
-                    int.Parse(txt_Stock.Text), int.Parse(txt_Disponibilidad.Text));
+                // Abre la conexión y ejecuta la sentencia SQL de actualización
+                conn.Open();
+                updateCommand.ExecuteNonQuery();
+                conn.Close();
 
-                updateAux.ActualizarRegistro(libro);
-                this.ListarDGV();
-                limpiarTxt();
+                // Actualiza el DataGridView para mostrar los datos actualizados
+                mostrardatos(); // Asumiendo que este método también muestra datos de productos
+                MessageBox.Show("La actualización del producto se realizó con éxito.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al actualizar producto: " + ex.Message);
             }
         }
         
+        private void actualizar()
+        {
+            try
+            {
+
+            }
+        }
         private void limpiarTxt()
         {
             this.txt_Codigo.ReadOnly= false;
@@ -125,6 +153,16 @@ namespace WinAppBiblioteca.Forms
         }
 
         private void DGVLibro_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

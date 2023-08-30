@@ -9,11 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinAppBiblioteca.Logica;
+using WinAppBiblioteca.Model;
 
 namespace WinAppBiblioteca.Forms
 {
     public partial class Login : Form
     {
+        Usuario user1 = new Usuario
+        {
+            username = "jsalazar",
+            password = "jsalazar",
+            ismaster = true
+        };
+
+        Usuario user2 = new Usuario
+        {
+            username = "marmijo",
+            password = "marmijo",
+            ismaster = false
+        };
 
         SQLiteConnection sqlcon = new SQLiteConnection();
        
@@ -59,39 +73,17 @@ namespace WinAppBiblioteca.Forms
             else
             {
 
-                try
+                if (tusers.Text == user1.username)
                 {
-                    sqlcon.Open();
-                    string query = "SELECT * FROM Usuarios WHERE Username= '" + tusers.Text + "'and Password= '" + tPass.Text + "' ";
-                    SQLiteCommand cmd = new SQLiteCommand(query, sqlcon);
-                    cmd.ExecuteNonQuery();
-                    SQLiteDataReader dr = cmd.ExecuteReader();
-
-                    int count = 0;
-                    while (dr.Read())
-                    {
-                        count++;
-                    }
-                    if (count == 1)
-                    {
-                        Diseno pantalla = new Diseno();
-                        pantalla.Show();
-                        this.Hide();
-
-                    }
-                    if (count < 1)
-                    {
-                        lmessage.Visible = true;
-                        lmessage.Text = "ERROR: INGRESE DATOS CORRECTOS";
-
-
-                    }
+                    Diseno pantalla = new Diseno(user1.ismaster);
+                    pantalla.Show();
+                    this.Hide();
                 }
-                catch (Exception ex)
+                else if(tusers.Text == user2.username)
                 {
-
-                    MessageBox.Show("erorr" + ex);
-
+                    Diseno pantalla = new Diseno(user2.ismaster);
+                    pantalla.Show();
+                    this.Hide();
                 }
 
             }
