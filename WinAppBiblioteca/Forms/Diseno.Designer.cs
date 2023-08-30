@@ -219,7 +219,7 @@
             this.btnAnalytics.Name = "btnAnalytics";
             this.btnAnalytics.Size = new System.Drawing.Size(200, 42);
             this.btnAnalytics.TabIndex = 4;
-            this.btnAnalytics.Text = "Analytics  ";
+            this.btnAnalytics.Text = "Replicación ";
             this.btnAnalytics.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAnalytics.UseVisualStyleBackColor = true;
             this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
