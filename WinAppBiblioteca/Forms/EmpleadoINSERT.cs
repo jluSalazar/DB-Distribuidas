@@ -16,10 +16,10 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace WinAppBiblioteca
 {
-    public partial class ClienteUIOinsert : Form 
+    public partial class EmpleadoINSERT : Form 
     {
         OracleConnection conn;
-        public ClienteUIOinsert()
+        public EmpleadoINSERT()
         {
             InitializeComponent();
         }
@@ -87,7 +87,7 @@ namespace WinAppBiblioteca
             this.LimpiarTexto();
             this.estadoBotonesCG(true);
             this.estadoBotonesPrincipales(false);
-            txtIdCliente.Focus();
+            txtIdEmpleado.Focus();
 
         }
         
@@ -111,7 +111,7 @@ namespace WinAppBiblioteca
         {
             string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
             conn = new OracleConnection(conStr);
-            string consulta = "SELECT * FROM cliente_uio"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            string consulta = "SELECT * FROM empleado"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
             conn.Open(); // Abre la conexión a la base de datos Oracle
             OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
@@ -125,38 +125,40 @@ namespace WinAppBiblioteca
         private void btGuardar_Click(object sender, EventArgs e)
         {
 
-            string idCliente = txtIdCliente.Text;
+            string idEmpleado = txtIdEmpleado.Text;
             string idSucursal = txtIdSucursal.Text;
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
+            string direccion = txtDireccion.Text;
             string ciudad = txtCiudad.Text;
             string provincia = txtProvincia.Text;
             string telefono = txtTelefono.Text;
 
             // Verifica que los campos no estén vacíos antes de la inserción (agrega tu propia lógica de validación)
-            if (string.IsNullOrWhiteSpace(idCliente) || string.IsNullOrWhiteSpace(idSucursal) || string.IsNullOrWhiteSpace(nombre) ||
-                string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(ciudad) || string.IsNullOrWhiteSpace(provincia) ||
-                string.IsNullOrWhiteSpace(telefono))
+            if (string.IsNullOrWhiteSpace(idEmpleado) || string.IsNullOrWhiteSpace(idSucursal) || string.IsNullOrWhiteSpace(nombre) ||
+                string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(direccion) || string.IsNullOrWhiteSpace(ciudad) ||
+                string.IsNullOrWhiteSpace(provincia) || string.IsNullOrWhiteSpace(telefono))
             {
                 MessageBox.Show("Por favor, completa todos los campos obligatorios.");
                 return;
             }
 
             // Modifica la cadena de conexión para usar el Database Link
-            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
+            string conStr = @"DATA SOURCE = replica_proyrad; USER ID=marmijo;PASSWORD=marmijo";
 
             // Sentencia SQL de inserción con el uso de Database Link
-            string insertQuery = "INSERT INTO Cliente_uio (IdCliente, IdSucursal, Nombre, Apellido, Ciudad, Provincia, Telefono) " +
-                                 "VALUES (:idCliente, :idSucursal, :nombre, :apellido, :ciudad, :provincia, :telefono)";
+            string insertQuery = "INSERT INTO empleado@replica_proyrad (IdEmpleado, IdSucursal, Nombre, Apellido, Direccion, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idEmpleado, :idSucursal, :nombre, :apellido, :direccion, :ciudad, :provincia, :telefono)";
 
             // Crea un objeto OracleCommand
             OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
 
             // Asigna valores a los parámetros
-            insertCommand.Parameters.Add(":idCliente", OracleDbType.Varchar2).Value = idCliente;
+            insertCommand.Parameters.Add(":idEmpleado", OracleDbType.Varchar2).Value = idEmpleado;
             insertCommand.Parameters.Add(":idSucursal", OracleDbType.Varchar2).Value = idSucursal;
             insertCommand.Parameters.Add(":nombre", OracleDbType.Varchar2).Value = nombre;
             insertCommand.Parameters.Add(":apellido", OracleDbType.Varchar2).Value = apellido;
+            insertCommand.Parameters.Add(":direccion", OracleDbType.Varchar2).Value = direccion;
             insertCommand.Parameters.Add(":ciudad", OracleDbType.Varchar2).Value = ciudad;
             insertCommand.Parameters.Add(":provincia", OracleDbType.Varchar2).Value = provincia;
             insertCommand.Parameters.Add(":telefono", OracleDbType.Varchar2).Value = telefono;
@@ -169,12 +171,12 @@ namespace WinAppBiblioteca
                 conn.Close();
 
                 // Actualiza el DataGridView para mostrar los datos actualizados
-                mostrardatos(); // Asumiendo que este método también muestra datos de clientes
-                MessageBox.Show("La inserción del cliente se realizó con éxito.");
+                mostrardatos(); // Asumiendo que este método también muestra datos de empleados
+                MessageBox.Show("La inserción del empleado se realizó con éxito.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al insertar cliente: " + ex.Message);
+                MessageBox.Show("Error al insertar empleado: " + ex.Message);
             }
 
         }

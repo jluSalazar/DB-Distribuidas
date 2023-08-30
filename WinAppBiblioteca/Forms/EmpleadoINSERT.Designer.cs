@@ -1,6 +1,6 @@
 ﻿namespace WinAppBiblioteca
 {
-    partial class ClienteUIOinsert
+    partial class EmpleadoINSERT
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             this.lbNombreA = new System.Windows.Forms.Label();
             this.lbInsertar = new System.Windows.Forms.Label();
             this.DGVINSERTPROD = new System.Windows.Forms.DataGridView();
-            this.txtIdCliente = new System.Windows.Forms.TextBox();
+            this.txtIdEmpleado = new System.Windows.Forms.TextBox();
             this.txtIdSucursal = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -48,6 +48,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVINSERTPROD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +113,7 @@
             this.lbEdicionL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.lbEdicionL.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEdicionL.ForeColor = System.Drawing.Color.White;
-            this.lbEdicionL.Location = new System.Drawing.Point(684, 182);
+            this.lbEdicionL.Location = new System.Drawing.Point(684, 161);
             this.lbEdicionL.Name = "lbEdicionL";
             this.lbEdicionL.Size = new System.Drawing.Size(69, 20);
             this.lbEdicionL.TabIndex = 14;
@@ -124,7 +126,7 @@
             this.lbNombreA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.lbNombreA.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombreA.ForeColor = System.Drawing.Color.White;
-            this.lbNombreA.Location = new System.Drawing.Point(685, 250);
+            this.lbNombreA.Location = new System.Drawing.Point(685, 223);
             this.lbNombreA.Name = "lbNombreA";
             this.lbNombreA.Size = new System.Drawing.Size(80, 17);
             this.lbNombreA.TabIndex = 15;
@@ -156,30 +158,30 @@
             this.DGVINSERTPROD.TabIndex = 0;
             this.DGVINSERTPROD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // txtIdCliente
+            // txtIdEmpleado
             // 
-            this.txtIdCliente.Location = new System.Drawing.Point(688, 85);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(261, 20);
-            this.txtIdCliente.TabIndex = 29;
+            this.txtIdEmpleado.Location = new System.Drawing.Point(688, 65);
+            this.txtIdEmpleado.Name = "txtIdEmpleado";
+            this.txtIdEmpleado.Size = new System.Drawing.Size(261, 20);
+            this.txtIdEmpleado.TabIndex = 29;
             // 
             // txtIdSucursal
             // 
-            this.txtIdSucursal.Location = new System.Drawing.Point(688, 149);
+            this.txtIdSucursal.Location = new System.Drawing.Point(688, 122);
             this.txtIdSucursal.Name = "txtIdSucursal";
             this.txtIdSucursal.Size = new System.Drawing.Size(261, 20);
             this.txtIdSucursal.TabIndex = 30;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(688, 214);
+            this.txtNombre.Location = new System.Drawing.Point(688, 184);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(261, 20);
             this.txtNombre.TabIndex = 31;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(688, 282);
+            this.txtApellido.Location = new System.Drawing.Point(688, 243);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(261, 20);
             this.txtApellido.TabIndex = 32;
@@ -197,7 +199,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.label1.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(685, 326);
+            this.label1.Location = new System.Drawing.Point(691, 338);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 33;
@@ -205,7 +207,7 @@
             // 
             // txtProvincia
             // 
-            this.txtProvincia.Location = new System.Drawing.Point(688, 428);
+            this.txtProvincia.Location = new System.Drawing.Point(688, 416);
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(261, 20);
             this.txtProvincia.TabIndex = 36;
@@ -224,7 +226,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(688, 498);
+            this.txtTelefono.Location = new System.Drawing.Point(688, 486);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(261, 20);
             this.txtTelefono.TabIndex = 38;
@@ -249,9 +251,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(684, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.Size = new System.Drawing.Size(109, 20);
             this.label4.TabIndex = 39;
-            this.label4.Text = "IDCliente";
+            this.label4.Text = "IDEmpleado";
             // 
             // label5
             // 
@@ -259,18 +261,39 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.label5.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(684, 112);
+            this.label5.Location = new System.Drawing.Point(684, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 20);
             this.label5.TabIndex = 40;
             this.label5.Text = "IDSucursal";
             // 
-            // ClienteGYEinsert
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(688, 298);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(261, 20);
+            this.txtDireccion.TabIndex = 42;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
+            this.label6.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(685, 278);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 17);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "Dirección";
+            // 
+            // EmpleadoINSERT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(984, 636);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTelefono);
@@ -282,7 +305,7 @@
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtIdSucursal);
-            this.Controls.Add(this.txtIdCliente);
+            this.Controls.Add(this.txtIdEmpleado);
             this.Controls.Add(this.lbInsertar);
             this.Controls.Add(this.lbNombreA);
             this.Controls.Add(this.lbEdicionL);
@@ -291,7 +314,7 @@
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btInsertar);
             this.Controls.Add(this.DGVINSERTPROD);
-            this.Name = "ClienteGYEinsert";
+            this.Name = "EmpleadoINSERT";
             this.Text = "Insertar";
             this.Load += new System.EventHandler(this.Insertar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVINSERTPROD)).EndInit();
@@ -309,7 +332,7 @@
         private System.Windows.Forms.Label lbNombreA;
         private System.Windows.Forms.Label lbInsertar;
         private System.Windows.Forms.DataGridView DGVINSERTPROD;
-        private System.Windows.Forms.TextBox txtIdCliente;
+        private System.Windows.Forms.TextBox txtIdEmpleado;
         private System.Windows.Forms.TextBox txtIdSucursal;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
@@ -321,5 +344,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Label label6;
     }
 }

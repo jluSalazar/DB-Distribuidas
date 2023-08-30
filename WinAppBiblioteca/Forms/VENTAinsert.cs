@@ -16,10 +16,10 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace WinAppBiblioteca
 {
-    public partial class PedidoUIOinsert : Form 
+    public partial class VENTAinsert : Form 
     {
         OracleConnection conn;
-        public PedidoUIOinsert()
+        public VENTAinsert()
         {
             InitializeComponent();
         }
@@ -87,7 +87,7 @@ namespace WinAppBiblioteca
             this.LimpiarTexto();
             this.estadoBotonesCG(true);
             this.estadoBotonesPrincipales(false);
-            txtIdPedido.Focus();
+            txtIdVenta.Focus();
 
         }
         
@@ -111,7 +111,7 @@ namespace WinAppBiblioteca
         {
             string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
             conn = new OracleConnection(conStr);
-            string consulta = "SELECT * FROM pedido_uio"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            string consulta = "SELECT * FROM venta"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
             conn.Open(); // Abre la conexión a la base de datos Oracle
             OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
@@ -124,7 +124,7 @@ namespace WinAppBiblioteca
         }
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            string idPedido = txtIdPedido.Text;
+            string idVenta = txtIdVenta.Text;
             string idSucursal = txtIdSucursal.Text;
             string idCliente = txtIdCliente.Text;
             DateTime fecha;
@@ -146,7 +146,7 @@ namespace WinAppBiblioteca
             }
 
             // Verifica que los campos no estén vacíos antes de la inserción (agrega tu propia lógica de validación)
-            if (string.IsNullOrWhiteSpace(idPedido) || string.IsNullOrWhiteSpace(idSucursal) || string.IsNullOrWhiteSpace(idCliente))
+            if (string.IsNullOrWhiteSpace(idVenta) || string.IsNullOrWhiteSpace(idSucursal) || string.IsNullOrWhiteSpace(idCliente))
             {
                 MessageBox.Show("Por favor, completa todos los campos obligatorios.");
                 return;
@@ -156,14 +156,14 @@ namespace WinAppBiblioteca
             string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
 
             // Sentencia SQL de inserción con el uso de Database Link
-            string insertQuery = "INSERT INTO Pedido_uio (IdPedido, IdSucursal, IdCliente, Fecha, Total) " +
-                                 "VALUES (:idPedido, :idSucursal, :idCliente, :fecha, :total)";
+            string insertQuery = "INSERT INTO venta@replica_proyrad (IdVenta, IdSucursal, IdCliente, Fecha, Total) " +
+                                 "VALUES (:idVenta, :idSucursal, :idCliente, :fecha, :total)";
 
             // Crea un objeto OracleCommand
             OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
 
             // Asigna valores a los parámetros
-            insertCommand.Parameters.Add(":idPedido", OracleDbType.Varchar2).Value = idPedido;
+            insertCommand.Parameters.Add(":idVenta", OracleDbType.Varchar2).Value = idVenta;
             insertCommand.Parameters.Add(":idSucursal", OracleDbType.Varchar2).Value = idSucursal;
             insertCommand.Parameters.Add(":idCliente", OracleDbType.Varchar2).Value = idCliente;
             insertCommand.Parameters.Add(":fecha", OracleDbType.Date).Value = fecha;
@@ -177,12 +177,12 @@ namespace WinAppBiblioteca
                 conn.Close();
 
                 // Actualiza el DataGridView para mostrar los datos actualizados
-                mostrardatos(); // Asumiendo que este método también muestra datos de pedidos
-                MessageBox.Show("La inserción del pedido se realizó con éxito.");
+                mostrardatos(); // Asumiendo que este método también muestra datos de ventas
+                MessageBox.Show("La inserción de la venta se realizó con éxito.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al insertar pedido: " + ex.Message);
+                MessageBox.Show("Error al insertar venta: " + ex.Message);
             }
 
         }

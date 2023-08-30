@@ -1,6 +1,6 @@
 ﻿namespace WinAppBiblioteca
 {
-    partial class PedidoUIOinsert
+    partial class VENTAinsert
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.lbEdicionL = new System.Windows.Forms.Label();
             this.lbInsertar = new System.Windows.Forms.Label();
             this.DGVINSERTPROD = new System.Windows.Forms.DataGridView();
-            this.txtIdPedido = new System.Windows.Forms.TextBox();
+            this.txtIdVenta = new System.Windows.Forms.TextBox();
             this.txtIdSucursal = new System.Windows.Forms.TextBox();
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
@@ -139,12 +139,12 @@
             this.DGVINSERTPROD.TabIndex = 0;
             this.DGVINSERTPROD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // txtIdPedido
+            // txtIdVenta
             // 
-            this.txtIdPedido.Location = new System.Drawing.Point(688, 89);
-            this.txtIdPedido.Name = "txtIdPedido";
-            this.txtIdPedido.Size = new System.Drawing.Size(261, 20);
-            this.txtIdPedido.TabIndex = 29;
+            this.txtIdVenta.Location = new System.Drawing.Point(688, 89);
+            this.txtIdVenta.Name = "txtIdVenta";
+            this.txtIdVenta.Size = new System.Drawing.Size(261, 20);
+            this.txtIdVenta.TabIndex = 29;
             // 
             // txtIdSucursal
             // 
@@ -206,9 +206,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(684, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 20);
+            this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 39;
-            this.label4.Text = "IdPedido";
+            this.label4.Text = "IdVenta";
             // 
             // label5
             // 
@@ -222,7 +222,7 @@
             this.label5.TabIndex = 40;
             this.label5.Text = "IdSucursal";
             // 
-            // PedidoGYEinsert
+            // VENTAinsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,7 +236,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.txtIdSucursal);
-            this.Controls.Add(this.txtIdPedido);
+            this.Controls.Add(this.txtIdVenta);
             this.Controls.Add(this.lbInsertar);
             this.Controls.Add(this.lbEdicionL);
             this.Controls.Add(this.lbFechaL);
@@ -244,7 +244,7 @@
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btInsertar);
             this.Controls.Add(this.DGVINSERTPROD);
-            this.Name = "PedidoGYEinsert";
+            this.Name = "VENTAinsert";
             this.Text = "Insertar";
             this.Load += new System.EventHandler(this.Insertar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVINSERTPROD)).EndInit();
@@ -261,7 +261,7 @@
         private System.Windows.Forms.Label lbEdicionL;
         private System.Windows.Forms.Label lbInsertar;
         private System.Windows.Forms.DataGridView DGVINSERTPROD;
-        private System.Windows.Forms.TextBox txtIdPedido;
+        private System.Windows.Forms.TextBox txtIdVenta;
         private System.Windows.Forms.TextBox txtIdSucursal;
         private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.TextBox txtFecha;
