@@ -287,6 +287,12 @@
     <Compile Include="Forms\ClienteUIOinsert.Designer.cs">
       <DependentUpon>ClienteUIOinsert.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VentaActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VentaActualizar.Designer.cs">
+      <DependentUpon>VentaActualizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\VENTAinsert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -473,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClienteUIOinsert.resx">
       <DependentUpon>ClienteUIOinsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VentaActualizar.resx">
+      <DependentUpon>VentaActualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VENTAinsert.resx">
       <DependentUpon>VENTAinsert.cs</DependentUpon>
