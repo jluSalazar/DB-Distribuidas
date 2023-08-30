@@ -22,14 +22,14 @@ namespace WinAppBiblioteca.Forms
         //REPLICACIÓN
         private void Form1_Load(object sender, EventArgs e)
         {
-            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=prueba;PASSWORD=prueba";
+            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
             conn = new OracleConnection(conStr);
             updateGried();
         }
 
         private void updateGried()
         {
-            string consulta = "SELECT * FROM VWTABLA_ORG"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            string consulta = "SELECT * FROM VWINVENTARIO"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
             conn.Open(); // Abre la conexión a la base de datos Oracle
             OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
