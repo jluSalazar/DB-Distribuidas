@@ -162,7 +162,16 @@ namespace WinAppBiblioteca
 
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
+            pnlNavIndicator.Height = btnUpdate.Height;
+            pnlNavIndicator.Top = btnUpdate.Top;
+            pnlNavIndicator.Left = btnUpdate.Left;
+            ButtonColorReset(btnDelete);
 
+            lblTabTitle.Text = "REPLICACIÓN";
+            this.pnlContent.Controls.Clear();
+            VistaMaterializada deleteForm = new VistaMaterializada() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pnlContent.Controls.Add(deleteForm);
+            deleteForm.Show();
         }
     }
 }
