@@ -269,12 +269,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmpleadoActualizar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmpleadoActualizar.Designer.cs">
-      <DependentUpon>EmpleadoActualizar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ClienteGYEActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,35 +287,11 @@
     <Compile Include="Forms\EmpleadoINSERT.Designer.cs">
       <DependentUpon>EmpleadoINSERT.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InventarioActualizar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\InventarioActualizar.Designer.cs">
-      <DependentUpon>InventarioActualizar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\InventarioINSERT.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\InventarioINSERT.Designer.cs">
       <DependentUpon>InventarioINSERT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ClienteUIOinsert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ClienteUIOinsert.Designer.cs">
-      <DependentUpon>ClienteUIOinsert.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PedidoUIOActualizar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PedidoUIOActualizar.Designer.cs">
-      <DependentUpon>PedidoUIOActualizar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ProveedorUIOActualizar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ProveedorUIOActualizar.Designer.cs">
-      <DependentUpon>ProveedorUIOActualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SucursalActualizar.cs">
       <SubType>Form</SubType>
@@ -341,23 +311,11 @@
     <Compile Include="Forms\VENTAinsert.Designer.cs">
       <DependentUpon>VENTAinsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PedidoUIOinsert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PedidoUIOinsert.Designer.cs">
-      <DependentUpon>PedidoUIOinsert.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\PedidoGYEinsert .cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\PedidoGYEinsert .Designer.cs">
       <DependentUpon>PedidoGYEinsert .cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ProveedorUIOinsert.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ProveedorUIOinsert.Designer.cs">
-      <DependentUpon>ProveedorUIOinsert.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProveedorGYEinsert .cs">
       <SubType>Form</SubType>
@@ -513,9 +471,6 @@
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
-    <EmbeddedResource Include="EmpleadoActualizar.resx">
-      <DependentUpon>EmpleadoActualizar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClienteGYEActualizar.resx">
       <DependentUpon>ClienteGYEActualizar.cs</DependentUpon>
     </EmbeddedResource>
@@ -525,20 +480,8 @@
     <EmbeddedResource Include="Forms\EmpleadoINSERT.resx">
       <DependentUpon>EmpleadoINSERT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InventarioActualizar.resx">
-      <DependentUpon>InventarioActualizar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventarioINSERT.resx">
       <DependentUpon>InventarioINSERT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClienteUIOinsert.resx">
-      <DependentUpon>ClienteUIOinsert.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PedidoUIOActualizar.resx">
-      <DependentUpon>PedidoUIOActualizar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProveedorUIOActualizar.resx">
-      <DependentUpon>ProveedorUIOActualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SucursalActualizar.resx">
       <DependentUpon>SucursalActualizar.cs</DependentUpon>
@@ -549,14 +492,8 @@
     <EmbeddedResource Include="Forms\VENTAinsert.resx">
       <DependentUpon>VENTAinsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PedidoUIOinsert.resx">
-      <DependentUpon>PedidoUIOinsert.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PedidoGYEinsert .resx">
       <DependentUpon>PedidoGYEinsert .cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProveedorUIOinsert.resx">
-      <DependentUpon>ProveedorUIOinsert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProveedorGYEinsert .resx">
       <DependentUpon>ProveedorGYEinsert .cs</DependentUpon>

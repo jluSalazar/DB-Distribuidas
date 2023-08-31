@@ -33,6 +33,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Btn_search = new FontAwesome.Sharp.IconButton();
             this.txt_FECHA = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.DGVProd_Act = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
+            this.ButEliminar = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProd_Act)).BeginInit();
             this.SuspendLayout();
@@ -53,13 +55,14 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.Btn_search);
             this.panel3.Controls.Add(this.txt_FECHA);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.txt_IDCLIENTE);
             this.panel3.Controls.Add(this.txt_IDSUCURSAL);
             this.panel3.Controls.Add(this.txt_IDVENTA);
-            this.panel3.Location = new System.Drawing.Point(2, 105);
+            this.panel3.Location = new System.Drawing.Point(26, 96);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 174);
             this.panel3.TabIndex = 30;
@@ -106,6 +109,21 @@
             this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "IDVENTA:";
+            // 
+            // Btn_search
+            // 
+            this.Btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_search.FlatAppearance.BorderSize = 0;
+            this.Btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_search.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.Btn_search.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.Btn_search.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btn_search.IconSize = 28;
+            this.Btn_search.Location = new System.Drawing.Point(342, 22);
+            this.Btn_search.Name = "Btn_search";
+            this.Btn_search.Size = new System.Drawing.Size(35, 24);
+            this.Btn_search.TabIndex = 16;
+            this.Btn_search.UseVisualStyleBackColor = true;
             // 
             // txt_FECHA
             // 
@@ -205,7 +223,7 @@
             this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizar.IconSize = 45;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.Location = new System.Drawing.Point(341, 298);
+            this.btnActualizar.Location = new System.Drawing.Point(281, 298);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(204, 48);
             this.btnActualizar.TabIndex = 32;
@@ -214,12 +232,36 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // ButEliminar
+            // 
+            this.ButEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.ButEliminar.FlatAppearance.BorderSize = 2;
+            this.ButEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.ButEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButEliminar.Font = new System.Drawing.Font("Courier New", 18F);
+            this.ButEliminar.ForeColor = System.Drawing.Color.Red;
+            this.ButEliminar.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.ButEliminar.IconColor = System.Drawing.Color.Red;
+            this.ButEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButEliminar.IconSize = 45;
+            this.ButEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButEliminar.Location = new System.Drawing.Point(557, 298);
+            this.ButEliminar.Name = "ButEliminar";
+            this.ButEliminar.Size = new System.Drawing.Size(204, 48);
+            this.ButEliminar.TabIndex = 47;
+            this.ButEliminar.Text = "ELIMINAR";
+            this.ButEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButEliminar.UseVisualStyleBackColor = true;
+            this.ButEliminar.Click += new System.EventHandler(this.ButEliminar_Click);
+            // 
             // VentaActualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1000, 675);
+            this.ClientSize = new System.Drawing.Size(1049, 675);
+            this.Controls.Add(this.ButEliminar);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.DGVProd_Act);
             this.Controls.Add(this.btnActualizar);
@@ -243,6 +285,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton Btn_search;
         private System.Windows.Forms.TextBox txt_FECHA;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
@@ -252,5 +295,6 @@
         private System.Windows.Forms.DataGridView DGVProd_Act;
         private FontAwesome.Sharp.IconButton btnActualizar;
         private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton ButEliminar;
     }
 }
