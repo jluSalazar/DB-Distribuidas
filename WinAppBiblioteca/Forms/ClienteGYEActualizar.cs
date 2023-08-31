@@ -68,8 +68,8 @@ namespace WinAppBiblioteca.Forms
         private void Actualizar(string id, string idsucursal, string nombre, string apellido, string ciudad, string provincia, string telefono)
         {
 
-            string updateQuery = "UPDATE CLIENTE_GYE SET IDSUCURSAL = :idsucursal, NOMBRE = :nombre, APELLIDO = :apellido, CIUDAD = :ciudad, PROVINCIA = :provincia, TELEFONO = :telefono WHERE IDCLIENTE = :idCliente";
-            
+            string updateQuery = "UPDATE cliente_gye SET IDSUCURSAL = :idsucursal, NOMBRE = :nombre, APELLIDO = :apellido, CIUDAD = :ciudad, PROVINCIA = :provincia, TELEFONO = :telefono WHERE IDCLIENTE = :idCliente";
+
 
             // Crea un objeto OracleCommand
             OracleCommand updateCommand = new OracleCommand(updateQuery, conn);

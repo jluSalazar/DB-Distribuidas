@@ -19,10 +19,12 @@ namespace WinAppBiblioteca
     public partial class ClienteGYEinsert : Form 
     {
         OracleConnection conn;
+        bool IsMaster;
 
-        public ClienteGYEinsert()
+        public ClienteGYEinsert(bool isMaster)
         {
             InitializeComponent();
+            IsMaster = isMaster;
         }
 
         #region "Variables"
@@ -112,9 +114,21 @@ namespace WinAppBiblioteca
         {
             string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
             conn = new OracleConnection(conStr);
-            string consulta = "SELECT * FROM cliente_gye"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            
+            string mostrartabla;
+            if (IsMaster)
+            {
+                mostrartabla = "SELECT * FROM cliente_uio";
+            }
+            else
+            {
+                mostrartabla = "SELECT * FROM cliente_gye";
+            }
+
+
+         
             conn.Open(); // Abre la conexión a la base de datos Oracle
-            OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
+            OracleCommand comando = new OracleCommand(mostrartabla, conn); // Utiliza "conn" como tu objeto de conexión
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
             DataTable tabla = new DataTable();
             adaptador.Fill(tabla);
@@ -142,13 +156,20 @@ namespace WinAppBiblioteca
                 MessageBox.Show("Por favor, completa todos los campos obligatorios.");
                 return;
             }
+            string insertQuery;
+            if (IsMaster)
+            {
+                insertQuery = "INSERT INTO Cliente_UIO (IdCliente, IdSucursal, Nombre, Apellido, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idCliente, :idSucursal, :nombre, :apellido, :ciudad, :provincia, :telefono)";
+            }
+            else
+            {
+                insertQuery = "INSERT INTO Cliente_GYE (IdCliente, IdSucursal, Nombre, Apellido, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idCliente, :idSucursal, :nombre, :apellido, :ciudad, :provincia, :telefono)";
+            }
 
             // Modifica la cadena de conexión para usar el Database Link
             string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
-
-            // Sentencia SQL de inserción con el uso de Database Link
-            string insertQuery = "INSERT INTO Cliente_GYE (IdCliente, IdSucursal, Nombre, Apellido, Ciudad, Provincia, Telefono) " +
-                                 "VALUES (:idCliente, :idSucursal, :nombre, :apellido, :ciudad, :provincia, :telefono)";
 
             // Crea un objeto OracleCommand
             OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
