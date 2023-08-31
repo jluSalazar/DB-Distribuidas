@@ -176,5 +176,57 @@ namespace WinAppBiblioteca.Forms
         {
 
         }
+        private void EliminarProducto(string idProducto)
+        {
+            // Verifica que el ID del producto no esté vacío
+            if (string.IsNullOrWhiteSpace(idProducto))
+            {
+                MessageBox.Show("Por favor, ingresa el ID del producto que deseas eliminar.");
+                return;
+            }
+
+            string deleteQuery;
+            if (IsMaster)
+            {
+                deleteQuery = "DELETE FROM Producto WHERE IdProducto = :idProducto";
+            }
+            else
+            {
+                deleteQuery = "DELETE FROM Producto@replica_proyrad WHERE IdProducto = :idProducto";
+            }
+
+            // Crea un objeto OracleCommand
+            OracleCommand deleteCommand = new OracleCommand(deleteQuery, conn);
+
+            // Asigna el valor al parámetro
+            deleteCommand.Parameters.Add(":idProducto", OracleDbType.Varchar2).Value = idProducto;
+
+            try
+            {
+                // Abre la conexión y ejecuta la consulta de eliminación
+                conn.Open();
+                int rowsAffected = deleteCommand.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("El producto se eliminó con éxito.");
+                    ListarDGV(); // Actualiza el DataGridView para mostrar los datos actualizados
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró un producto con el ID especificado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el producto: " + ex.Message);
+            }
+        }
+        private void ButEliminar_Click(object sender, EventArgs e)
+        {
+            string idProducto = txt_Codigo.Text;
+            EliminarProducto(idProducto);
+        }
     }
 }
