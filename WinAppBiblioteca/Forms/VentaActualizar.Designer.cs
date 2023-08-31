@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txt_TOTAL = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txt_FECHA = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,10 +41,6 @@
             this.txt_IDVENTA = new System.Windows.Forms.TextBox();
             this.DGVProd_Act = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_TOTAL = new System.Windows.Forms.TextBox();
             this.Btn_search = new FontAwesome.Sharp.IconButton();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
@@ -61,10 +61,53 @@
             this.panel3.Controls.Add(this.txt_IDCLIENTE);
             this.panel3.Controls.Add(this.txt_IDSUCURSAL);
             this.panel3.Controls.Add(this.txt_IDVENTA);
-            this.panel3.Location = new System.Drawing.Point(20, 73);
+            this.panel3.Location = new System.Drawing.Point(26, 96);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 174);
             this.panel3.TabIndex = 30;
+            // 
+            // txt_TOTAL
+            // 
+            this.txt_TOTAL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.txt_TOTAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TOTAL.ForeColor = System.Drawing.Color.White;
+            this.txt_TOTAL.Location = new System.Drawing.Point(566, 98);
+            this.txt_TOTAL.Name = "txt_TOTAL";
+            this.txt_TOTAL.Size = new System.Drawing.Size(169, 24);
+            this.txt_TOTAL.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(464, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 20);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "TOTAL:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 20);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "IDSUCURSAL:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(42, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "IDVENTA:";
             // 
             // txt_FECHA
             // 
@@ -133,65 +176,22 @@
             this.DGVProd_Act.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.DGVProd_Act.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DGVProd_Act.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVProd_Act.Location = new System.Drawing.Point(13, 344);
+            this.DGVProd_Act.Location = new System.Drawing.Point(12, 376);
             this.DGVProd_Act.Name = "DGVProd_Act";
             this.DGVProd_Act.Size = new System.Drawing.Size(968, 287);
             this.DGVProd_Act.TabIndex = 33;
-            this.DGVProd_Act.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLibro_CellClick);
+            this.DGVProd_Act.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(49, 5);
+            this.label2.Location = new System.Drawing.Point(47, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(236, 27);
             this.label2.TabIndex = 31;
             this.label2.Text = "ACTUALIZAR VENTA";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(42, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "IDVENTA:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 20);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "IDSUCURSAL:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(464, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 20);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "TOTAL:";
-            // 
-            // txt_TOTAL
-            // 
-            this.txt_TOTAL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
-            this.txt_TOTAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TOTAL.ForeColor = System.Drawing.Color.White;
-            this.txt_TOTAL.Location = new System.Drawing.Point(566, 98);
-            this.txt_TOTAL.Name = "txt_TOTAL";
-            this.txt_TOTAL.Size = new System.Drawing.Size(169, 24);
-            this.txt_TOTAL.TabIndex = 21;
             // 
             // Btn_search
             // 
@@ -222,7 +222,7 @@
             this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizar.IconSize = 45;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.Location = new System.Drawing.Point(335, 275);
+            this.btnActualizar.Location = new System.Drawing.Point(341, 298);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(204, 48);
             this.btnActualizar.TabIndex = 32;
@@ -236,7 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1033, 636);
+            this.ClientSize = new System.Drawing.Size(1049, 675);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.DGVProd_Act);
             this.Controls.Add(this.btnActualizar);

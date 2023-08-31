@@ -18,7 +18,7 @@ namespace WinAppBiblioteca
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new VentaActualizar(true));
+            Application.Run(new ClienteGYEActualizar(true));
 
         }
     }

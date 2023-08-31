@@ -38,7 +38,7 @@ namespace WinAppBiblioteca.Forms
             conn.Close(); // Cierra la conexión después de usarla
 
         }
-        private void DGVLibro_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
