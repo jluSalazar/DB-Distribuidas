@@ -269,6 +269,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ClienteGYEActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClienteGYEActualizar.Designer.cs">
+      <DependentUpon>ClienteGYEActualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClienteUIOActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClienteUIOActualizar.Designer.cs">
+      <DependentUpon>ClienteUIOActualizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmpleadoINSERT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +298,12 @@
     </Compile>
     <Compile Include="Forms\ClienteUIOinsert.Designer.cs">
       <DependentUpon>ClienteUIOinsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SucursalActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SucursalActualizar.Designer.cs">
+      <DependentUpon>SucursalActualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\VentaActualizar.cs">
       <SubType>Form</SubType>
@@ -471,6 +489,12 @@
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
+    <EmbeddedResource Include="Forms\ClienteGYEActualizar.resx">
+      <DependentUpon>ClienteGYEActualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClienteUIOActualizar.resx">
+      <DependentUpon>ClienteUIOActualizar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmpleadoINSERT.resx">
       <DependentUpon>EmpleadoINSERT.cs</DependentUpon>
     </EmbeddedResource>
@@ -479,6 +503,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClienteUIOinsert.resx">
       <DependentUpon>ClienteUIOinsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SucursalActualizar.resx">
+      <DependentUpon>SucursalActualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VentaActualizar.resx">
       <DependentUpon>VentaActualizar.cs</DependentUpon>
