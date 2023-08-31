@@ -79,7 +79,7 @@ namespace WinAppBiblioteca.Forms
 
 
             string updateQuery;
-                if (IsMaster)
+            if (IsMaster)
             {
                 updateQuery = "UPDATE Venta SET IDSUCURSAL = :idSucursal, IDCLIENTE = :idCliente, FECHA = :fecha, TOTAL = :total WHERE IDVENTA = :idVenta";
             }
@@ -149,6 +149,59 @@ namespace WinAppBiblioteca.Forms
         private void VentaActualizar_Load(object sender, EventArgs e)
         {
             this.ListarDGV();
+        }
+        private void EliminarVenta(string idVenta)
+        {
+            // Verifica que el ID de la venta no esté vacío
+            if (string.IsNullOrWhiteSpace(idVenta))
+            {
+                MessageBox.Show("Por favor, ingresa el ID de la venta que deseas eliminar.");
+                return;
+            }
+
+            string deleteQuery;
+            if (IsMaster)
+            {
+                deleteQuery = "DELETE FROM Venta WHERE IDVENTA = :idVenta";
+            }
+            else
+            {
+                deleteQuery = "DELETE FROM Venta@replica_proyrad WHERE IDVENTA = :idVenta";
+            }
+
+            // Crea un objeto OracleCommand
+            OracleCommand deleteCommand = new OracleCommand(deleteQuery, conn);
+
+            // Asigna el valor al parámetro
+            deleteCommand.Parameters.Add(":idVenta", OracleDbType.Varchar2).Value = idVenta;
+
+            try
+            {
+                // Abre la conexión y ejecuta la consulta de eliminación
+                conn.Open();
+                int rowsAffected = deleteCommand.ExecuteNonQuery();
+                conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("La venta se eliminó con éxito.");
+                    ListarDGV(); // Actualiza el DataGridView para mostrar los datos actualizados
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró una venta con el ID especificado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar la venta: " + ex.Message);
+                conn.Close();
+            }
+        }
+        private void ButEliminar_Click(object sender, EventArgs e)
+        {
+            string idVenta = txt_IDVENTA.Text;
+            EliminarVenta(idVenta);
         }
     }
 }

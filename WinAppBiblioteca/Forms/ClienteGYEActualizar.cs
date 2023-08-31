@@ -14,7 +14,7 @@ namespace WinAppBiblioteca.Forms
     public partial class ClienteGYEActualizar : Form
     {
         OracleConnection conn;
-        string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=jsalazar;PASSWORD=jsalazar";
+        string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
 
         bool IsMaster;
         public ClienteGYEActualizar(bool ismaster)
@@ -68,8 +68,8 @@ namespace WinAppBiblioteca.Forms
         private void Actualizar(string id, string idsucursal, string nombre, string apellido, string ciudad, string provincia, string telefono)
         {
 
-            string updateQuery = "UPDATE CLIENTE_GYE SET IDSUCURSAL = :idsucursal, NOMBRE = :nombre, APELLIDO = :apellido, CIUDAD = :ciudad, PROVINCIA = :provincia, TELEFONO = :telefono WHERE IDCLIENTE = :idCliente";
-            
+            string updateQuery = "UPDATE cliente_gye SET IDSUCURSAL = :idsucursal, NOMBRE = :nombre, APELLIDO = :apellido, CIUDAD = :ciudad, PROVINCIA = :provincia, TELEFONO = :telefono WHERE IDCLIENTE = :idCliente";
+
 
             // Crea un objeto OracleCommand
             OracleCommand updateCommand = new OracleCommand(updateQuery, conn);
@@ -124,6 +124,55 @@ namespace WinAppBiblioteca.Forms
         private void ClienteGYEActualizar_Load_1(object sender, EventArgs e)
         {
             this.ListarDGV();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_ID.Text))
+            {
+                string id = txt_ID.Text;
+
+                // Query para eliminar el registro
+                string deleteQuery = "DELETE FROM CLIENTE_GYE WHERE IDCLIENTE = :idCliente";
+
+                // Crea un objeto OracleCommand
+                OracleCommand deleteCommand = new OracleCommand(deleteQuery, conn);
+
+                // Asigna el valor al parámetro
+                deleteCommand.Parameters.Add(":idCliente", OracleDbType.Varchar2).Value = id;
+
+                try
+                {
+                    // Abre la conexión y ejecuta la consulta de eliminación
+                    conn.Open();
+                    int rowsAffected = deleteCommand.ExecuteNonQuery();
+                    conn.Close();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("El cliente se eliminó con éxito.");
+                        ListarDGV(); // Actualiza el DataGridView para mostrar los datos actualizados
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró un cliente con el ID especificado.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el cliente: " + ex.Message);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un cliente de la lista antes de eliminarlo.");
+            }
+        }
+
+        private void txt_ID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
