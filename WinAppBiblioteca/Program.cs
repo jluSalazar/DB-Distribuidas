@@ -18,7 +18,7 @@ namespace WinAppBiblioteca
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new EmpleadoActualizar(true));
+            Application.Run(new VistaMaterializada());
 
         }
     }

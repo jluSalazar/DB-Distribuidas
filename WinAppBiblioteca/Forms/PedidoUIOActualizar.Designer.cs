@@ -1,6 +1,6 @@
 ﻿namespace WinAppBiblioteca.Forms
 {
-    partial class VentaActualizar
+    partial class PedidoUIOActualizar
     {
         /// <summary>
         /// Required designer variable.
@@ -38,12 +38,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_IDCLIENTE = new System.Windows.Forms.TextBox();
             this.txt_IDSUCURSAL = new System.Windows.Forms.TextBox();
-            this.txt_IDVENTA = new System.Windows.Forms.TextBox();
-            this.DGVProd_Act = new System.Windows.Forms.DataGridView();
+            this.txt_ID = new System.Windows.Forms.TextBox();
+            this.DGV_Act = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProd_Act)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Act)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -58,11 +58,11 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.txt_IDCLIENTE);
             this.panel3.Controls.Add(this.txt_IDSUCURSAL);
-            this.panel3.Controls.Add(this.txt_IDVENTA);
-            this.panel3.Location = new System.Drawing.Point(2, 105);
+            this.panel3.Controls.Add(this.txt_ID);
+            this.panel3.Location = new System.Drawing.Point(0, 95);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 174);
-            this.panel3.TabIndex = 30;
+            this.panel3.TabIndex = 34;
             // 
             // txt_TOTAL
             // 
@@ -103,9 +103,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(42, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.TabIndex = 18;
-            this.label1.Text = "IDVENTA:";
+            this.label1.Text = "IDPEDIDO:";
             // 
             // txt_FECHA
             // 
@@ -159,37 +159,37 @@
             this.txt_IDSUCURSAL.Size = new System.Drawing.Size(168, 24);
             this.txt_IDSUCURSAL.TabIndex = 5;
             // 
-            // txt_IDVENTA
+            // txt_ID
             // 
-            this.txt_IDVENTA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
-            this.txt_IDVENTA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IDVENTA.ForeColor = System.Drawing.Color.White;
-            this.txt_IDVENTA.Location = new System.Drawing.Point(151, 19);
-            this.txt_IDVENTA.Name = "txt_IDVENTA";
-            this.txt_IDVENTA.Size = new System.Drawing.Size(168, 24);
-            this.txt_IDVENTA.TabIndex = 4;
+            this.txt_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.txt_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ID.ForeColor = System.Drawing.Color.White;
+            this.txt_ID.Location = new System.Drawing.Point(151, 19);
+            this.txt_ID.Name = "txt_ID";
+            this.txt_ID.Size = new System.Drawing.Size(168, 24);
+            this.txt_ID.TabIndex = 4;
             // 
-            // DGVProd_Act
+            // DGV_Act
             // 
-            this.DGVProd_Act.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
-            this.DGVProd_Act.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.DGVProd_Act.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVProd_Act.Location = new System.Drawing.Point(12, 376);
-            this.DGVProd_Act.Name = "DGVProd_Act";
-            this.DGVProd_Act.Size = new System.Drawing.Size(968, 287);
-            this.DGVProd_Act.TabIndex = 33;
-            this.DGVProd_Act.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
+            this.DGV_Act.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.DGV_Act.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.DGV_Act.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Act.Location = new System.Drawing.Point(10, 366);
+            this.DGV_Act.Name = "DGV_Act";
+            this.DGV_Act.Size = new System.Drawing.Size(968, 287);
+            this.DGV_Act.TabIndex = 37;
+            this.DGV_Act.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(47, 32);
+            this.label2.Location = new System.Drawing.Point(45, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(236, 27);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "ACTUALIZAR VENTA";
+            this.label2.Size = new System.Drawing.Size(306, 27);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "ACTUALIZAR PEDIDO_UIO";
             // 
             // btnActualizar
             // 
@@ -205,32 +205,32 @@
             this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizar.IconSize = 45;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.Location = new System.Drawing.Point(341, 298);
+            this.btnActualizar.Location = new System.Drawing.Point(339, 288);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(204, 48);
-            this.btnActualizar.TabIndex = 32;
+            this.btnActualizar.TabIndex = 36;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // VentaActualizar
+            // PedidoUIOActualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1000, 675);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.DGVProd_Act);
+            this.Controls.Add(this.DGV_Act);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VentaActualizar";
-            this.Text = "VentaActualizar";
-            this.Load += new System.EventHandler(this.VentaActualizar_Load);
+            this.Name = "PedidoUIOActualizar";
+            this.Text = "PEDIDO";
+            this.Load += new System.EventHandler(this.PedidoUIOActualizar_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProd_Act)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Act)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,8 +248,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_IDCLIENTE;
         private System.Windows.Forms.TextBox txt_IDSUCURSAL;
-        private System.Windows.Forms.TextBox txt_IDVENTA;
-        private System.Windows.Forms.DataGridView DGVProd_Act;
+        private System.Windows.Forms.TextBox txt_ID;
+        private System.Windows.Forms.DataGridView DGV_Act;
         private FontAwesome.Sharp.IconButton btnActualizar;
         private System.Windows.Forms.Label label2;
     }
