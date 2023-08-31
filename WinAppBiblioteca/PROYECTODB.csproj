@@ -269,6 +269,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmpleadoActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadoActualizar.Designer.cs">
+      <DependentUpon>EmpleadoActualizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClienteGYEActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,12 @@
     </Compile>
     <Compile Include="Forms\EmpleadoINSERT.Designer.cs">
       <DependentUpon>EmpleadoINSERT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventarioActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventarioActualizar.Designer.cs">
+      <DependentUpon>InventarioActualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InventarioINSERT.cs">
       <SubType>Form</SubType>
@@ -489,6 +501,9 @@
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
+    <EmbeddedResource Include="EmpleadoActualizar.resx">
+      <DependentUpon>EmpleadoActualizar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClienteGYEActualizar.resx">
       <DependentUpon>ClienteGYEActualizar.cs</DependentUpon>
     </EmbeddedResource>
@@ -497,6 +512,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmpleadoINSERT.resx">
       <DependentUpon>EmpleadoINSERT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventarioActualizar.resx">
+      <DependentUpon>InventarioActualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventarioINSERT.resx">
       <DependentUpon>InventarioINSERT.cs</DependentUpon>
