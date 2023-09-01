@@ -119,11 +119,11 @@
             this.lbInsertar.AutoSize = true;
             this.lbInsertar.Font = new System.Drawing.Font("Courier New", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInsertar.ForeColor = System.Drawing.Color.White;
-            this.lbInsertar.Location = new System.Drawing.Point(48, 89);
+            this.lbInsertar.Location = new System.Drawing.Point(45, 34);
             this.lbInsertar.Name = "lbInsertar";
-            this.lbInsertar.Size = new System.Drawing.Size(416, 40);
+            this.lbInsertar.Size = new System.Drawing.Size(542, 40);
             this.lbInsertar.TabIndex = 28;
-            this.lbInsertar.Text = "INSERTAR PEDIDO GYE";
+            this.lbInsertar.Text = "INSERTAR PEDIDO GYE Y UIO";
             // 
             // DGVINSERTPROD
             // 
