@@ -37,12 +37,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlNavIndicator = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
-            this.btnRestaurants = new System.Windows.Forms.Button();
+            this.btnAuditoria = new System.Windows.Forms.Button();
             this.btnAnalytics = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnFrag = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnCustomers = new System.Windows.Forms.Button();
-            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -152,12 +151,11 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.panel2.Controls.Add(this.pnlNavIndicator);
             this.panel2.Controls.Add(this.btnSettings);
-            this.panel2.Controls.Add(this.btnRestaurants);
+            this.panel2.Controls.Add(this.btnAuditoria);
             this.panel2.Controls.Add(this.btnAnalytics);
-            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnFrag);
             this.panel2.Controls.Add(this.btnUpdate);
-            this.panel2.Controls.Add(this.btnCustomers);
-            this.panel2.Controls.Add(this.btnDashboard);
+            this.panel2.Controls.Add(this.btnInsert);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 60);
@@ -190,22 +188,22 @@
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSettings.UseVisualStyleBackColor = true;
             // 
-            // btnRestaurants
+            // btnAuditoria
             // 
-            this.btnRestaurants.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRestaurants.FlatAppearance.BorderSize = 0;
-            this.btnRestaurants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurants.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurants.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnRestaurants.Image = global::WinAppBiblioteca.Properties.Resources.hamburger;
-            this.btnRestaurants.Location = new System.Drawing.Point(0, 328);
-            this.btnRestaurants.Name = "btnRestaurants";
-            this.btnRestaurants.Size = new System.Drawing.Size(200, 42);
-            this.btnRestaurants.TabIndex = 4;
-            this.btnRestaurants.Text = "Auditoria";
-            this.btnRestaurants.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnRestaurants.UseVisualStyleBackColor = true;
-            this.btnRestaurants.Click += new System.EventHandler(this.BtnRestaurants_Click);
+            this.btnAuditoria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAuditoria.FlatAppearance.BorderSize = 0;
+            this.btnAuditoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAuditoria.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAuditoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnAuditoria.Image = global::WinAppBiblioteca.Properties.Resources.hamburger;
+            this.btnAuditoria.Location = new System.Drawing.Point(0, 286);
+            this.btnAuditoria.Name = "btnAuditoria";
+            this.btnAuditoria.Size = new System.Drawing.Size(200, 42);
+            this.btnAuditoria.TabIndex = 4;
+            this.btnAuditoria.Text = "Auditoria";
+            this.btnAuditoria.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAuditoria.UseVisualStyleBackColor = true;
+            this.btnAuditoria.Click += new System.EventHandler(this.BtnAuditoria_Click);
             // 
             // btnAnalytics
             // 
@@ -215,7 +213,7 @@
             this.btnAnalytics.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnalytics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
             this.btnAnalytics.Image = global::WinAppBiblioteca.Properties.Resources.data_analytics;
-            this.btnAnalytics.Location = new System.Drawing.Point(0, 286);
+            this.btnAnalytics.Location = new System.Drawing.Point(0, 244);
             this.btnAnalytics.Name = "btnAnalytics";
             this.btnAnalytics.Size = new System.Drawing.Size(200, 42);
             this.btnAnalytics.TabIndex = 4;
@@ -224,22 +222,22 @@
             this.btnAnalytics.UseVisualStyleBackColor = true;
             this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
             // 
-            // btnDelete
+            // btnFrag
             // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnDelete.Image = global::WinAppBiblioteca.Properties.Resources.clipboard;
-            this.btnDelete.Location = new System.Drawing.Point(0, 244);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(200, 42);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelet_Click);
+            this.btnFrag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFrag.FlatAppearance.BorderSize = 0;
+            this.btnFrag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFrag.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFrag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnFrag.Image = global::WinAppBiblioteca.Properties.Resources.clipboard;
+            this.btnFrag.Location = new System.Drawing.Point(0, 202);
+            this.btnFrag.Name = "btnFrag";
+            this.btnFrag.Size = new System.Drawing.Size(200, 42);
+            this.btnFrag.TabIndex = 4;
+            this.btnFrag.Text = "Fragmentacion";
+            this.btnFrag.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnFrag.UseVisualStyleBackColor = true;
+            this.btnFrag.Click += new System.EventHandler(this.btnFrag_Click);
             // 
             // btnUpdate
             // 
@@ -249,7 +247,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
             this.btnUpdate.Image = global::WinAppBiblioteca.Properties.Resources.employee;
-            this.btnUpdate.Location = new System.Drawing.Point(0, 202);
+            this.btnUpdate.Location = new System.Drawing.Point(0, 160);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(200, 42);
             this.btnUpdate.TabIndex = 4;
@@ -258,39 +256,22 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnCustomers
+            // btnInsert
             // 
-            this.btnCustomers.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCustomers.FlatAppearance.BorderSize = 0;
-            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnCustomers.Image = global::WinAppBiblioteca.Properties.Resources.value__1_;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 160);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(200, 42);
-            this.btnCustomers.TabIndex = 4;
-            this.btnCustomers.Text = "Querys";
-            this.btnCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnCustomers.UseVisualStyleBackColor = true;
-            this.btnCustomers.Click += new System.EventHandler(this.BtnCustomers_Click);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnDashboard.Image = global::WinAppBiblioteca.Properties.Resources.home;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 118);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(200, 42);
-            this.btnDashboard.TabIndex = 4;
-            this.btnDashboard.Text = "Insertar";
-            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
+            this.btnInsert.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnInsert.Image = global::WinAppBiblioteca.Properties.Resources.home;
+            this.btnInsert.Location = new System.Drawing.Point(0, 118);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(200, 42);
+            this.btnInsert.TabIndex = 4;
+            this.btnInsert.Text = "Insertar";
+            this.btnInsert.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // panel3
             // 
@@ -416,15 +397,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTabTitle;
         private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Button btnRestaurants;
+        private System.Windows.Forms.Button btnAuditoria;
         private System.Windows.Forms.Button btnAnalytics;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnFrag;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnCustomers;
-        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel pnlContent;
+        public System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Panel pnlNavIndicator;
         private System.Windows.Forms.Button btnExit;
     }
