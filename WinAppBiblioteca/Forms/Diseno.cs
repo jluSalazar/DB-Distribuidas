@@ -63,47 +63,80 @@ namespace WinAppBiblioteca
         {
             Color activeColor = Color.FromArgb(31, 27, 48);
             Color btnColor = Color.FromArgb(26, 23, 40);
-            btnDashboard.BackColor = btnColor;
-            btnCustomers.BackColor = btnColor;
+            btnInsert.BackColor = btnColor;
             btnUpdate.BackColor = btnColor;
-            btnDelete.BackColor = btnColor;
+            btnFrag.BackColor = btnColor;
             btnAnalytics.BackColor = btnColor;
-            btnRestaurants.BackColor = btnColor;
+            btnAuditoria.BackColor = btnColor;
             btnSettings.BackColor = btnColor;
             button.BackColor = activeColor;
         }
 
-        private void BtnDashboard_Click(object sender, EventArgs e) //Insertar
+        private void BtnInsert_Click(object sender, EventArgs e) //Insertar
         {
-           pnlNavIndicator.Height = btnDashboard.Height;
-            pnlNavIndicator.Top = btnDashboard.Top;
-            pnlNavIndicator.Left = btnDashboard.Left;
-            ButtonColorReset(btnDashboard);
+           pnlNavIndicator.Height = btnInsert.Height;
+            pnlNavIndicator.Top = btnInsert.Top;
+            pnlNavIndicator.Left = btnInsert.Left;
+            ButtonColorReset(btnInsert);
            
            
             lblTabTitle.Text = "Insertar";
             this.pnlContent.Controls.Clear();
-            Insertar insertar = new Insertar() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(insertar);
-            insertar.Show();
+            TablasInsert tinsert = new TablasInsert(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pnlContent.Controls.Add(tinsert);
+            tinsert.Show();
+
+            /*
+              // Configura pnlNavIndicator para resaltar el botón actual
+                pnlNavIndicator.Height = btnCustomers.Height;
+                pnlNavIndicator.Top = btnCustomers.Top;
+                pnlNavIndicator.Left = btnCustomers.Left;
+
+                // Oculta los paneles de contenido actuales (si los hay)
+                foreach (Control control in pnlContent.Controls)
+                {
+                    control.Visible = false;
+                }
+
+                // Muestra el panel de Customers (o el que desees mostrar)
+                if (customersPanel == null)
+                {
+                    customersPanel = new CustomersPanel(); // Reemplaza con el nombre de tu clase de panel
+                    customersPanel.Dock = DockStyle.Fill;
+                    customersPanel.TopLevel = false;
+                    customersPanel.TopMost = true;
+                    pnlContent.Controls.Add(customersPanel);
+                }
+    
+                customersPanel.Visible = true; // Muestra el panel Customers
+             */
         }
 
-        private void BtnCustomers_Click(object sender, EventArgs e)
+        public void MostrarPanel(int opc)
         {
-           pnlNavIndicator.Height = btnCustomers.Height;
-            pnlNavIndicator.Top = btnCustomers.Top;
-            pnlNavIndicator.Left = btnCustomers.Left;
-            ButtonColorReset(btnCustomers);
-            
-            lblTabTitle.Text = "Query";
-            this.pnlContent.Controls.Clear();
-             query = new Query() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(query);
-            query.Show();
+            switch (opc)
+            {
+                case 1:
+
+                    ClienteGYEinsert clientInsert = new ClienteGYEinsert(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    this.pnlContent.Controls.Add(clientInsert);
+                    clientInsert.Show();
+                    break;
+            }
+
         }
-        private void BtnRestaurants_Click(object sender, EventArgs e)
+        private void BtnAuditoria_Click(object sender, EventArgs e)
         {
-            
+            pnlNavIndicator.Height = btnAuditoria.Height;
+            pnlNavIndicator.Top = btnAuditoria.Top;
+            pnlNavIndicator.Left = btnAuditoria.Left;
+            ButtonColorReset(btnAuditoria);
+
+            lblTabTitle.Text = "Auditoria";
+            this.pnlContent.Controls.Clear();
+            Auditoria audit = new Auditoria(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pnlContent.Controls.Add(audit);
+            audit.Show();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -125,23 +158,23 @@ namespace WinAppBiblioteca
 
             lblTabTitle.Text = "Update";
             this.pnlContent.Controls.Clear();
-            ProductoActualizar update = new ProductoActualizar(user.IsMaster){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ProductoActualizar update = new ProductoActualizar(user){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(update);
             update.Show();
         }
 
-        private void btnDelet_Click(object sender, EventArgs e)
+        private void btnFrag_Click(object sender, EventArgs e)
         {
             pnlNavIndicator.Height = btnUpdate.Height;
             pnlNavIndicator.Top = btnUpdate.Top;
             pnlNavIndicator.Left = btnUpdate.Left;
-            ButtonColorReset(btnDelete);
+            ButtonColorReset(btnFrag);
 
-            lblTabTitle.Text = "Delete";
+            lblTabTitle.Text = "Fragmentacion";
             this.pnlContent.Controls.Clear();
-            DeleteForm deleteForm = new DeleteForm() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(deleteForm);
-            deleteForm.Show();
+            ReadFrag readFrag = new ReadFrag(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pnlContent.Controls.Add(readFrag);
+            readFrag.Show();
         }
 
         private void btnAnalytics_Click(object sender, EventArgs e)
@@ -149,7 +182,7 @@ namespace WinAppBiblioteca
             pnlNavIndicator.Height = btnUpdate.Height;
             pnlNavIndicator.Top = btnUpdate.Top;
             pnlNavIndicator.Left = btnUpdate.Left;
-            ButtonColorReset(btnDelete);
+            ButtonColorReset(btnFrag);
 
             lblTabTitle.Text = "REPLICACIÓN";
             this.pnlContent.Controls.Clear();
