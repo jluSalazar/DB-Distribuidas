@@ -9,12 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinAppBiblioteca.Forms;
+using WinAppBiblioteca.Model;
 
 namespace WinAppBiblioteca
 {
     public partial class Diseno : Form
     {
-        bool IsMaster;
+        Usuario user;
         Query query;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         
@@ -30,11 +31,12 @@ namespace WinAppBiblioteca
 
       );
         
-        public Diseno(bool ismaster)
+        public Diseno(Usuario usuario)
         {
             InitializeComponent();
-            IsMaster = ismaster;
+            user = usuario;
             
+            Console.WriteLine(user.ToString());
         }
         private Point lastLocation;
 
@@ -123,7 +125,7 @@ namespace WinAppBiblioteca
 
             lblTabTitle.Text = "Update";
             this.pnlContent.Controls.Clear();
-            ProductoActualizar update = new ProductoActualizar(IsMaster){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ProductoActualizar update = new ProductoActualizar(user.IsMaster){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.pnlContent.Controls.Add(update);
             update.Show();
         }

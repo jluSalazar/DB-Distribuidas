@@ -138,9 +138,9 @@
             this.lbInsertar.ForeColor = System.Drawing.Color.White;
             this.lbInsertar.Location = new System.Drawing.Point(50, 91);
             this.lbInsertar.Name = "lbInsertar";
-            this.lbInsertar.Size = new System.Drawing.Size(437, 40);
+            this.lbInsertar.Size = new System.Drawing.Size(353, 40);
             this.lbInsertar.TabIndex = 28;
-            this.lbInsertar.Text = "INSERTAR CLIENTE GYE";
+            this.lbInsertar.Text = "INSERTAR CLIENTE";
             // 
             // DGVINSERTPROD
             // 
@@ -270,7 +270,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(984, 636);
+            this.ClientSize = new System.Drawing.Size(1000, 675);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTelefono);
@@ -291,6 +291,7 @@
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btInsertar);
             this.Controls.Add(this.DGVINSERTPROD);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClienteGYEinsert";
             this.Text = "Insertar";
             this.Load += new System.EventHandler(this.Insertar_Load);

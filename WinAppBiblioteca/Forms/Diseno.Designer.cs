@@ -202,7 +202,7 @@
             this.btnRestaurants.Name = "btnRestaurants";
             this.btnRestaurants.Size = new System.Drawing.Size(200, 42);
             this.btnRestaurants.TabIndex = 4;
-            this.btnRestaurants.Text = "Restaurants";
+            this.btnRestaurants.Text = "Auditoria";
             this.btnRestaurants.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnRestaurants.UseVisualStyleBackColor = true;
             this.btnRestaurants.Click += new System.EventHandler(this.BtnRestaurants_Click);

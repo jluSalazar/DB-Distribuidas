@@ -19,12 +19,12 @@ namespace WinAppBiblioteca
     public partial class ClienteGYEinsert : Form 
     {
         OracleConnection conn;
-        bool IsMaster;
+        Usuario user;
 
-        public ClienteGYEinsert(bool isMaster)
+        public ClienteGYEinsert(Usuario usuario)
         {
             InitializeComponent();
-            IsMaster = isMaster;
+            user=usuario;
         }
 
         #region "Variables"
@@ -112,11 +112,11 @@ namespace WinAppBiblioteca
         }*/
         private void mostrardatos()
         {
-            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
+            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=" + user.username + ";PASSWORD=" + user.password;
             conn = new OracleConnection(conStr);
             
             string mostrartabla;
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 mostrartabla = "SELECT * FROM cliente_uio";
             }
@@ -157,7 +157,7 @@ namespace WinAppBiblioteca
                 return;
             }
             string insertQuery;
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 insertQuery = "INSERT INTO Cliente_UIO (IdCliente, IdSucursal, Nombre, Apellido, Ciudad, Provincia, Telefono) " +
                                  "VALUES (:idCliente, :idSucursal, :nombre, :apellido, :ciudad, :provincia, :telefono)";
@@ -203,12 +203,6 @@ namespace WinAppBiblioteca
         //Fin de los botones de modificación de datos
 
         //Inicio de los label que indican que infromación debe llenar el usuario
-
-        private void lbNombreL_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void lbFechaL_Click(object sender, EventArgs e)
         {
 
@@ -224,69 +218,6 @@ namespace WinAppBiblioteca
 
         }
 
-        private void lbApellidoA_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbCategoriaL_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbStockL_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbDisponibilidadL_Click(object sender, EventArgs e)
-        {
-
-        }
-        //Fin de los Label
-
-        //Inicio de los cuadros de texto que albergan la la información ingresada por el usuario
-
-        
-        private void txtNombreL_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFechaL_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEdicionL_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombreA_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtApellidoA_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCategoriaL_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtStockL_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDisponibilidadL_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         //EVENTO LOAD
         private void Insertar_Load(object sender, EventArgs e)
@@ -298,23 +229,5 @@ namespace WinAppBiblioteca
         {
 
         }
-
-        private void lbCodigo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_codigo_libro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_codigo_libro_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-
-        //Fin de los cuadros dde texto
     }
 }
