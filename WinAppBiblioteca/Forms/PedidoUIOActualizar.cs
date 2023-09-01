@@ -27,7 +27,16 @@ namespace WinAppBiblioteca.Forms
         private void ListarDGV()
         {
 
-            string consulta = "SELECT * FROM pedido_uio";
+            string consulta;
+            if (IsMaster)
+            {
+                consulta = "SELECT * FROM pedido_uio";
+            }
+            else
+            {
+                consulta = "SELECT * FROM pedido_gye";
+            }
+
             conn.Open();
             OracleCommand comando = new OracleCommand(consulta, conn);
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
@@ -75,7 +84,17 @@ namespace WinAppBiblioteca.Forms
         private void Actualizar(string id, string idsucursal, string idcliente, DateTime fecha, decimal total)
         {
 
-            string updateQuery= "UPDATE pedido_uio SET IDSUCURSAL = :idSucursal, IDCLIENTE = :idCliente, FECHA = :fecha, TOTAL = :total WHERE IDPEDIDO = :idPedido";
+            string updateQuery;
+
+            if (IsMaster)
+            {
+                 updateQuery = "UPDATE pedido_uio SET IDSUCURSAL = :idSucursal, IDCLIENTE = :idCliente, FECHA = :fecha, TOTAL = :total WHERE IDPEDIDO = :idPedido";
+            }
+            else
+            {
+                updateQuery = "UPDATE pedido_gye SET IDSUCURSAL = :idSucursal, IDCLIENTE = :idCliente, FECHA = :fecha, TOTAL = :total WHERE IDPEDIDO = :idPedido";
+            }
+
 
 
             // Crea un objeto OracleCommand
@@ -133,6 +152,58 @@ namespace WinAppBiblioteca.Forms
 
             Actualizar(id, idSucursal, idCliente, fecha, total);
             ListarDGV(); // Actualiza el DataGridView para mostrar los datos actualizados
+        }
+
+        private void ButEliminar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_ID.Text))
+            {
+                string id = txt_ID.Text;
+
+                // Query para eliminar el registro
+                string deleteQuery;
+                if (IsMaster)
+                {
+                    deleteQuery = "DELETE FROM pedido_uio WHERE IDPEDIDO = :idPedido";
+                }
+                else
+                {
+                    deleteQuery = "DELETE FROM pedido_gye WHERE IDPEDIDO = :idPedido";
+                }
+
+                // Crea un objeto OracleCommand
+                OracleCommand deleteCommand = new OracleCommand(deleteQuery, conn);
+
+                // Asigna el valor al parámetro
+                deleteCommand.Parameters.Add(":idPedido", OracleDbType.Varchar2).Value = id;
+
+                try
+                {
+                    // Abre la conexión y ejecuta la consulta de eliminación
+                    conn.Open();
+                    int rowsAffected = deleteCommand.ExecuteNonQuery();
+                    conn.Close();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("El cliente se eliminó con éxito.");
+                        ListarDGV(); // Actualiza el DataGridView para mostrar los datos actualizados
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró un cliente con el ID especificado.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el cliente: " + ex.Message);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un cliente de la lista antes de eliminarlo.");
+            }
         }
     }
 }
