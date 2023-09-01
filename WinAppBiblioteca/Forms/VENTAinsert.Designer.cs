@@ -227,7 +227,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(984, 636);
+            this.ClientSize = new System.Drawing.Size(1000, 675);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTotal);
@@ -244,6 +244,7 @@
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btInsertar);
             this.Controls.Add(this.DGVINSERTPROD);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VENTAinsert";
             this.Text = "Insertar";
             this.Load += new System.EventHandler(this.Insertar_Load);

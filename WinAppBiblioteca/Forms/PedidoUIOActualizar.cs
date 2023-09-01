@@ -9,26 +9,28 @@ using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinAppBiblioteca.Model;
 
 namespace WinAppBiblioteca.Forms
 {
     public partial class PedidoUIOActualizar : Form
     {
         OracleConnection conn;
-        string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=jsalazar;PASSWORD=jsalazar";
+        string conStr;
 
-        bool IsMaster;
-        public PedidoUIOActualizar(bool ismaster)
+        Usuario user;
+        public PedidoUIOActualizar(Usuario usuario)
         {
             InitializeComponent();
+            user = usuario;
+            conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=" + user.username + ";PASSWORD=" + user.password;
             conn = new OracleConnection(conStr);
-            IsMaster = ismaster;
         }
         private void ListarDGV()
         {
 
             string consulta;
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 consulta = "SELECT * FROM pedido_uio";
             }
@@ -86,7 +88,7 @@ namespace WinAppBiblioteca.Forms
 
             string updateQuery;
 
-            if (IsMaster)
+            if (user.IsMaster)
             {
                  updateQuery = "UPDATE pedido_uio SET IDSUCURSAL = :idSucursal, IDCLIENTE = :idCliente, FECHA = :fecha, TOTAL = :total WHERE IDPEDIDO = :idPedido";
             }
@@ -162,7 +164,7 @@ namespace WinAppBiblioteca.Forms
 
                 // Query para eliminar el registro
                 string deleteQuery;
-                if (IsMaster)
+                if (user.IsMaster)
                 {
                     deleteQuery = "DELETE FROM pedido_uio WHERE IDPEDIDO = :idPedido";
                 }

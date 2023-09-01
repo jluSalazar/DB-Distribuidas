@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using FontAwesome.Sharp;
 
 
 namespace WinAppBiblioteca
@@ -19,12 +20,12 @@ namespace WinAppBiblioteca
     public partial class VENTAinsert : Form 
     {
         OracleConnection conn;
-        bool IsMaster;
+        Usuario user;
 
-        public VENTAinsert(bool isMaster)
+        public VENTAinsert(Usuario usuario)
         {
             InitializeComponent();
-            IsMaster = isMaster;
+            user = usuario;
         }
 
         #region "Variables"
@@ -112,9 +113,17 @@ namespace WinAppBiblioteca
         }*/
         private void mostrardatos()
         {
-            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
+            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=" + user.username + ";PASSWORD=" + user.password;
             conn = new OracleConnection(conStr);
-            string consulta = "SELECT * FROM VENTA"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            string consulta;
+            if (user.IsMaster)
+            {
+                consulta = "SELECT * FROM venta";
+            }
+            else
+            {
+                consulta = "SELECT * FROM vwventa";
+            }
             conn.Open(); // Abre la conexión a la base de datos Oracle
             OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
@@ -156,7 +165,7 @@ namespace WinAppBiblioteca
             }
 
             string updateQuery = "";
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 updateQuery = "INSERT INTO venta (IdVenta, IdSucursal, IdCliente, Fecha, Total) " +
                                  "VALUES (:idVenta, :idSucursal, :idCliente, :fecha, :total)";
@@ -166,11 +175,6 @@ namespace WinAppBiblioteca
                 updateQuery = "INSERT INTO venta@replica_proyrad (IdVenta, IdSucursal, IdCliente, Fecha, Total) " +
                                  "VALUES (:idVenta, :idSucursal, :idCliente, :fecha, :total)";
             }
-            // Modifica la cadena de conexión para usar el Database Link
-            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
-
-            // Sentencia SQL de inserción con el uso de Database Link
-           
 
             // Crea un objeto OracleCommand
             OracleCommand insertCommand = new OracleCommand(updateQuery, conn);

@@ -11,14 +11,15 @@ namespace WinAppBiblioteca.Forms
     public partial class ProductoActualizar : Form
     {
         OracleConnection conn;
-        string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
-        
-        bool IsMaster;
-        public ProductoActualizar(bool ismaster)
+        string conStr;
+
+        Usuario user;
+        public ProductoActualizar(Usuario usuario)
         {
             InitializeComponent();
+            user = usuario;
+            conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=" + user.username + ";PASSWORD=" + user.password;
             conn = new OracleConnection(conStr);
-            IsMaster = ismaster;
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -89,7 +90,7 @@ namespace WinAppBiblioteca.Forms
 
             // Crea la consulta SQL de actualización
             string updateQuery = "";
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 updateQuery = "UPDATE Producto SET NombreProducto = :nuevoNombre, Descripcion = :nuevaDescripcion, PrecioUnitario = :nuevoPrecio WHERE IdProducto = :idProducto";
             }
@@ -186,7 +187,7 @@ namespace WinAppBiblioteca.Forms
             }
 
             string deleteQuery;
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 deleteQuery = "DELETE FROM Producto WHERE IdProducto = :idProducto";
             }

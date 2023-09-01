@@ -8,20 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinAppBiblioteca.Model;
 
 namespace WinAppBiblioteca.Forms
 {
     public partial class SucursalActualizar : Form
     {
         OracleConnection conn;
-        string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=jsalazar;PASSWORD=jsalazar";
+        string conStr;
 
-        bool IsMaster;
-        public SucursalActualizar(bool ismaster)
+        Usuario user;
+
+        public SucursalActualizar(Usuario usuario)
         {
             InitializeComponent();
+            user = usuario;
+            conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=" + user.username + ";PASSWORD=" + user.password;
             conn = new OracleConnection(conStr);
-            IsMaster = ismaster;
         }
 
         private void ListarDGV()
@@ -72,7 +75,7 @@ namespace WinAppBiblioteca.Forms
         {
 
             string updateQuery = "";
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 updateQuery = "UPDATE Sucursal SET NombreSucursal = :nombreSucursal, Direccion = :direccion, Ciudad = :ciudad, Provincia = :provincia, Telefono = :telefono WHERE IDSUCURSAL = :idSucursal";
             }

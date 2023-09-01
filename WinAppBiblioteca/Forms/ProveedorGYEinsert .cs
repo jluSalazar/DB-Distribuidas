@@ -163,12 +163,6 @@ namespace WinAppBiblioteca
                                  "VALUES (:idProveedor, :idSucursal, :nombreProveedor, :ciudad, :provincia, :telefono)";
             }
 
-            // Modifica la cadena de conexión para usar el Database Link
-            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
-
-            // Sentencia SQL de inserción con el uso de Database Link
-          
-
             // Crea un objeto OracleCommand
             OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
 

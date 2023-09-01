@@ -8,26 +8,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinAppBiblioteca.Model;
 
 namespace WinAppBiblioteca.Forms
 {
     public partial class VentaActualizar : Form
     {
         OracleConnection conn;
-        string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=jsalazar;PASSWORD=jsalazar";
+        string conStr;
+        Usuario user;
 
-        bool IsMaster;
-        public VentaActualizar(bool ismaster)
+        public VentaActualizar(Usuario usuario)
         {
             InitializeComponent();
+            user = usuario;
+            conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=" + user.username + ";PASSWORD=" + user.password;
             conn = new OracleConnection(conStr);
-            IsMaster = ismaster;
         }
 
         private void ListarDGV()
         {
-
-            string consulta = "SELECT * FROM venta"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            string consulta;
+            if (user.IsMaster)
+            {
+                consulta = "SELECT * FROM venta";
+            }
+            else
+            {
+                consulta = "SELECT * FROM vwventa";
+            }
+            
             conn.Open(); // Abre la conexión a la base de datos Oracle
             OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
@@ -79,7 +89,7 @@ namespace WinAppBiblioteca.Forms
 
 
             string updateQuery;
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 updateQuery = "UPDATE Venta SET IDSUCURSAL = :idSucursal, IDCLIENTE = :idCliente, FECHA = :fecha, TOTAL = :total WHERE IDVENTA = :idVenta";
             }
@@ -160,7 +170,7 @@ namespace WinAppBiblioteca.Forms
             }
 
             string deleteQuery;
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 deleteQuery = "DELETE FROM Venta WHERE IDVENTA = :idVenta";
             }
