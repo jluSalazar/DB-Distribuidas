@@ -19,11 +19,11 @@ namespace WinAppBiblioteca
     public partial class ProveedorGYEinsert : Form 
     {
         OracleConnection conn;
-        bool isMaster;
-        public ProveedorGYEinsert(bool isMaster)
+        Usuario user;
+        public ProveedorGYEinsert(Usuario usuario)
         {
             InitializeComponent();
-            this.isMaster = isMaster;
+            user = usuario;
         }
 
         #region "Variables"
@@ -111,11 +111,11 @@ namespace WinAppBiblioteca
         }*/
         private void mostrardatos()
         {
-            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
+            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=" + user.username + ";PASSWORD=" + user.password;
             conn = new OracleConnection(conStr);
 
             string mostrartabla;
-            if (isMaster)
+            if (user.IsMaster)
             {
                 mostrartabla = "SELECT * FROM proveedor_uio";
             }
@@ -152,7 +152,7 @@ namespace WinAppBiblioteca
             }
 
             string insertQuery;
-            if (isMaster)
+            if (user.IsMaster)
             {
                 insertQuery = "INSERT INTO Proveedor_UIO (IdProveedor, IdSucursal, NombreProveedor, Ciudad, Provincia, Telefono) " +
                                  "VALUES (:idProveedor, :idSucursal, :nombreProveedor, :ciudad, :provincia, :telefono)";

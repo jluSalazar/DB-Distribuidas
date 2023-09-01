@@ -19,11 +19,11 @@ namespace WinAppBiblioteca
     public partial class PedidoGYEinsert : Form 
     {
         OracleConnection conn;
-        bool isMaster;
-        public PedidoGYEinsert(bool isMaster)
+        Usuario user;
+        public PedidoGYEinsert(Usuario usuario)
         {
             InitializeComponent();
-            this.isMaster = isMaster;
+            user = usuario;
         }
 
         #region "Variables"
@@ -111,11 +111,11 @@ namespace WinAppBiblioteca
         }*/
         private void mostrardatos()
         {
-            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
+            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=" + user.username + ";PASSWORD=" + user.password;
             conn = new OracleConnection(conStr);
 
             string mostrartabla;
-            if (isMaster)
+            if (user.IsMaster)
             {
                 mostrartabla = "SELECT * FROM pedido_uio";
             }
@@ -165,7 +165,7 @@ namespace WinAppBiblioteca
             }
 
             string insertQuery;
-            if (isMaster)
+            if (user.IsMaster)
             {
                 insertQuery = "INSERT INTO Pedido_UIO (IdPedido, IdSucursal, IdCliente, Fecha, Total) " +
                                  "VALUES (:idPedido, :idSucursal, :idCliente, :fecha, :total)";
