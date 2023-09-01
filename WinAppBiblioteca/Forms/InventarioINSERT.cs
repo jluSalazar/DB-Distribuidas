@@ -19,11 +19,11 @@ namespace WinAppBiblioteca
     public partial class InventarioINSERT : Form 
     {
         OracleConnection conn;
-        bool IsMaster;
-        public InventarioINSERT(bool isMaster)
+        Usuario user;
+        public InventarioINSERT(Usuario usuario)
         {
             InitializeComponent();
-            IsMaster = isMaster;
+            user = usuario;
         }
 
         #region "Variables"
@@ -111,7 +111,7 @@ namespace WinAppBiblioteca
         }*/
         private void mostrardatos()
         {
-            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
+            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID="+user.username+";PASSWORD="+user.password;
             conn = new OracleConnection(conStr);
             string consulta = "SELECT * FROM INVENTARIO"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
             conn.Open(); // Abre la conexión a la base de datos Oracle
@@ -146,7 +146,7 @@ namespace WinAppBiblioteca
             }
 
             string updateQuery = "";
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 updateQuery = "INSERT INTO Inventario (IdProducto, IdSucursal, Cantidad) " +
                                  "VALUES (:idProducto, :idSucursal, :cantidad)";

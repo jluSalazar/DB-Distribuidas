@@ -19,18 +19,17 @@ namespace WinAppBiblioteca.Forms
         {
             username = "jsalazar",
             password = "jsalazar",
-            ismaster = true
+            IsMaster = true
         };
 
         Usuario user2 = new Usuario
         {
             username = "marmijo",
             password = "marmijo",
-            ismaster = false
+            IsMaster = false
         };
 
-        SQLiteConnection sqlcon = new SQLiteConnection();
-       
+        
         public Login()
         {
             InitializeComponent();
@@ -63,7 +62,6 @@ namespace WinAppBiblioteca.Forms
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            sqlcon= Conexion.getInstancia().crearConexion();
 
             if (((tusers.Text == "") && (tPass.Text == "")) || (tusers.Text == "") || (tPass.Text == ""))
             {
@@ -73,15 +71,15 @@ namespace WinAppBiblioteca.Forms
             else
             {
 
-                if (tusers.Text == user1.username && tPass.Text == user1.password)
+                if (tusers.Text.Equals(user1.username) && tPass.Text.Equals(user1.password))
                 {
-                    Diseno pantalla = new Diseno(user1.ismaster);
+                    Diseno pantalla = new Diseno(user1);
                     pantalla.Show();
                     this.Hide();
                 }
-                else if(tusers.Text == user2.username && tPass.Text == user2.password)
+                else if(tusers.Text.Equals(user2.username) && tPass.Text.Equals(user2.password))
                 {
-                    Diseno pantalla = new Diseno(user2.ismaster);
+                    Diseno pantalla = new Diseno(user2);
                     pantalla.Show();
                     this.Hide();
                 }

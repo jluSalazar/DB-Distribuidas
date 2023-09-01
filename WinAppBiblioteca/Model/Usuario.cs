@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WinAppBiblioteca.Model
 {
-    internal class Usuario
+    public class Usuario
     {
         public string username { get; set; }
         public string password { get; set; }
-        public bool ismaster { get; set; }
+        public bool IsMaster { get; set; }
 
         public Usuario() { 
         
