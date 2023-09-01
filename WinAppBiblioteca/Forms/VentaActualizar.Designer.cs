@@ -62,7 +62,7 @@
             this.panel3.Controls.Add(this.txt_IDCLIENTE);
             this.panel3.Controls.Add(this.txt_IDSUCURSAL);
             this.panel3.Controls.Add(this.txt_IDVENTA);
-            this.panel3.Location = new System.Drawing.Point(26, 96);
+            this.panel3.Location = new System.Drawing.Point(25, 118);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 174);
             this.panel3.TabIndex = 30;
@@ -192,9 +192,9 @@
             this.DGVProd_Act.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.DGVProd_Act.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DGVProd_Act.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVProd_Act.Location = new System.Drawing.Point(12, 376);
+            this.DGVProd_Act.Location = new System.Drawing.Point(12, 398);
             this.DGVProd_Act.Name = "DGVProd_Act";
-            this.DGVProd_Act.Size = new System.Drawing.Size(968, 287);
+            this.DGVProd_Act.Size = new System.Drawing.Size(968, 265);
             this.DGVProd_Act.TabIndex = 33;
             this.DGVProd_Act.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             // 
@@ -203,7 +203,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(47, 32);
+            this.label2.Location = new System.Drawing.Point(46, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(236, 27);
             this.label2.TabIndex = 31;
@@ -223,7 +223,7 @@
             this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizar.IconSize = 45;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.Location = new System.Drawing.Point(281, 298);
+            this.btnActualizar.Location = new System.Drawing.Point(280, 320);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(204, 48);
             this.btnActualizar.TabIndex = 32;
@@ -246,7 +246,7 @@
             this.ButEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ButEliminar.IconSize = 45;
             this.ButEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButEliminar.Location = new System.Drawing.Point(557, 298);
+            this.ButEliminar.Location = new System.Drawing.Point(556, 320);
             this.ButEliminar.Name = "ButEliminar";
             this.ButEliminar.Size = new System.Drawing.Size(204, 48);
             this.ButEliminar.TabIndex = 47;

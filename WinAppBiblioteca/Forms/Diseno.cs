@@ -15,10 +15,12 @@ namespace WinAppBiblioteca
 {
     public partial class Diseno : Form
     {
-        Usuario user;
+        static Usuario user ;
         Query query;
+
+        private Form formularioActual = null;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        
 
         private static extern IntPtr CreateRoundRectRgn
      (
@@ -66,7 +68,7 @@ namespace WinAppBiblioteca
             btnInsert.BackColor = btnColor;
             btnUpdate.BackColor = btnColor;
             btnFrag.BackColor = btnColor;
-            btnAnalytics.BackColor = btnColor;
+            btnReplic.BackColor = btnColor;
             btnAuditoria.BackColor = btnColor;
             btnSettings.BackColor = btnColor;
             button.BackColor = activeColor;
@@ -74,42 +76,19 @@ namespace WinAppBiblioteca
 
         private void BtnInsert_Click(object sender, EventArgs e) //Insertar
         {
-           pnlNavIndicator.Height = btnInsert.Height;
+            this.menuStripUpdate.Visible = false;
+            pnlNavIndicator.Height = btnInsert.Height;
             pnlNavIndicator.Top = btnInsert.Top;
             pnlNavIndicator.Left = btnInsert.Left;
             ButtonColorReset(btnInsert);
-           
+            
+            this.menuStripInsert.Visible = true;
            
             lblTabTitle.Text = "Insertar";
-            this.pnlContent.Controls.Clear();
-            TablasInsert tinsert = new TablasInsert(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(tinsert);
-            tinsert.Show();
-
-            /*
-              // Configura pnlNavIndicator para resaltar el botón actual
-                pnlNavIndicator.Height = btnCustomers.Height;
-                pnlNavIndicator.Top = btnCustomers.Top;
-                pnlNavIndicator.Left = btnCustomers.Left;
-
-                // Oculta los paneles de contenido actuales (si los hay)
-                foreach (Control control in pnlContent.Controls)
-                {
-                    control.Visible = false;
-                }
-
-                // Muestra el panel de Customers (o el que desees mostrar)
-                if (customersPanel == null)
-                {
-                    customersPanel = new CustomersPanel(); // Reemplaza con el nombre de tu clase de panel
-                    customersPanel.Dock = DockStyle.Fill;
-                    customersPanel.TopLevel = false;
-                    customersPanel.TopMost = true;
-                    pnlContent.Controls.Add(customersPanel);
-                }
-    
-                customersPanel.Visible = true; // Muestra el panel Customers
-             */
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
         }
 
         public void MostrarPanel(int opc)
@@ -127,16 +106,31 @@ namespace WinAppBiblioteca
         }
         private void BtnAuditoria_Click(object sender, EventArgs e)
         {
+            this.menuStripInsert.Visible = false;
+            this.menuStripUpdate.Visible = false;
             pnlNavIndicator.Height = btnAuditoria.Height;
             pnlNavIndicator.Top = btnAuditoria.Top;
             pnlNavIndicator.Left = btnAuditoria.Left;
             ButtonColorReset(btnAuditoria);
 
             lblTabTitle.Text = "Auditoria";
-            this.pnlContent.Controls.Clear();
-            Auditoria audit = new Auditoria(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(audit);
-            audit.Show();
+            //this.pnlContent.Controls.Clear();
+
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            Auditoria formactual = new Auditoria(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(formactual);
+            formactual.Show();
+            formularioActual = formactual;
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -151,44 +145,349 @@ namespace WinAppBiblioteca
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            this.menuStripInsert.Visible = false;
             pnlNavIndicator.Height = btnUpdate.Height;
             pnlNavIndicator.Top = btnUpdate.Top;
             pnlNavIndicator.Left = btnUpdate.Left;
             ButtonColorReset(btnUpdate);
 
             lblTabTitle.Text = "Update";
-            this.pnlContent.Controls.Clear();
-            ProductoActualizar update = new ProductoActualizar(user){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(update);
-            update.Show();
+            this.menuStripUpdate.Visible = true;
+
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
         }
 
         private void btnFrag_Click(object sender, EventArgs e)
         {
-            pnlNavIndicator.Height = btnUpdate.Height;
-            pnlNavIndicator.Top = btnUpdate.Top;
-            pnlNavIndicator.Left = btnUpdate.Left;
+            this.menuStripInsert.Visible =false;
+            this.menuStripUpdate.Visible =false;
+            pnlNavIndicator.Height = btnFrag.Height;
+            pnlNavIndicator.Top = btnFrag.Top;
+            pnlNavIndicator.Left = btnFrag.Left;
             ButtonColorReset(btnFrag);
 
             lblTabTitle.Text = "Fragmentacion";
-            this.pnlContent.Controls.Clear();
-            ReadFrag readFrag = new ReadFrag(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            ReadFrag readFrag = new ReadFrag(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
             this.pnlContent.Controls.Add(readFrag);
             readFrag.Show();
+            formularioActual = readFrag;
         }
 
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
-            pnlNavIndicator.Height = btnUpdate.Height;
-            pnlNavIndicator.Top = btnUpdate.Top;
-            pnlNavIndicator.Left = btnUpdate.Left;
-            ButtonColorReset(btnFrag);
+            this.menuStripInsert.Visible = false;
+            this.menuStripUpdate.Visible = false;
+
+            pnlNavIndicator.Height = btnReplic.Height;
+            pnlNavIndicator.Top = btnReplic.Top;
+            pnlNavIndicator.Left = btnReplic.Left;
+            ButtonColorReset(btnReplic);
 
             lblTabTitle.Text = "REPLICACIÓN";
-            this.pnlContent.Controls.Clear();
-            VistaMaterializada deleteForm = new VistaMaterializada() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.pnlContent.Controls.Add(deleteForm);
-            deleteForm.Show();
+
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            VistaMaterializada formactual = new VistaMaterializada()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(formactual);
+            formactual.Show();
+            formularioActual = formactual;
+
+            //this.pnlContent.Controls.Clear();
+        }
+
+        private void cLIENTEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            ClienteGYEinsert clienteinsert = new ClienteGYEinsert(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(clienteinsert);
+            clienteinsert.Show();
+            formularioActual = clienteinsert;
+        }
+
+       
+
+        private void eMPLEADOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            EmpleadoINSERT empleadoINSERT = new EmpleadoINSERT(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(empleadoINSERT);
+            empleadoINSERT.Show();
+
+            formularioActual = empleadoINSERT;
+        }
+
+        private void iNVENTARIOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            InventarioINSERT inventarioINSERT = new InventarioINSERT(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(inventarioINSERT);
+            inventarioINSERT.Show();
+
+            formularioActual = inventarioINSERT;
+        }
+
+
+        private void pRODUCTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            ProdInsert FormINSERT = new ProdInsert(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(FormINSERT);
+            FormINSERT.Show();
+            formularioActual = FormINSERT;
+        }
+
+        private void pROVEEDORToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            ProveedorGYEinsert FormINSERT = new ProveedorGYEinsert(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(FormINSERT);
+            FormINSERT.Show();
+            formularioActual = FormINSERT;
+
+        }
+
+        private void pEDIDOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            PedidoGYEinsert FormINSERT = new PedidoGYEinsert(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(FormINSERT);
+            FormINSERT.Show();
+            formularioActual = FormINSERT;
+        }
+
+        private void vENTAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            VENTAinsert FormINSERT = new VENTAinsert(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(FormINSERT);
+            FormINSERT.Show();
+            formularioActual = FormINSERT;
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            ClienteGYEActualizar formUPDATE = new ClienteGYEActualizar(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(formUPDATE);
+            formUPDATE.Show();
+            formularioActual = formUPDATE;
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            EmpleadoActualizar formUPDATE = new EmpleadoActualizar(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(formUPDATE);
+            formUPDATE.Show();
+            formularioActual = formUPDATE;
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            InventarioActualizar formUPDATE = new InventarioActualizar(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(formUPDATE);
+            formUPDATE.Show();
+            formularioActual = formUPDATE;
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            ProductoActualizar formUPDATE = new ProductoActualizar(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(formUPDATE);
+            formUPDATE.Show();
+            formularioActual = formUPDATE;
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            ProveedorUIOActualizar formUPDATE = new ProveedorUIOActualizar(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(formUPDATE);
+            formUPDATE.Show();
+            formularioActual = formUPDATE;
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            PedidoUIOActualizar formUPDATE = new PedidoUIOActualizar(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(formUPDATE);
+            formUPDATE.Show();
+            formularioActual = formUPDATE;
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            if (formularioActual != null)
+            {
+                formularioActual.Hide();
+            }
+
+            VentaActualizar formUPDATE = new VentaActualizar(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(formUPDATE);
+            formUPDATE.Show();
+            formularioActual = formUPDATE;
         }
     }
 }

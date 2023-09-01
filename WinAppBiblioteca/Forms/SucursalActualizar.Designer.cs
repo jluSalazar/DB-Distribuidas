@@ -199,7 +199,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(47, 28);
+            this.label2.Location = new System.Drawing.Point(43, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(278, 27);
             this.label2.TabIndex = 35;
@@ -210,9 +210,9 @@
             this.DGV_Act.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.DGV_Act.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DGV_Act.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Act.Location = new System.Drawing.Point(12, 372);
+            this.DGV_Act.Location = new System.Drawing.Point(12, 391);
             this.DGV_Act.Name = "DGV_Act";
-            this.DGV_Act.Size = new System.Drawing.Size(968, 287);
+            this.DGV_Act.Size = new System.Drawing.Size(968, 268);
             this.DGV_Act.TabIndex = 37;
             this.DGV_Act.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             // 

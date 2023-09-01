@@ -58,7 +58,7 @@
             this.panel3.Controls.Add(this.txt_Nombre);
             this.panel3.Controls.Add(this.txt_Codigo);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(27, 105);
+            this.panel3.Location = new System.Drawing.Point(37, 127);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 174);
             this.panel3.TabIndex = 12;
@@ -168,7 +168,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(56, 37);
+            this.label2.Location = new System.Drawing.Point(56, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(278, 27);
             this.label2.TabIndex = 14;
@@ -180,9 +180,9 @@
             this.DGVProd_Act.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.DGVProd_Act.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DGVProd_Act.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVProd_Act.Location = new System.Drawing.Point(20, 376);
+            this.DGVProd_Act.Location = new System.Drawing.Point(20, 405);
             this.DGVProd_Act.Name = "DGVProd_Act";
-            this.DGVProd_Act.Size = new System.Drawing.Size(968, 287);
+            this.DGVProd_Act.Size = new System.Drawing.Size(968, 258);
             this.DGVProd_Act.TabIndex = 29;
             this.DGVProd_Act.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLibro_CellClick);
             this.DGVProd_Act.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLibro_CellContentClick);
@@ -201,7 +201,7 @@
             this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizar.IconSize = 45;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.Location = new System.Drawing.Point(235, 307);
+            this.btnActualizar.Location = new System.Drawing.Point(245, 329);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(204, 48);
             this.btnActualizar.TabIndex = 28;
@@ -224,7 +224,7 @@
             this.ButEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ButEliminar.IconSize = 45;
             this.ButEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButEliminar.Location = new System.Drawing.Point(531, 307);
+            this.ButEliminar.Location = new System.Drawing.Point(541, 329);
             this.ButEliminar.Name = "ButEliminar";
             this.ButEliminar.Size = new System.Drawing.Size(204, 48);
             this.ButEliminar.TabIndex = 48;

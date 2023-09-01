@@ -56,7 +56,7 @@
             this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizar.IconSize = 45;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.Location = new System.Drawing.Point(393, 291);
+            this.btnActualizar.Location = new System.Drawing.Point(205, 301);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(204, 48);
             this.btnActualizar.TabIndex = 44;
@@ -92,7 +92,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(46, 23);
+            this.label2.Location = new System.Drawing.Point(45, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(306, 27);
             this.label2.TabIndex = 43;
@@ -160,7 +160,7 @@
             this.panel3.Controls.Add(this.txt_CANTIDAD);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.txt_IDPROD);
-            this.panel3.Location = new System.Drawing.Point(0, 89);
+            this.panel3.Location = new System.Drawing.Point(0, 111);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1003, 174);
             this.panel3.TabIndex = 42;
