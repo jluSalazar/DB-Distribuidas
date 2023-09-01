@@ -119,7 +119,7 @@
             this.pnlNavIndicator.Name = "pnlNavIndicator";
             this.pnlNavIndicator.Size = new System.Drawing.Size(2, 100);
             this.pnlNavIndicator.TabIndex = 5;
-            // 
+            //
             // panel3
             // 
             this.panel3.Controls.Add(this.label4);
