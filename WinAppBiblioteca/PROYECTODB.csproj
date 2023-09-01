@@ -281,6 +281,12 @@
     <Compile Include="Forms\ClienteGYEActualizar.Designer.cs">
       <DependentUpon>ClienteGYEActualizar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmpleadoActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmpleadoActualizar.Designer.cs">
+      <DependentUpon>EmpleadoActualizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmpleadoINSERT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -506,6 +512,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClienteGYEActualizar.resx">
       <DependentUpon>ClienteGYEActualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmpleadoActualizar.resx">
+      <DependentUpon>EmpleadoActualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmpleadoINSERT.resx">
       <DependentUpon>EmpleadoINSERT.cs</DependentUpon>
