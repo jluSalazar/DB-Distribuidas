@@ -19,9 +19,11 @@ namespace WinAppBiblioteca
     public partial class ProdInsert : Form 
     {
         OracleConnection conn;
-        public ProdInsert()
+        Usuario user;
+        public ProdInsert(Usuario usuario)
         {
             InitializeComponent();
+            user = usuario;
         }
 
         #region "Variables"
@@ -143,8 +145,18 @@ namespace WinAppBiblioteca
                 MessageBox.Show("Por favor, completa todos los campos obligatorios.");
                 return;
             }
-            string insertQuery = "INSERT INTO Producto@replica_proyrad (IdProducto, NombreProducto, Descripcion, PrecioUnitario) " +
+            string insertQuery;
+
+            if (user.IsMaster)
+            {
+                insertQuery = "INSERT INTO Producto (IdProducto, NombreProducto, Descripcion, PrecioUnitario) " +
                      "VALUES (:idProducto, :nombreProducto, :descripcion, :precioUnitario)";
+            }
+            else
+            {
+                insertQuery = "INSERT INTO Producto@replica_proyrad (IdProducto, NombreProducto, Descripcion, PrecioUnitario) " +
+                     "VALUES (:idProducto, :nombreProducto, :descripcion, :precioUnitario)";
+            }
 
             // Crea un objeto OracleCommand
             OracleCommand insertCommand = new OracleCommand(insertQuery, conn);

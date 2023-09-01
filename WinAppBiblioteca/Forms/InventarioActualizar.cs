@@ -8,25 +8,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinAppBiblioteca.Model;
 
 namespace WinAppBiblioteca.Forms
 {
     public partial class InventarioActualizar : Form
     {
         OracleConnection conn;
-        string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=jsalazar;PASSWORD=jsalazar";
+        string conStr;
 
-        bool IsMaster;
-        public InventarioActualizar(bool ismaster)
+        Usuario user;
+        public InventarioActualizar(Usuario usuario)
         {
             InitializeComponent();
+            user = usuario;
+            conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=" + user.username + ";PASSWORD=" + user.password;
             conn = new OracleConnection(conStr);
-            IsMaster = ismaster;
         }
         private void ListarDGV()
         {
 
-            string consulta = "SELECT * FROM Inventario";
+            string consulta;
+            if (user.IsMaster)
+            {
+                consulta = "SELECT * FROM inventario";
+            }
+            else
+            {
+                consulta = "SELECT * FROM vwinventario";
+            }
             conn.Open();
             OracleCommand comando = new OracleCommand(consulta, conn);
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
@@ -67,7 +77,7 @@ namespace WinAppBiblioteca.Forms
         {
 
             string updateQuery = "";
-            if (IsMaster)
+            if (user.IsMaster)
             {
                 updateQuery = "UPDATE Inventario SET Cantidad = :cantidad WHERE IdProducto = :idProducto AND IdSucursal = :idSucursal";
             }

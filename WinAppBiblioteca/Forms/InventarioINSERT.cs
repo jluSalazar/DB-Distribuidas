@@ -113,7 +113,15 @@ namespace WinAppBiblioteca
         {
             string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID="+user.username+";PASSWORD="+user.password;
             conn = new OracleConnection(conStr);
-            string consulta = "SELECT * FROM INVENTARIO"; // Reemplaza mv_ejemplo con el nombre de tu vista materializada
+            string consulta;
+            if (user.IsMaster)
+            {
+                consulta = "SELECT * FROM inventario";
+            }
+            else
+            {
+                consulta = "SELECT * FROM vwinventario";
+            }
             conn.Open(); // Abre la conexión a la base de datos Oracle
             OracleCommand comando = new OracleCommand(consulta, conn); // Utiliza "conn" como tu objeto de conexión
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
