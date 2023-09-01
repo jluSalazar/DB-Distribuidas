@@ -287,11 +287,29 @@
     <Compile Include="Forms\EmpleadoINSERT.Designer.cs">
       <DependentUpon>EmpleadoINSERT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InventarioActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventarioActualizar.Designer.cs">
+      <DependentUpon>InventarioActualizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InventarioINSERT.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\InventarioINSERT.Designer.cs">
       <DependentUpon>InventarioINSERT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PedidoUIOActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PedidoUIOActualizar.Designer.cs">
+      <DependentUpon>PedidoUIOActualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProveedorUIOActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProveedorUIOActualizar.Designer.cs">
+      <DependentUpon>ProveedorUIOActualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SucursalActualizar.cs">
       <SubType>Form</SubType>
@@ -480,8 +498,17 @@
     <EmbeddedResource Include="Forms\EmpleadoINSERT.resx">
       <DependentUpon>EmpleadoINSERT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventarioActualizar.resx">
+      <DependentUpon>InventarioActualizar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventarioINSERT.resx">
       <DependentUpon>InventarioINSERT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PedidoUIOActualizar.resx">
+      <DependentUpon>PedidoUIOActualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProveedorUIOActualizar.resx">
+      <DependentUpon>ProveedorUIOActualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SucursalActualizar.resx">
       <DependentUpon>SucursalActualizar.cs</DependentUpon>
