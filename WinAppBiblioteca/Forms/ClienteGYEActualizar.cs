@@ -26,7 +26,16 @@ namespace WinAppBiblioteca.Forms
         private void ListarDGV()
         {
 
-            string consulta = "SELECT * FROM CLIENTE_GYE";
+           
+            string consulta;
+            if (IsMaster)
+            {
+                consulta = "SELECT * FROM CLIENTE_UIO";
+            }
+            else
+            {
+                consulta = "SELECT * FROM CLIENTE_GYE";
+            }
             conn.Open();
             OracleCommand comando = new OracleCommand(consulta, conn);
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
@@ -68,7 +77,16 @@ namespace WinAppBiblioteca.Forms
         private void Actualizar(string id, string idsucursal, string nombre, string apellido, string ciudad, string provincia, string telefono)
         {
 
-            string updateQuery = "UPDATE cliente_gye SET IDSUCURSAL = :idsucursal, NOMBRE = :nombre, APELLIDO = :apellido, CIUDAD = :ciudad, PROVINCIA = :provincia, TELEFONO = :telefono WHERE IDCLIENTE = :idCliente";
+            string updateQuery;
+            if (IsMaster)
+            {
+                updateQuery = "UPDATE cliente_uio SET IDSUCURSAL = :idsucursal, NOMBRE = :nombre, APELLIDO = :apellido, CIUDAD = :ciudad, PROVINCIA = :provincia, TELEFONO = :telefono WHERE IDCLIENTE = :idCliente";
+            }
+            else
+            {
+                updateQuery = "UPDATE cliente_gye SET IDSUCURSAL = :idsucursal, NOMBRE = :nombre, APELLIDO = :apellido, CIUDAD = :ciudad, PROVINCIA = :provincia, TELEFONO = :telefono WHERE IDCLIENTE = :idCliente";
+            }
+            
 
 
             // Crea un objeto OracleCommand
@@ -133,7 +151,15 @@ namespace WinAppBiblioteca.Forms
                 string id = txt_ID.Text;
 
                 // Query para eliminar el registro
-                string deleteQuery = "DELETE FROM CLIENTE_GYE WHERE IDCLIENTE = :idCliente";
+                string deleteQuery;
+                if (IsMaster)
+                {
+                    deleteQuery = "DELETE FROM CLIENTE_UIO WHERE IDCLIENTE = :idCliente";
+                }
+                else
+                {
+                    deleteQuery = "DELETE FROM CLIENTE_GYE WHERE IDCLIENTE = :idCliente";
+                }
 
                 // Crea un objeto OracleCommand
                 OracleCommand deleteCommand = new OracleCommand(deleteQuery, conn);

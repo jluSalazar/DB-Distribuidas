@@ -42,6 +42,7 @@
             this.DGV_Act = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
+            this.ButEliminar = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Act)).BeginInit();
             this.SuspendLayout();
@@ -187,9 +188,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(45, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(306, 27);
+            this.label2.Size = new System.Drawing.Size(390, 27);
             this.label2.TabIndex = 35;
-            this.label2.Text = "ACTUALIZAR PEDIDO_UIO";
+            this.label2.Text = "ACTUALIZAR PEDIDO GYE Y UIO";
             // 
             // btnActualizar
             // 
@@ -205,7 +206,7 @@
             this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActualizar.IconSize = 45;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.Location = new System.Drawing.Point(339, 288);
+            this.btnActualizar.Location = new System.Drawing.Point(230, 288);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(204, 48);
             this.btnActualizar.TabIndex = 36;
@@ -214,12 +215,36 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // ButEliminar
+            // 
+            this.ButEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.ButEliminar.FlatAppearance.BorderSize = 2;
+            this.ButEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.ButEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButEliminar.Font = new System.Drawing.Font("Courier New", 18F);
+            this.ButEliminar.ForeColor = System.Drawing.Color.Red;
+            this.ButEliminar.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.ButEliminar.IconColor = System.Drawing.Color.Red;
+            this.ButEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButEliminar.IconSize = 45;
+            this.ButEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButEliminar.Location = new System.Drawing.Point(504, 288);
+            this.ButEliminar.Name = "ButEliminar";
+            this.ButEliminar.Size = new System.Drawing.Size(204, 48);
+            this.ButEliminar.TabIndex = 47;
+            this.ButEliminar.Text = "ELIMINAR";
+            this.ButEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButEliminar.UseVisualStyleBackColor = true;
+            this.ButEliminar.Click += new System.EventHandler(this.ButEliminar_Click);
+            // 
             // PedidoUIOActualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1000, 675);
+            this.Controls.Add(this.ButEliminar);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.DGV_Act);
             this.Controls.Add(this.btnActualizar);
@@ -252,5 +277,6 @@
         private System.Windows.Forms.DataGridView DGV_Act;
         private FontAwesome.Sharp.IconButton btnActualizar;
         private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton ButEliminar;
     }
 }

@@ -275,12 +275,6 @@
     <Compile Include="Forms\ClienteGYEActualizar.Designer.cs">
       <DependentUpon>ClienteGYEActualizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ClienteUIOActualizar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ClienteUIOActualizar.Designer.cs">
-      <DependentUpon>ClienteUIOActualizar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\EmpleadoINSERT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -491,9 +485,6 @@
     <Content Include="webfonts\fa-solid-900.svg" />
     <EmbeddedResource Include="Forms\ClienteGYEActualizar.resx">
       <DependentUpon>ClienteGYEActualizar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClienteUIOActualizar.resx">
-      <DependentUpon>ClienteUIOActualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmpleadoINSERT.resx">
       <DependentUpon>EmpleadoINSERT.cs</DependentUpon>

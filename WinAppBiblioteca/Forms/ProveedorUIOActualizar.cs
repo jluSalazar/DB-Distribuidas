@@ -26,7 +26,16 @@ namespace WinAppBiblioteca.Forms
         private void ListarDGV()
         {
 
-            string consulta = "SELECT * FROM PROVEEDOR_UIO";
+            string consulta;
+            if (IsMaster)
+            {
+                consulta = "SELECT * FROM PROVEEDOR_UIO";
+            }
+            else
+            {
+                consulta = "SELECT * FROM PROVEEDOR_GYE";
+            }
+
             conn.Open();
             OracleCommand comando = new OracleCommand(consulta, conn);
             OracleDataAdapter adaptador = new OracleDataAdapter(comando);
@@ -70,8 +79,17 @@ namespace WinAppBiblioteca.Forms
 
         private void Actualizar(string id, string idsucursal, string nombre, string ciudad, string provincia, string telefono)
         {
+            string updateQuery;
 
-            string updateQuery = "UPDATE PROVEEDOR_UIO SET IDSUCURSAL = :idsucursal, NOMBREPROVEEDOR = :nombre, CIUDAD = :ciudad, PROVINCIA = :provincia, TELEFONO = :telefono WHERE IDPROVEEDOR = :idProveedor";
+            if (IsMaster)
+            {
+                updateQuery = "UPDATE PROVEEDOR_UIO SET IDSUCURSAL = :idsucursal, NOMBREPROVEEDOR = :nombre, CIUDAD = :ciudad, PROVINCIA = :provincia, TELEFONO = :telefono WHERE IDPROVEEDOR = :idProveedor";
+            }
+            else
+            {
+                updateQuery = "UPDATE PROVEEDOR_GYE SET IDSUCURSAL = :idsucursal, NOMBREPROVEEDOR = :nombre, CIUDAD = :ciudad, PROVINCIA = :provincia, TELEFONO = :telefono WHERE IDPROVEEDOR = :idProveedor";
+            }
+
 
 
             // Crea un objeto OracleCommand
@@ -120,6 +138,58 @@ namespace WinAppBiblioteca.Forms
 
             Actualizar(id, idsucursal, nombre, ciudad, provincia, telefono);
             ListarDGV(); // Actualiza el DataGridView para mostrar los datos actualizados
+        }
+
+        private void ButEliminar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_ID.Text))
+            {
+                string id = txt_ID.Text;
+
+                // Query para eliminar el registro
+                string deleteQuery;
+                if (IsMaster)
+                {
+                    deleteQuery = "DELETE FROM PROVEEDOR_UIO WHERE IDPROVEEDOR = :idProveedor";
+                }
+                else
+                {
+                    deleteQuery = "DELETE FROM PROVEEDOR_GYE WHERE IDPROVEEDOR = :idProveedor";
+                }
+
+                // Crea un objeto OracleCommand
+                OracleCommand deleteCommand = new OracleCommand(deleteQuery, conn);
+
+                // Asigna el valor al parámetro
+                deleteCommand.Parameters.Add(":idProveedor", OracleDbType.Varchar2).Value = id;
+
+                try
+                {
+                    // Abre la conexión y ejecuta la consulta de eliminación
+                    conn.Open();
+                    int rowsAffected = deleteCommand.ExecuteNonQuery();
+                    conn.Close();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("El cliente se eliminó con éxito.");
+                        ListarDGV(); // Actualiza el DataGridView para mostrar los datos actualizados
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró un cliente con el ID especificado.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el cliente: " + ex.Message);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un cliente de la lista antes de eliminarlo.");
+            }
         }
     }
 }
