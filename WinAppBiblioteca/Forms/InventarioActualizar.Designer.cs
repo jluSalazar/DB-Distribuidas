@@ -38,6 +38,7 @@
             this.DGV_Act = new System.Windows.Forms.DataGridView();
             this.txt_CANTIDAD = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ButEliminar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Act)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -165,12 +166,36 @@
             this.panel3.Size = new System.Drawing.Size(1003, 174);
             this.panel3.TabIndex = 42;
             // 
+            // ButEliminar
+            // 
+            this.ButEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.ButEliminar.FlatAppearance.BorderSize = 2;
+            this.ButEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.ButEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButEliminar.Font = new System.Drawing.Font("Courier New", 18F);
+            this.ButEliminar.ForeColor = System.Drawing.Color.Red;
+            this.ButEliminar.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.ButEliminar.IconColor = System.Drawing.Color.Red;
+            this.ButEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ButEliminar.IconSize = 45;
+            this.ButEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButEliminar.Location = new System.Drawing.Point(483, 301);
+            this.ButEliminar.Name = "ButEliminar";
+            this.ButEliminar.Size = new System.Drawing.Size(204, 48);
+            this.ButEliminar.TabIndex = 52;
+            this.ButEliminar.Text = "ELIMINAR";
+            this.ButEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButEliminar.UseVisualStyleBackColor = true;
+            this.ButEliminar.Click += new System.EventHandler(this.ButEliminar_Click);
+            // 
             // InventarioActualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(984, 636);
+            this.Controls.Add(this.ButEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DGV_Act);
@@ -199,5 +224,6 @@
         private System.Windows.Forms.DataGridView DGV_Act;
         private System.Windows.Forms.TextBox txt_CANTIDAD;
         private System.Windows.Forms.Panel panel3;
+        private FontAwesome.Sharp.IconButton ButEliminar;
     }
 }

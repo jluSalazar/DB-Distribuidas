@@ -165,5 +165,14 @@ namespace WinAppBiblioteca
         {
             
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            string conStr = @"DATA SOURCE = localhost:1521/orcl; USER ID=marmijo;PASSWORD=marmijo";
+            conn = new OracleConnection(conStr);
+            updateVWINVENTARIO();
+            updateVWEMPLEADO();
+            updateVWVENTA();
+        }
     }
 }
