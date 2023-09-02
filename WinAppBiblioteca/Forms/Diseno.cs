@@ -39,6 +39,17 @@ namespace WinAppBiblioteca
             user = usuario;
             
             Console.WriteLine(user.ToString());
+            label4.Text = user.username;
+            if (usuario.IsMaster)
+            {
+                btnReplic.Visible= false;
+                label2.Text = "MASTER";
+            }
+            else
+            {
+                btnAuditoria.Visible= false;
+                label2.Text = "REPLICA";
+            }
         }
         private Point lastLocation;
 
@@ -160,6 +171,18 @@ namespace WinAppBiblioteca
             {
                 formularioActual.Hide();
             }
+            /*
+            ProdInsert FormINSERT = new ProdInsert(user)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false,
+                TopMost = true
+            };
+
+            this.pnlContent.Controls.Add(FormINSERT);
+            FormINSERT.Show();
+            formularioActual = FormINSERT;*/
+
         }
 
         private void btnFrag_Click(object sender, EventArgs e)
