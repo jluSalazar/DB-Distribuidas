@@ -129,5 +129,56 @@ namespace WinAppBiblioteca.Forms
             ListarDGV(); // Actualiza el DataGridView para mostrar los datos actualizados
         }
 
+        private void ButEliminar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_IDSUCURSAL.Text))
+            {
+                string id = txt_IDSUCURSAL.Text;
+
+                // Query para eliminar el registro
+                string deleteQuery;
+                if (user.IsMaster)
+                {
+                    deleteQuery = "DELETE FROM Inventario WHERE IDEMPLEADO = :idSucursal";
+                }
+                else
+                {
+                    deleteQuery = "DELETE FROM Inventario@replica_proyrad WHERE IDEMPLEADO = :idSucursal";
+                }
+
+                // Crea un objeto OracleCommand
+                OracleCommand deleteCommand = new OracleCommand(deleteQuery, conn);
+
+                // Asigna el valor al parámetro
+                deleteCommand.Parameters.Add(":idSucursal", OracleDbType.Varchar2).Value = id;
+
+                try
+                {
+                    // Abre la conexión y ejecuta la consulta de eliminación
+                    conn.Open();
+                    int rowsAffected = deleteCommand.ExecuteNonQuery();
+                    conn.Close();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("El empleado se eliminó con éxito.");
+                        ListarDGV(); // Actualiza el DataGridView para mostrar los datos actualizados
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró un empleado con el ID especificado.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el empleado: " + ex.Message);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un empleado de la lista antes de eliminarlo.");
+            }
+        }
     }
 }

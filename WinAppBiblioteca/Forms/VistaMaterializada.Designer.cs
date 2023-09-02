@@ -52,6 +52,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnActualizar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGVinventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEMPLEADO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVVENTA)).BeginInit();
@@ -82,7 +83,7 @@
             this.DGVinventario.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVinventario.EnableHeadersVisualStyles = false;
             this.DGVinventario.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DGVinventario.Location = new System.Drawing.Point(278, 40);
+            this.DGVinventario.Location = new System.Drawing.Point(278, 51);
             this.DGVinventario.Name = "DGVinventario";
             this.DGVinventario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -101,7 +102,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.DGVinventario.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVinventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVinventario.Size = new System.Drawing.Size(690, 178);
+            this.DGVinventario.Size = new System.Drawing.Size(690, 167);
             this.DGVinventario.TabIndex = 24;
             this.DGVinventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.DGVinventario.Layout += new System.Windows.Forms.LayoutEventHandler(this.dataGridView1_Layout);
@@ -131,7 +132,7 @@
             this.DGVEMPLEADO.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVEMPLEADO.EnableHeadersVisualStyles = false;
             this.DGVEMPLEADO.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.DGVEMPLEADO.Location = new System.Drawing.Point(278, 247);
+            this.DGVEMPLEADO.Location = new System.Drawing.Point(278, 246);
             this.DGVEMPLEADO.Name = "DGVEMPLEADO";
             this.DGVEMPLEADO.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -150,7 +151,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.DGVEMPLEADO.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVEMPLEADO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVEMPLEADO.Size = new System.Drawing.Size(690, 178);
+            this.DGVEMPLEADO.Size = new System.Drawing.Size(690, 179);
             this.DGVEMPLEADO.TabIndex = 30;
             // 
             // DGVVENTA
@@ -299,12 +300,36 @@
             this.label9.TabIndex = 38;
             this.label9.Text = "Venta";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.btnActualizar.FlatAppearance.BorderSize = 2;
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Courier New", 18F);
+            this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.btnActualizar.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.btnActualizar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnActualizar.IconSize = 45;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizar.Location = new System.Drawing.Point(715, 4);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(213, 41);
+            this.btnActualizar.TabIndex = 45;
+            this.btnActualizar.Text = "REFRESH";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // VistaMaterializada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1000, 675);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -342,5 +367,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private FontAwesome.Sharp.IconButton btnActualizar;
     }
 }
