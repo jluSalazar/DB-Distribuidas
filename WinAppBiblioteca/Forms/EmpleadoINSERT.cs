@@ -152,17 +152,28 @@ namespace WinAppBiblioteca
                 MessageBox.Show("Por favor, completa todos los campos obligatorios.");
                 return;
             }
-            string updateQuery = "";
-            if (user.IsMaster)
+            string insertQuery = "";
+            if (user.IsMaster && idSucursal.Equals("S001"))
             {
-                updateQuery = "INSERT INTO empleado (IdEmpleado, IdSucursal, Nombre, Apellido, Direccion, Ciudad, Provincia, Telefono) " +
+                insertQuery = "INSERT INTO empleado (IdEmpleado, IdSucursal, Nombre, Apellido, Direccion, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idEmpleado, :idSucursal, :nombre, :apellido, :direccion, :ciudad, :provincia, :telefono)";
+            }
+            else if (user.IsMaster && idSucursal.Equals("S002"))
+            {
+                insertQuery = "INSERT INTO empleado@replica_proyrad (IdEmpleado, IdSucursal, Nombre, Apellido, Direccion, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idEmpleado, :idSucursal, :nombre, :apellido, :direccion, :ciudad, :provincia, :telefono)";
+            }
+            else if (!user.IsMaster && idSucursal.Equals("S001"))
+            {
+                insertQuery = "INSERT INTO empleado@replica_proyrad (IdEmpleado, IdSucursal, Nombre, Apellido, Direccion, Ciudad, Provincia, Telefono) " +
                                  "VALUES (:idEmpleado, :idSucursal, :nombre, :apellido, :direccion, :ciudad, :provincia, :telefono)";
             }
             else
             {
-                updateQuery = "INSERT INTO empleado@replica_proyrad (IdEmpleado, IdSucursal, Nombre, Apellido, Direccion, Ciudad, Provincia, Telefono) " +
+                insertQuery = "INSERT INTO empleado (IdEmpleado, IdSucursal, Nombre, Apellido, Direccion, Ciudad, Provincia, Telefono) " +
                                  "VALUES (:idEmpleado, :idSucursal, :nombre, :apellido, :direccion, :ciudad, :provincia, :telefono)";
             }
+
             // Modifica la cadena de conexión para usar el Database Link
             string conStr = @"DATA SOURCE = replica_proyrad; USER ID=marmijo;PASSWORD=marmijo";
 
@@ -170,7 +181,7 @@ namespace WinAppBiblioteca
           
 
             // Crea un objeto OracleCommand
-            OracleCommand insertCommand = new OracleCommand(updateQuery, conn);
+            OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
 
             // Asigna valores a los parámetros
             insertCommand.Parameters.Add(":idEmpleado", OracleDbType.Varchar2).Value = idEmpleado;

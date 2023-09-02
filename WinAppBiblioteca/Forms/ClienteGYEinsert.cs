@@ -156,10 +156,20 @@ namespace WinAppBiblioteca
                 MessageBox.Show("Por favor, completa todos los campos obligatorios.");
                 return;
             }
-            string insertQuery;
-            if (user.IsMaster)
+            string insertQuery="";
+            if (user.IsMaster && idSucursal.Equals("S001"))
             {
                 insertQuery = "INSERT INTO Cliente_UIO (IdCliente, IdSucursal, Nombre, Apellido, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idCliente, :idSucursal, :nombre, :apellido, :ciudad, :provincia, :telefono)";
+            }
+            else if(user.IsMaster && idSucursal.Equals("S002"))
+            {
+                insertQuery = "INSERT INTO Cliente_GYE@replica_proyrad (IdCliente, IdSucursal, Nombre, Apellido, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idCliente, :idSucursal, :nombre, :apellido, :ciudad, :provincia, :telefono)";
+            }
+            else if(!user.IsMaster && idSucursal.Equals("S001"))
+            {
+                insertQuery = "INSERT INTO Cliente_UIO@replica_proyrad (IdCliente, IdSucursal, Nombre, Apellido, Ciudad, Provincia, Telefono) " +
                                  "VALUES (:idCliente, :idSucursal, :nombre, :apellido, :ciudad, :provincia, :telefono)";
             }
             else

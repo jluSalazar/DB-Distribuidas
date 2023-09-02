@@ -152,9 +152,20 @@ namespace WinAppBiblioteca
             }
 
             string insertQuery;
-            if (user.IsMaster)
+
+            if (user.IsMaster && idSucursal.Equals("S001"))
             {
                 insertQuery = "INSERT INTO Proveedor_UIO (IdProveedor, IdSucursal, NombreProveedor, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idProveedor, :idSucursal, :nombreProveedor, :ciudad, :provincia, :telefono)";
+            }
+            else if (user.IsMaster && idSucursal.Equals("S002"))
+            {
+                insertQuery = "INSERT INTO Proveedor_GYE@replica_proyrad (IdProveedor, IdSucursal, NombreProveedor, Ciudad, Provincia, Telefono) " +
+                                 "VALUES (:idProveedor, :idSucursal, :nombreProveedor, :ciudad, :provincia, :telefono)";
+            }
+            else if (!user.IsMaster && idSucursal.Equals("S001"))
+            {
+                insertQuery = "INSERT INTO Proveedor_UIO@replica_proyrad (IdProveedor, IdSucursal, NombreProveedor, Ciudad, Provincia, Telefono) " +
                                  "VALUES (:idProveedor, :idSucursal, :nombreProveedor, :ciudad, :provincia, :telefono)";
             }
             else
@@ -162,7 +173,6 @@ namespace WinAppBiblioteca
                 insertQuery = "INSERT INTO Proveedor_GYE (IdProveedor, IdSucursal, NombreProveedor, Ciudad, Provincia, Telefono) " +
                                  "VALUES (:idProveedor, :idSucursal, :nombreProveedor, :ciudad, :provincia, :telefono)";
             }
-
             // Crea un objeto OracleCommand
             OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
 
