@@ -153,15 +153,16 @@ namespace WinAppBiblioteca
                 return;
             }
 
-            string updateQuery = "";
+            string insertQuery = "";
+
             if (user.IsMaster)
             {
-                updateQuery = "INSERT INTO Inventario (IdProducto, IdSucursal, Cantidad) " +
+                insertQuery = "INSERT INTO Inventario (IdProducto, IdSucursal, Cantidad) " +
                                  "VALUES (:idProducto, :idSucursal, :cantidad)";
             }
             else
             {
-                updateQuery = "INSERT INTO Inventario@replica_proyrad (IdProducto, IdSucursal, Cantidad) " +
+                insertQuery = "INSERT INTO Inventario@replica_proyrad (IdProducto, IdSucursal, Cantidad) " +
                                  "VALUES (:idProducto, :idSucursal, :cantidad)";
             }
 
@@ -171,7 +172,7 @@ namespace WinAppBiblioteca
             // Sentencia SQL de inserción con el uso de Database Link
 
             // Crea un objeto OracleCommand
-            OracleCommand insertCommand = new OracleCommand(updateQuery, conn);
+            OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
 
             // Asigna valores a los parámetros
             insertCommand.Parameters.Add(":idProducto", OracleDbType.Varchar2).Value = idProducto;

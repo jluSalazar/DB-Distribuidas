@@ -131,6 +131,8 @@ namespace WinAppBiblioteca
             this.pnlContent.Controls.Add(formactual);
             formactual.Show();
             formularioActual = formactual;
+
+
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -181,7 +183,6 @@ namespace WinAppBiblioteca
                 TopLevel = false,
                 TopMost = true
             };
-
             this.pnlContent.Controls.Add(readFrag);
             readFrag.Show();
             formularioActual = readFrag;

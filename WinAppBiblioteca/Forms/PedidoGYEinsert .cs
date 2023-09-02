@@ -165,9 +165,19 @@ namespace WinAppBiblioteca
             }
 
             string insertQuery;
-            if (user.IsMaster)
+            if (user.IsMaster && idSucursal.Equals("S001"))
             {
                 insertQuery = "INSERT INTO Pedido_UIO (IdPedido, IdSucursal, IdCliente, Fecha, Total) " +
+                                 "VALUES (:idPedido, :idSucursal, :idCliente, :fecha, :total)";
+            }
+            else if (user.IsMaster && idSucursal.Equals("S002"))
+            {
+                insertQuery = "INSERT INTO Pedido_GYE@replica_proyrad (IdPedido, IdSucursal, IdCliente, Fecha, Total) " +
+                                 "VALUES (:idPedido, :idSucursal, :idCliente, :fecha, :total)";
+            }
+            else if (!user.IsMaster && idSucursal.Equals("S001"))
+            {
+                insertQuery = "INSERT INTO Pedido_UIO@replica_proyrad (IdPedido, IdSucursal, IdCliente, Fecha, Total) " +
                                  "VALUES (:idPedido, :idSucursal, :idCliente, :fecha, :total)";
             }
             else
@@ -176,7 +186,10 @@ namespace WinAppBiblioteca
                                  "VALUES (:idPedido, :idSucursal, :idCliente, :fecha, :total)";
             }
 
+<<<<<<< jona-branch
+=======
 
+>>>>>>> master
             // Crea un objeto OracleCommand
             OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
 
