@@ -29,12 +29,24 @@
         private void InitializeComponent()
         {
             this.panel_header = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlNavIndicator = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnAuditoria = new System.Windows.Forms.Button();
+            this.btnReplic = new System.Windows.Forms.Button();
+            this.btnFrag = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTabTitle = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pnlContent = new System.Windows.Forms.Panel();
@@ -54,27 +66,15 @@
             this.pROVEEDORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pEDIDOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENTAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.btnAuditoria = new System.Windows.Forms.Button();
-            this.btnReplic = new System.Windows.Forms.Button();
-            this.btnFrag = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.menuStripUpdate.SuspendLayout();
             this.menuStripInsert.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_header
@@ -93,6 +93,78 @@
             this.panel_header.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_header_Paint);
             this.panel_header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelHeader_MouseDown);
             this.panel_header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelHeader_MouseMove);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.button3.Image = global::WinAppBiblioteca.Properties.Resources.exit__2_;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(1093, 15);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(66, 25);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Logout";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackgroundImage = global::WinAppBiblioteca.Properties.Resources.email__2_;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.button2.Location = new System.Drawing.Point(1057, 15);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(16, 25);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackgroundImage = global::WinAppBiblioteca.Properties.Resources.close_new;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnExit.Location = new System.Drawing.Point(1168, 16);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(15, 25);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = global::WinAppBiblioteca.Properties.Resources.search__1_;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.button1.Location = new System.Drawing.Point(1029, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(15, 25);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WinAppBiblioteca.Properties.Resources.logo_color;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -119,7 +191,108 @@
             this.pnlNavIndicator.Name = "pnlNavIndicator";
             this.pnlNavIndicator.Size = new System.Drawing.Size(2, 100);
             this.pnlNavIndicator.TabIndex = 5;
-            //
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnSettings.Image = global::WinAppBiblioteca.Properties.Resources.setting;
+            this.btnSettings.Location = new System.Drawing.Point(0, 675);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(200, 42);
+            this.btnSettings.TabIndex = 4;
+            this.btnSettings.Text = "Settings  ";
+            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            // 
+            // btnAuditoria
+            // 
+            this.btnAuditoria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAuditoria.FlatAppearance.BorderSize = 0;
+            this.btnAuditoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAuditoria.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAuditoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnAuditoria.Image = global::WinAppBiblioteca.Properties.Resources.hamburger;
+            this.btnAuditoria.Location = new System.Drawing.Point(0, 286);
+            this.btnAuditoria.Name = "btnAuditoria";
+            this.btnAuditoria.Size = new System.Drawing.Size(200, 42);
+            this.btnAuditoria.TabIndex = 4;
+            this.btnAuditoria.Text = "Auditoria";
+            this.btnAuditoria.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAuditoria.UseVisualStyleBackColor = true;
+            this.btnAuditoria.Click += new System.EventHandler(this.BtnAuditoria_Click);
+            // 
+            // btnReplic
+            // 
+            this.btnReplic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReplic.FlatAppearance.BorderSize = 0;
+            this.btnReplic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReplic.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReplic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnReplic.Image = global::WinAppBiblioteca.Properties.Resources.data_analytics;
+            this.btnReplic.Location = new System.Drawing.Point(0, 244);
+            this.btnReplic.Name = "btnReplic";
+            this.btnReplic.Size = new System.Drawing.Size(200, 42);
+            this.btnReplic.TabIndex = 4;
+            this.btnReplic.Text = "Replicación ";
+            this.btnReplic.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnReplic.UseVisualStyleBackColor = true;
+            this.btnReplic.Click += new System.EventHandler(this.btnAnalytics_Click);
+            // 
+            // btnFrag
+            // 
+            this.btnFrag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFrag.FlatAppearance.BorderSize = 0;
+            this.btnFrag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFrag.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFrag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnFrag.Image = global::WinAppBiblioteca.Properties.Resources.clipboard;
+            this.btnFrag.Location = new System.Drawing.Point(0, 202);
+            this.btnFrag.Name = "btnFrag";
+            this.btnFrag.Size = new System.Drawing.Size(200, 42);
+            this.btnFrag.TabIndex = 4;
+            this.btnFrag.Text = "Fragmentacion";
+            this.btnFrag.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnFrag.UseVisualStyleBackColor = true;
+            this.btnFrag.Click += new System.EventHandler(this.btnFrag_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnUpdate.Image = global::WinAppBiblioteca.Properties.Resources.employee;
+            this.btnUpdate.Location = new System.Drawing.Point(0, 160);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(200, 42);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Update Y Delete";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.btnInsert.Image = global::WinAppBiblioteca.Properties.Resources.home;
+            this.btnInsert.Location = new System.Drawing.Point(0, 118);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(200, 42);
+            this.btnInsert.TabIndex = 4;
+            this.btnInsert.Text = "Insertar";
+            this.btnInsert.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label4);
@@ -164,6 +337,16 @@
             this.label2.Size = new System.Drawing.Size(57, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Designer";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WinAppBiblioteca.Properties.Resources.man;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 22);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(54, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // lblTabTitle
             // 
@@ -332,188 +515,6 @@
             this.vENTAToolStripMenuItem.Text = "VENTA";
             this.vENTAToolStripMenuItem.Click += new System.EventHandler(this.vENTAToolStripMenuItem_Click);
             // 
-            // btnSettings
-            // 
-            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnSettings.Image = global::WinAppBiblioteca.Properties.Resources.setting;
-            this.btnSettings.Location = new System.Drawing.Point(0, 675);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(200, 42);
-            this.btnSettings.TabIndex = 4;
-            this.btnSettings.Text = "Settings  ";
-            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            // 
-            // btnAuditoria
-            // 
-            this.btnAuditoria.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAuditoria.FlatAppearance.BorderSize = 0;
-            this.btnAuditoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAuditoria.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAuditoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnAuditoria.Image = global::WinAppBiblioteca.Properties.Resources.hamburger;
-            this.btnAuditoria.Location = new System.Drawing.Point(0, 286);
-            this.btnAuditoria.Name = "btnAuditoria";
-            this.btnAuditoria.Size = new System.Drawing.Size(200, 42);
-            this.btnAuditoria.TabIndex = 4;
-            this.btnAuditoria.Text = "Auditoria";
-            this.btnAuditoria.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnAuditoria.UseVisualStyleBackColor = true;
-            this.btnAuditoria.Click += new System.EventHandler(this.BtnAuditoria_Click);
-            // 
-            // btnReplic
-            // 
-            this.btnReplic.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReplic.FlatAppearance.BorderSize = 0;
-            this.btnReplic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReplic.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReplic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnReplic.Image = global::WinAppBiblioteca.Properties.Resources.data_analytics;
-            this.btnReplic.Location = new System.Drawing.Point(0, 244);
-            this.btnReplic.Name = "btnReplic";
-            this.btnReplic.Size = new System.Drawing.Size(200, 42);
-            this.btnReplic.TabIndex = 4;
-            this.btnReplic.Text = "Replicación ";
-            this.btnReplic.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnReplic.UseVisualStyleBackColor = true;
-            this.btnReplic.Click += new System.EventHandler(this.btnAnalytics_Click);
-            // 
-            // btnFrag
-            // 
-            this.btnFrag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFrag.FlatAppearance.BorderSize = 0;
-            this.btnFrag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFrag.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFrag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnFrag.Image = global::WinAppBiblioteca.Properties.Resources.clipboard;
-            this.btnFrag.Location = new System.Drawing.Point(0, 202);
-            this.btnFrag.Name = "btnFrag";
-            this.btnFrag.Size = new System.Drawing.Size(200, 42);
-            this.btnFrag.TabIndex = 4;
-            this.btnFrag.Text = "Fragmentacion";
-            this.btnFrag.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnFrag.UseVisualStyleBackColor = true;
-            this.btnFrag.Click += new System.EventHandler(this.btnFrag_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnUpdate.Image = global::WinAppBiblioteca.Properties.Resources.employee;
-            this.btnUpdate.Location = new System.Drawing.Point(0, 160);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(200, 42);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Update Y Delete";
-            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInsert.FlatAppearance.BorderSize = 0;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnInsert.Image = global::WinAppBiblioteca.Properties.Resources.home;
-            this.btnInsert.Location = new System.Drawing.Point(0, 118);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(200, 42);
-            this.btnInsert.TabIndex = 4;
-            this.btnInsert.Text = "Insertar";
-            this.btnInsert.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::WinAppBiblioteca.Properties.Resources.man;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 22);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(54, 42);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.button3.Image = global::WinAppBiblioteca.Properties.Resources.exit__2_;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(1093, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(66, 25);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Logout";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackgroundImage = global::WinAppBiblioteca.Properties.Resources.email__2_;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.button2.Location = new System.Drawing.Point(1057, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(16, 25);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackgroundImage = global::WinAppBiblioteca.Properties.Resources.close_new;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.btnExit.Location = new System.Drawing.Point(1168, 16);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(15, 25);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = global::WinAppBiblioteca.Properties.Resources.search__1_;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
-            this.button1.Location = new System.Drawing.Point(1029, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(15, 25);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WinAppBiblioteca.Properties.Resources.logo_color;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // Diseno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,9 +531,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel_header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnlContent.ResumeLayout(false);
@@ -541,8 +544,6 @@
             this.menuStripUpdate.PerformLayout();
             this.menuStripInsert.ResumeLayout(false);
             this.menuStripInsert.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
