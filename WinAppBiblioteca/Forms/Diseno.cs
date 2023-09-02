@@ -132,6 +132,7 @@ namespace WinAppBiblioteca
             formactual.Show();
             formularioActual = formactual;
 
+
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -159,18 +160,6 @@ namespace WinAppBiblioteca
             {
                 formularioActual.Hide();
             }
-            /*
-            ProdInsert FormINSERT = new ProdInsert(user)
-            {
-                Dock = DockStyle.Fill,
-                TopLevel = false,
-                TopMost = true
-            };
-
-            this.pnlContent.Controls.Add(FormINSERT);
-            FormINSERT.Show();
-            formularioActual = FormINSERT;*/
-
         }
 
         private void btnFrag_Click(object sender, EventArgs e)
@@ -194,11 +183,9 @@ namespace WinAppBiblioteca
                 TopLevel = false,
                 TopMost = true
             };
-
             this.pnlContent.Controls.Add(readFrag);
             readFrag.Show();
             formularioActual = readFrag;
-
         }
 
         private void btnAnalytics_Click(object sender, EventArgs e)

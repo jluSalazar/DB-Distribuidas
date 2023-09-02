@@ -186,6 +186,10 @@ namespace WinAppBiblioteca
                                  "VALUES (:idPedido, :idSucursal, :idCliente, :fecha, :total)";
             }
 
+<<<<<<< jona-branch
+=======
+
+>>>>>>> master
             // Crea un objeto OracleCommand
             OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
 

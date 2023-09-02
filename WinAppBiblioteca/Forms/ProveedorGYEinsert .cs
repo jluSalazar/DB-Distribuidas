@@ -173,6 +173,7 @@ namespace WinAppBiblioteca
                 insertQuery = "INSERT INTO Proveedor_GYE (IdProveedor, IdSucursal, NombreProveedor, Ciudad, Provincia, Telefono) " +
                                  "VALUES (:idProveedor, :idSucursal, :nombreProveedor, :ciudad, :provincia, :telefono)";
             }
+            
             // Crea un objeto OracleCommand
             OracleCommand insertCommand = new OracleCommand(insertQuery, conn);
 
